@@ -2,7 +2,7 @@
 title: ratsgo's blog
 tagline: 'for textmining'
 description: 'blog for textmining'
-baseurl: "/ratsgo"
+baseurl: "/"
 url: http://ratsgo.github.io
 logo: '/public/logo.png'
 encoding: utf-8
