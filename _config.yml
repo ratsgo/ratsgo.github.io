@@ -1,0 +1,61 @@
+# Site Info
+title: ratsgo's blog
+tagline: 'for textmining'
+description: 'blog for textmining'
+baseurl: "/ratsgo"
+url: http://ratsgo.github.io
+logo: '/public/logo.png'
+encoding: utf-8
+
+# Site configurations
+gems:
+  - jekyll-paginate
+markdown: kramdown
+kramdown:
+  input: GFM
+excerpt_separator: "<!-- more -->"
+sass:
+  style: compressed
+  sass_dir: _scss    
+paginate: 5
+paginate_path: '/blog/page:num'
+permalink: pretty
+version: 1.0.0
+
+# About/contact
+author:
+  name: ratsgo
+  description: <strong>보물찾기</strong> 그리운 마을, 그 먼 바다에 이르기까지
+  gravatar: 0a638fc7996869b1b67fb90ccf77dcfe # md5 hash of your email address
+  contact:
+    linkedin:  https://www.linkedin.com/in/gichanglee/
+    github:    https://github.com/ratsgo
+    facebook:  https://www.facebook.com/gichanglee.84
+    #twitter:  <hide>
+    #weibo:    <hide>
+    email:     gichanglee@korea.ac.kr
+
+# Navigation (2nd level links supported)
+nav:
+  Home:           
+    - '/'
+  Contents:           
+    - '/blog/'
+    - { Categories: '/blog/categories/' }
+    - { Tags: '/blog/tags/' }
+  About:          
+    - '/about/'
+
+# Where are tags and categories displayed
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
+
+hero:
+  image: /public/img/picture.jpg
+  caption: Original Artwork &copy; Pablo Picasso. Girl before a Mirror. Boisgeloup, March 1932. Oil on canvas
+
+# Puglins
+mathjax: true # whether support mathjax
+google_analytics_token: 'UA-93172815-1' # leave blank if you don't want google analytics
+disqus_short_name: 'ratsgo' # leave blank if you don't want disqus
+
