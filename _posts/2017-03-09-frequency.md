@@ -1,5 +1,5 @@
 ---
-title: '빈도'에서 '의미'로 나아가기
+title: 빈도에서 의미로 나아가기
 category: Natural Language Processing
 tag: frequency
 ---
