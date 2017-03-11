@@ -67,15 +67,15 @@ Word2Vec 네트워크가 p(o\|c)를 키우려면 반드시 정답 셋이 있어�
 
 ## 그렇다면 GloVe, Fasttext는?
 
-[GloVe](http://nlp.stanford.edu/projects/glove/)는 2014년 미국 스탠포드대학 연구팀에서 개발한 단어 임베딩 방법론입니다. GloVe 연구진이 명시적으로 밝혔듯 GloVe가 보존하려는 정보는 단어 동시 등장 여부입니다. 실제로 GloVe로 임베딩된 단어 벡터끼리의 내적은 동시 등장확률의 로그값과 같습니다(their dot product equals the logarithm of the words' probability of co-occurrence). 특정 window 내 동시 등장 정보를 보존하는 Word2Vec과 본질적으로 다르지 않은 셈이죠. 그럼 연구팀이 직접 든 예시를 볼까요?
+[GloVe](http://nlp.stanford.edu/projects/glove/)는 2014년 미국 스탠포드대학 연구팀에서 개발한 단어 임베딩 방법론입니다. GloVe 연구진이 명시적으로 밝혔듯 GloVe가 보존하려는 정보는 단어 동시 등장 여부입니다. 실제로 GloVe로 임베딩된 단어 벡터끼리의 내적은 동시 등장확률의 로그값과 같습니다(their dot product equals the logarithm of the words' probability of co-occurrence). Word2Vec이 학습과정 말단(loss 구할 때)에서 동시 등장 정보를 반영한다면 GloVe는 목적함수 자체에 동시 등장 정보가 명시된 형태인 셈이죠. 그럼 GloVe 연구팀이 직접 든 예시를 볼까요?
 
 ![GloVe example](http://i.imgur.com/WhWPkMm.png)
 
 위 표의 조건부 확률은 학습 말뭉치에 등장한 빈도수를 기반으로 작성된 것입니다. 예시를 보면 'ice(얼음)'라는 단어가 주어졌을 때 'solid(단단한)'가 동시에 등장할 확률은 'steam(증기)'가 주어졌을 때 'solid'가 나타날 확률보다 높습니다. 반대로 'ice'가 주어졌을 때 'gas(가스)'의 확률은 'steam'일 때 'gas'일 확률보다 낮습니다. 한편 'ice'가 주어졌을 때 'water(물)'이 나올 확률과 'ice'와 'steam'이 동시에 등장할 확률은 비슷합니다. 'fashion'과 'ice', 'fashion'과 'steam' 또한 비슷합니다.
 
-GloVe는 위 표를 기준으로 할 때 P(k\|ice)/P(k\|steam)로 표현되는 비율을 최대화하고자 합니다. 우선 분자, 분모에 해당하는 확률이 비슷해 분간이 잘 안되는 'water'와 'fashion'은 분석에서 제외합니다. 차이가 있는 'solid', 'gas'가 분석 대상입니다. 비율을 최대화하기 위해선 분자를 키우고, 분모를 줄여야 합니다. 이를 동시에 이해할 필요가 있습니다. 예컨대 'solid'라는 단어를 벡터공간에 임베딩할 때 'ice', 'steam' 중 어느 쪽에 가깝게 둘 것인지 선택하는 문제가 된다는 겁니다.
+GloVe는 위 표를 기준으로 할 때 P(k\|ice)/P(k\|steam)로 표현되는 **동시 등장 정보 간 비율**을 최대화하고자 합니다. 우선 분자, 분모에 해당하는 확률이 비슷해 분간이 잘 안되는 'water'와 'fashion'은 분석에서 제외합니다. 차이가 있는 'solid', 'gas'가 분석 대상입니다. 비율을 최대화하기 위해선 분자를 키우고, 분모를 줄여야 합니다. 이를 동시에 이해할 필요가 있습니다. 예컨대 'solid'라는 단어를 벡터공간에 임베딩할 때 'ice', 'steam' 중 어느 쪽에 가깝게 둘 것인지 선택하는 문제가 된다는 겁니다. 바꿔 말하면 GloVe는 단어벡터의 내적이 동시 등장 정보 간 비율과 같아지도록 벡터를 임베딩합니다.
 
-Word2Vec을 개발한 mikolov가 2016년 제안한 **[Fasttext](https://arxiv.org/pdf/1607.04606.pdf)**는 원래 단어를 **부분단어(subword)**의 벡터들로 표현하는 방식으로써 Word2Vec과 거의 유사합니다. 노이즈가 많은 말뭉치에 강점을 지닌 것으로 알려져 있습니다.
+Word2Vec을 개발한 mikolov가 2016년 제안한 **[Fasttext](https://arxiv.org/pdf/1607.04606.pdf)**는 원래 단어를 **부분단어(subword)**의 벡터들로 표현한다는 점을 제외하고는 Word2Vec과 거의 유사합니다. 노이즈가 많은 말뭉치에 강점을 지닌 것으로 알려져 있습니다.
 
 
 
