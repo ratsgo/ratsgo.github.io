@@ -1,5 +1,5 @@
 ---
-title: statistical semantics
+title: idea of statistical semantics
 category: From frequency to semantics
 tag: distributional hypothesis
 ---
