@@ -25,4 +25,6 @@ Word2Vec은 지난번 [포스트](https://ratsgo.github.io/natural%20language%20
 
 Word2Vec은 **자연언어처리(Natural Language Processing)**의 대표적인 가정인 **[Distributional Hypothesis](https://ratsgo.github.io/natural%20language%20processing/2017/03/09/frequency/)**(비슷한 맥락이나 위치에 등장하는 단어들은 그 의미도 유사하다)에 근거한 방법론입니다. Word2Vec은 어떤 방식으로 학습하고, 단어 벡터들을 만들어내는 걸까요? 최대한 직관적으로 설명해보려고 합니다. Word2Vec은 아래 식을 최대화하는 걸 목표로 합니다.
 
-\\( p(o|c)=\frac { exp({ u }_{ o }^{ T }{ v }_{ c }) }{ \sum _{ w=1 }^{ W }{ exp({ u }_{ w }^{ T }{ v }_{ c } } ) } \\)
+\\( 
+p(o|c)=\frac { exp({ u }_{ o }^{ T }{ v }_{ c }) }{ \sum _{ w=1 }^{ W }{ exp({ u }_{ w }^{ T }{ v }_{ c } } ) } 
+\\)
