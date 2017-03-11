@@ -1,8 +1,8 @@
 ---
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 title: 빈도수 세기의 놀라운 마법 Word2Vec, Glove, Fasttext 
 category: From frequency to semantics
 tag: embedding methods
+html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 안녕하세요. 이번 포스팅에서는 단어를 벡터화하는 **임베딩(embedding)** 방법론인 **Word2Vec, Glove, Fasttext**에 대해 알아보고자 합니다. 세 방법론은 대체 어떤 정보를 보존하면서 단어벡터를 만들기에 뛰어난 성능으로 유명세를 탄 것일까요? 저는 이번 포스팅에서 세 방법론이 크고 작은 차이점을 갖고 있지만 **단어 동시 등장 정보(word's of co-occurrence)**를 보존하기 위해 그 빈도수를 센다는 점에서 본질적으로 같다는 점을 이야기해보려고 합니다. 저는 이 사실을 처음 깨닫고 나서 놀라움을 금치 못했었는데요. 자, 이제 시작해 볼까요.
