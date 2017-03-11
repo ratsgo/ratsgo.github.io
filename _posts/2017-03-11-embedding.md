@@ -23,7 +23,7 @@ Word2Vec은 지난번 [포스트](https://ratsgo.github.io/natural%20language%20
 
 여기서 하나 같이 고민해볼 문제가 있습니다. '외나무다리'는 '원수'와 비슷한 표현(단어)라고 볼 수 있을까요? 정답이 없는 문제입니다만, 제 생각엔 그렇다고도, 그렇지 않다고도 볼 수 있을 것 같습니다. '외나무다리'는 '원수'와는 그 의미가 정확히 같지는 않지만, 동시에 같이 쓰이는 일종의 **연어(collocation)**로써 대체로 꺼리고 싫어하는 대상을 피할 수 없는 곳에서 공교롭게 만나게 됨을 비유적으로 말할 때 동시에 같이 쓰이기 때문입니다. 
 
-Word2Vec은 **자연언어처리(Natural Language Processing)**의 대표적인 가정인 **[Distributional Hypothesis](https://ratsgo.github.io/natural%20language%20processing/2017/03/09/frequency/)**(비슷한 맥락이나 위치에 등장하는 단어들은 그 의미도 유사하다)에 근거한 방법론입니다. Word2Vec은 어떤 방식으로 학습하고, 단어 벡터들을 만들어내는 걸까요? 최대한 직관적으로 설명해보려고 합니다. Word2Vec(Skip-Gram)은 아래 식을 최대화하는 걸 목표로 합니다.
+Word2Vec은 **자연언어처리(Natural Language Processing)**의 대표적인 가정인 **[Distributional Hypothesis](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/10/frequency/)**(비슷한 맥락이나 위치에 등장하는 단어들은 그 의미도 유사하다)에 근거한 방법론입니다. Word2Vec은 어떤 방식으로 학습하고, 단어 벡터들을 만들어내는 걸까요? 최대한 직관적으로 설명해보려고 합니다. Word2Vec(Skip-Gram)은 아래 식을 최대화하는 걸 목표로 합니다.
 
 $$p(o|c)=\frac { exp({ u }_{ o }^{ T }{ v }_{ c }) }{ \sum _{ w=1 }^{ W }{ exp({ u }_{ w }^{ T }{ v }_{ c } } )}$$
 

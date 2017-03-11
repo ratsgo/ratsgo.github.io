@@ -1,10 +1,10 @@
 ---
-title: NLP의 기본 가정과 그 절차
+title: statistical semantics
 category: From frequency to semantics
 tag: distributional hypothesis
 ---
 
-이번 포스팅에서는 **자연언어처리(Natural Language Processing)**의 기본 가정 가운데 하나인 **distributional hypothesis**와 **벡터공간모델(Vector Space Models)**에 대해 알아보도록 하겠습니다. 아울러 NLP 분야에서 생각하는 **유사도(similarity)**와 NLP의 기본 절차에 대해서도 이야기해보겠습니다. 이와 관련해 괜찮은 [아티클](http://www.jair.org/media/2934/live-2934-4846-jair.pdf)이 있어 공부 겸 소개 겸 정리를 해볼까 합니다. 
+이번 포스팅에서는 **자연언어처리(Natural Language Processing)**의 기본 가정 가운데 하나인 **distributional hypothesis**와 **벡터공간모델(Vector Space Models)**에 대해 알아보도록 하겠습니다. 그 핵심은 '빈도'를 '의미'로 진화시킬 수 있다는 아이디어인데요. 이와 아울러 NLP 분야에서 생각하는 **유사도(similarity)**와 NLP의 기본 절차에 대해서도 이야기해보겠습니다. 이와 관련해 괜찮은 [아티클](http://www.jair.org/media/2934/live-2934-4846-jair.pdf)이 있어 공부 겸 소개 겸 정리를 해볼까 합니다. 
 
 
 
