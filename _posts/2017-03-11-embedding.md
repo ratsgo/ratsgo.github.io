@@ -1,8 +1,8 @@
 ---
+html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 title: 빈도수 세기의 놀라운 마법 Word2Vec, Glove, Fasttext 
 category: From frequency to semantics
 tag: embedding methods
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 ---
 
 안녕하세요. 이번 포스팅에서는 단어를 벡터화하는 **임베딩(embedding)** 방법론인 **Word2Vec, Glove, Fasttext**에 대해 알아보고자 합니다. 세 방법론이 크고 작은 차이점을 갖고 있지만 '단어 빈도수 세기'라는 점에서 본질적으로 같다는 점을 이야기해보려고 합니다. 저는 이 사실을 처음 깨닫고 나서 놀라움을 금치 못했었는데요. 자, 이제 시작해 볼까요.
@@ -25,4 +25,4 @@ Word2Vec은 지난번 [포스트](https://ratsgo.github.io/natural%20language%20
 
 Word2Vec은 **자연언어처리(Natural Language Processing)**의 대표적인 가정인 **[Distributional Hypothesis](https://ratsgo.github.io/natural%20language%20processing/2017/03/09/frequency/)**(비슷한 맥락이나 위치에 등장하는 단어들은 그 의미도 유사하다)에 근거한 방법론입니다. Word2Vec은 어떤 방식으로 학습하고, 단어 벡터들을 만들어내는 걸까요? 최대한 직관적으로 설명해보려고 합니다. Word2Vec은 아래 식을 최대화하는 걸 목표로 합니다.
 
-\\(p(o|c)=\frac { exp({ u }_{ o }^{ T }{ v }_{ c }) }{ \sum _{ w=1 }^{ W }{ exp({ u }_{ w }^{ T }{ v }_{ c } } ) } \\)
+\\( p(o|c)=\frac { exp({ u }_{ o }^{ T }{ v }_{ c }) }{ \sum _{ w=1 }^{ W }{ exp({ u }_{ w }^{ T }{ v }_{ c } } ) } \\)
