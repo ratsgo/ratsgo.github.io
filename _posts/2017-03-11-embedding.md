@@ -1,5 +1,5 @@
 ---
-title: '빈도수 세기의 놀라운 마법' Word2Vec, Glove, Fasttext 
+title: 빈도수 세기의 놀라운 마법 Word2Vec, Glove, Fasttext 
 category: From frequency to semantics
 tag: embedding methods
 html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
