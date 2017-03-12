@@ -61,7 +61,7 @@ Word2Vec 네트워크가 p(o\|c)를 키우려면 반드시 정답 셋이 있어�
 
 다시 말해 Word2Vec은 window 내에 등장하지 않는 단어에 해당하는 벡터는 중심단어 벡터와 벡터공간상에서 멀어지게끔(*내적값* **줄이기**), 등장하는 주변단어 벡터는 중심단어 벡터와 가까워지게끔(*내적값* **키우기**) 한다는 것이죠. 
 
-그럼 이렇게 생각해보는건 어떨까요? window 내에 등장하지 않으면 *결과값을* **줄이고**, 등장할 경우 *결과값을* **키우는** 건? 정확히 이 방식으로 작동하는 알고리즘이 오래 전부터 제안돼 왔습니다. 예컨대 주변 단어를 몇 개 볼지를 정하고 동시에 등장하는 단어의 빈도수를 세어서 행렬로 변환한 '[단어-문맥행렬](https://ratsgo.github.io/natural%20language%20processing/2017/03/09/frequency/)'이 대표 사례입니다. 바꿔 말하면 Word2Vec은 기존 count 기반 방법론처럼 자주 같이 등장하는 단어들의 정보(Co-occurrence)를 보존한다는 얘기입니다. [Omer and Yoav(2014)](https://papers.nips.cc/paper/5477-neural-word-embedding-as-implicit-matrix-factorization.pdf)도 Word2Vec은 본질적으로 기존 count 기반의 방법론과 다르지 않다는 점을 논증해 눈길을 끕니다.
+그럼 이렇게 생각해보는건 어떨까요? window 내에 등장하지 않으면 *결과값을* **줄이고**, 등장할 경우 *결과값을* **키우는** 건? 정확히 이 방식으로 작동하는 알고리즘이 오래 전부터 제안돼 왔습니다. 예컨대 주변 단어를 몇 개 볼지를 정하고 동시에 등장하는 단어의 빈도수를 세어서 행렬로 변환한 '[단어-문맥행렬](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/10/frequency/)'이 대표 사례입니다. 바꿔 말하면 Word2Vec은 기존 count 기반 방법론처럼 자주 같이 등장하는 단어들의 정보(Co-occurrence)를 보존한다는 얘기입니다. [Omer and Yoav(2014)](https://papers.nips.cc/paper/5477-neural-word-embedding-as-implicit-matrix-factorization.pdf)도 Word2Vec은 본질적으로 기존 count 기반의 방법론과 다르지 않다는 점을 논증해 눈길을 끕니다.
 
 
 
@@ -75,7 +75,7 @@ Word2Vec 네트워크가 p(o\|c)를 키우려면 반드시 정답 셋이 있어�
 
 GloVe는 위 표를 기준으로 할 때 P(k\|ice)/P(k\|steam)로 표현되는 **동시 등장 정보 간 비율**을 최대화하고자 합니다. 우선 분자, 분모에 해당하는 확률이 비슷해 분간이 잘 안되는 'water'와 'fashion'은 분석에서 제외합니다. 차이가 있는 'solid', 'gas'가 분석 대상입니다. 비율을 최대화하기 위해선 분자를 키우고, 분모를 줄여야 합니다. 이를 동시에 이해할 필요가 있습니다. 예컨대 'solid'라는 단어를 벡터공간에 임베딩할 때 'ice', 'steam' 중 어느 쪽에 가깝게 둘 것인지 선택하는 문제가 된다는 겁니다. 바꿔 말하면 GloVe는 단어벡터의 내적이 동시 등장 정보 간 비율과 같아지도록 벡터를 임베딩합니다.
 
-Word2Vec을 개발한 mikolov가 2016년 제안한 **[Fasttext](https://arxiv.org/pdf/1607.04606.pdf)**는 원래 단어를 **부분단어(subword)**의 벡터들로 표현한다는 점을 제외하고는 Word2Vec과 거의 유사합니다. 노이즈가 많은 말뭉치에 강점을 지닌 것으로 알려져 있습니다.
+페이스북이 2016년 발표한 **[Fasttext](https://research.fb.com/projects/fasttext/)**는 원래 단어를 **부분단어(subword)**의 벡터들로 표현한다는 점을 제외하고는 Word2Vec과 거의 유사합니다. 노이즈가 많은 말뭉치에 강점을 지닌 것으로 알려져 있습니다.
 
 
 
