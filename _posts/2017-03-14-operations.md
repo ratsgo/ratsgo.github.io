@@ -1,5 +1,5 @@
 ---
-title: 머신러닝 기초 행렬연산
+title: 기초 행렬연산
 category: Machine Learning
 tag: matrix
 html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
