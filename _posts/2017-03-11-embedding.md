@@ -2,7 +2,6 @@
 title: 빈도수 세기의 놀라운 마법 Word2Vec, Glove, Fasttext 
 category: From frequency to semantics
 tag: embedding methods
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 안녕하세요. 이번 포스팅에서는 단어를 벡터화하는 **임베딩(embedding)** 방법론인 **Word2Vec, Glove, Fasttext**에 대해 알아보고자 합니다. 세 방법론은 대체 어떤 정보를 보존하면서 단어벡터를 만들기에 뛰어난 성능으로 유명세를 탄 것일까요? 저는 이번 포스팅에서 세 방법론이 크고 작은 차이점을 갖고 있지만 **단어 동시 등장 정보(word's of co-occurrence)**를 보존한다는 점에서 빈도수 기반의 방법론들과 본질적으로 같다는 점을 이야기해보려고 합니다. 저는 이 사실을 처음 깨닫고 나서 놀라움을 금치 못했었는데요. 자, 이제 시작해 볼까요.
@@ -37,9 +36,7 @@ Word2Vec 연구진은 p(o\|c)을 위 식 우변과 같이 정의했습니다. u�
 
 예컨대 빨간점 위치에 있는 벡터(A)와 노란점 위치에 있는 벡터(B)가 있다고 합시다. B가 A에 정확히 포개어져 있을 때(θ=0도) cos(θ)는 1입니다. 녹색선의 길이가 반지름과 일치하기 때문입니다. A는 고정한 채 B가 y축 상단으로 옮겨간다(θ가 0도에서 90도로 증가)고 칩시다. 이때 cos(θ)는 점점 감소하여 0이 되게 됩니다. θ가 0도에서 90도로 커짐에 따라 녹색선이 줄어들게 된 것이죠. 아래 그림의 경우 빨간색 직선이 X축과 만나는 점이 바로 cos(θ)이 됩니다.
 
-
 <iframe src="https://www.desmos.com/calculator/47f4jkcysj?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
-
 
 cos(θ)는 단위원 내 벡터들끼리의 내적과 같기 때문에 그 내적값이 커진다는 것은 θ가 작아진다(**유사도가 높아진다**)는 의미로 받아들일 수 있습니다. 이러한 사실은 고차원 벡터공간으로도 확대할 수 있으며, Word2Vec 연구진은 이러한 코사인과 내적의 성질을 목적함수 구축에 적극 활용한 것 같습니다. 
 
