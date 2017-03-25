@@ -83,37 +83,37 @@ $$T(x)=\begin{bmatrix} 1 & -3 \\ 3 & 5 \\ -1 & 7 \end{bmatrix}\begin{bmatrix} { 
 
 ### reflections
 
-<a href="http://imgur.com/uPnbpUw"><img src="http://i.imgur.com/uPnbpUw.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/uPnbpUw"><img src="http://i.imgur.com/uPnbpUw.png" width="400px" title="source: imgur.com" /></a>
 
-<a href="http://imgur.com/RoDXSuM"><img src="http://i.imgur.com/RoDXSuM.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/RoDXSuM"><img src="http://i.imgur.com/RoDXSuM.png" width="400px" title="source: imgur.com" /></a>
 
-<a href="http://imgur.com/ospTeBE"><img src="http://i.imgur.com/ospTeBE.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/ospTeBE"><img src="http://i.imgur.com/ospTeBE.png" width="400px" title="source: imgur.com" /></a>
 
-<a href="http://imgur.com/QC495wq"><img src="http://i.imgur.com/QC495wq.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/QC495wq"><img src="http://i.imgur.com/QC495wq.png" width="400px" title="source: imgur.com" /></a>
 
-<a href="http://imgur.com/bnlpdpx"><img src="http://i.imgur.com/bnlpdpx.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/bnlpdpx"><img src="http://i.imgur.com/bnlpdpx.png" width="400px" title="source: imgur.com" /></a>
 
 
 
 ### contractions and expansions
 
-<a href="http://imgur.com/Jwihag1"><img src="http://i.imgur.com/Jwihag1.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/Jwihag1"><img src="http://i.imgur.com/Jwihag1.png" width="450px" title="source: imgur.com" /></a>
 
-<a href="http://imgur.com/cQP4sU8"><img src="http://i.imgur.com/cQP4sU8.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/cQP4sU8"><img src="http://i.imgur.com/cQP4sU8.png" width="450px" title="source: imgur.com" /></a>
 
 
 
 ### shears
 
-<a href="http://imgur.com/VVAf9kP"><img src="http://i.imgur.com/VVAf9kP.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/VVAf9kP"><img src="http://i.imgur.com/VVAf9kP.png" width="450px" title="source: imgur.com" /></a>
 
-<a href="http://imgur.com/dP2dXad"><img src="http://i.imgur.com/dP2dXad.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/dP2dXad"><img src="http://i.imgur.com/dP2dXad.png" width="450px" title="source: imgur.com" /></a>
 
 
 
 ### projections
 
-<a href="http://imgur.com/u4ZTNdX"><img src="http://i.imgur.com/u4ZTNdX.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/u4ZTNdX"><img src="http://i.imgur.com/u4ZTNdX.png" width="400px" title="source: imgur.com" /></a>
 
-<a href="http://imgur.com/vy3DFXB"><img src="http://i.imgur.com/vy3DFXB.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/vy3DFXB"><img src="http://i.imgur.com/vy3DFXB.png" width="400px" title="source: imgur.com" /></a>
 
