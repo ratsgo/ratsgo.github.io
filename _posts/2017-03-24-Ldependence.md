@@ -11,7 +11,7 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 ## 선형독립과 선형종속
 
-아래 조건을 만족하는 유한한 p개의 벡터는 **선형종속**(線型從屬, linear dependence)이라고 정의됩니다.
+아래 조건을 만족하는 유한한 n개의 벡터는 **선형종속**(線型從屬, linear dependence)이라고 정의됩니다.
 
 $$S=\left\{ { v }_{ 1 },{ v }_{ 2 },...,{ v }_{ n } \right\} 에\quad 대해\\{ c }_{ 1 }{ v }_{ 1 }+{ c }_{ 2 }{ v }_{ 2 }+...+{ c }_{ n }=0을\quad만족하는\\0이\quad 아닌\quad { c }_{ 1 },{ c }_{ 2 },...,{ c }_{ n }이\quad존재한다$$
 
