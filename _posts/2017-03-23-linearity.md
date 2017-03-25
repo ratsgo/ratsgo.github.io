@@ -1,7 +1,7 @@
 ---
 title: Linearity, Linear combination
 category: Linear Algebra
-tag: Linear Discriminant Analysis
+tag: linear
 html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
