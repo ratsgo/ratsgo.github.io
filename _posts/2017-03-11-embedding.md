@@ -32,11 +32,11 @@ Word2Vec 연구진은 p(o\|c)을 위 식 우변과 같이 정의했습니다. u�
 
 위 식 분모와 분자를 설명하기 전에 **코사인 유사도**를 설명하는 것이 좋겠습니다. 2차원 평면 위에 반지름이 1인 단위원이 있다고 칩시다. **[코사인(cosine)](https://ko.wikipedia.org/wiki/%EC%82%BC%EA%B0%81%ED%95%A8%EC%88%98)**의 정의에 의해 cos(θ)는 녹색 선의 길이와 같습니다. 아래 그림처럼 노란점을 꼭지점으로 하는 직각삼각형의 빗변의 길이는 단위원 반지름인 1이기 때문이죠. 아울러 코사인과 **내적(inner product)** 사이의 관계에 의해 단위원 위에 있는 벡터들끼리의 내적은 cos(θ)와 같습니다.
 
-![cosine similarity](http://i.imgur.com/yL4dlAu.png)
+<a href="http://imgur.com/v4KhWSh"><img src="http://i.imgur.com/v4KhWSh.png" width="500px" title="source: imgur.com" /></a>
 
 예컨대 빨간점 위치에 있는 벡터(A)와 노란점 위치에 있는 벡터(B)가 있다고 합시다. B가 A에 정확히 포개어져 있을 때(θ=0도) cos(θ)는 1입니다. 녹색선의 길이가 반지름과 일치하기 때문입니다. A는 고정한 채 B가 y축 상단으로 옮겨간다(θ가 0도에서 90도로 증가)고 칩시다. 이때 cos(θ)는 점점 감소하여 0이 되게 됩니다. θ가 0도에서 90도로 커짐에 따라 녹색선이 줄어들게 된 것이죠. 아래 그림의 경우 빨간색 직선이 X축과 만나는 점이 바로 cos(θ)이 됩니다.
 
-![그림](http://i.imgur.com/H8WvWMB.gif)
+<a href="http://imgur.com/H8WvWMB"><img src="http://i.imgur.com/H8WvWMB.gif" width="450px" title="source: imgur.com" /></a>
 
 cos(θ)는 단위원 내 벡터들끼리의 내적과 같기 때문에 그 내적값이 커진다는 것은 θ가 작아진다(**유사도가 높아진다**)는 의미로 받아들일 수 있습니다. 이러한 사실은 고차원 벡터공간으로도 확대할 수 있으며, Word2Vec 연구진은 이러한 코사인과 내적의 성질을 목적함수 구축에 적극 활용한 것 같습니다. 
 
@@ -70,7 +70,7 @@ Word2Vec 네트워크가 p(o\|c)를 키우려면 반드시 정답 셋이 있어�
 
 [GloVe](http://nlp.stanford.edu/projects/glove/)는 2014년 미국 스탠포드대학 연구팀에서 개발한 단어 임베딩 방법론입니다. GloVe 연구진이 명시적으로 밝혔듯 GloVe가 보존하려는 정보는 단어 동시 등장 여부입니다. GloVe로 임베딩된 단어 벡터끼리의 내적은 동시 등장확률의 로그값과 같습니다(their dot product equals the logarithm of the words' probability of co-occurrence). Word2Vec이 임베딩된 두 단어벡터의 내적이 코사인 유사도라면 GloVe는 동시 등장 확률인 셈이죠. 그럼 GloVe 연구팀이 직접 든 예시를 볼까요?
 
-![GloVe example](http://i.imgur.com/WhWPkMm.png)
+<a href="http://imgur.com/WhWPkMm"><img src="http://i.imgur.com/WhWPkMm.png" width="500px" title="source: imgur.com" /></a>
 
 위 표의 조건부 확률은 학습 말뭉치에 등장한 빈도수를 기반으로 작성된 것입니다. 예시를 보면 'ice(얼음)'라는 단어가 주어졌을 때 'solid(단단한)'가 동시에 등장할 확률은 'steam(증기)'가 주어졌을 때 'solid'가 나타날 확률보다 높습니다. 반대로 'ice'가 주어졌을 때 'gas(가스)'의 확률은 'steam'일 때 'gas'일 확률보다 낮습니다. 한편 'ice'가 주어졌을 때 'water(물)'이 나올 확률과 'ice'와 'steam'이 동시에 등장할 확률은 비슷합니다. 'fashion'과 'ice', 'fashion'과 'steam' 또한 비슷합니다.
 

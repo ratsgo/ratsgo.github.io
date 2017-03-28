@@ -13,11 +13,11 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 하루에도 수백 수천건의 기사가 쏟아지는 '뉴스의 홍수' 시대입니다. 소비자 입장에선 어떤 기사가 중요하고 그렇지 않은지 알기 어렵고 생산자 입장에선 공들여 만든 뉴스가 단 하루만 지나도 쓸모 없어지기 때문에 대단히 비효율적입니다. 생산자든 소비자든 뉴스의 맥락을 짚기가 매우 어려운 것이 요즘 현실입니다. 예를 들어볼까요? 대한민국 대표기업 '삼성'에 관련된 이슈를 찾아보고 싶다고 칩시다. 네이버에 삼성 키워드를 넣어서 뉴스를 검색해봤습니다.
 
-![search](http://i.imgur.com/HqWB22Q.png)
+<a href="http://imgur.com/HqWB22Q"><img src="http://i.imgur.com/HqWB22Q.png" width="600px" title="source: imgur.com" /></a>
 
 많이들 검색해보셔서 아시겠지만 지금 당장 벌어지고 있는 이슈는 비교적 쉽게 알 수 있지만 과거 이슈는 시간과 노력을 들이지 않으면 알기 어렵습니다. 또 '공채', '최순실 수사', '삼성전자의 하만 인수' 등은 시간의 흐름에 따라 진화, 발전하는 이슈지요. 저는 뉴스 소비자에게 중요한 기사를 걸러 보여주면서도 뉴스의 **맥락(context)**을 알 수 있게 하면 좋겠다는 생각을 했습니다. 이와 관련된 개념이 바로 **[스트럭처 저널리즘(Structured Journalism)](https://www.kpf.or.kr/site/kpf/research/selectMediaPdsView.do?seq=7562)**입니다.
 
-![structured journalism](http://i.imgur.com/CfWCQrS.jpg)
+<a href="http://imgur.com/CfWCQrS"><img src="http://i.imgur.com/CfWCQrS.jpg" width="500px" title="source: imgur.com" /></a>
 
 스트럭처 저널리즘은 언론학계에 최근 제시되고 있는 개념으로 기사 및 기사 속에 내재된 정보를 계속 누적시켜 **재맥락화(recontextualize)**하려는 노력을 총칭합니다. 위 그림에서처럼 단순 팩트나 기존 기사들을 재조합하여 새로운 가치, 맥락을 만들어보려는 시도입니다.  
 
@@ -53,7 +53,7 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 이날 대부분의 신문은 '사드', '남중국해 판결'을 비중있게 보도했습니다. 그만큼 중요한 사안이라는 이야기죠. 우선 뉴스 제목을 **포스태깅**하고 조사 등 불필요한 품사를 제거했습니다. 그리고 중복 단어 숫자를 **웨이트(가중치)**로 하는 무방향 엣지를 연결했습니다.
 
-![그래프 예시](http://i.imgur.com/reEVDkz.png)
+<a href="http://imgur.com/reEVDkz"><img src="http://i.imgur.com/reEVDkz.png" width="500px" title="source: imgur.com" /></a>
 
 조선일보 1면 톱기사 '사드, 경북 성주에 배치한다'는 제목의 노드는 경향신문의 1면 톱기사 '사드 배치 경북 성주 사실상 결정'과 단어 중복수가 4개입니다(사드 경북 성주 배치). 조선일보의 1면 톱기사 제목은 한겨레의 1면 톱기사 '외교장관 만류에도 사드 결정 강행했다'는 기사와 2개 단어가 겹칩니다(사드), 경향신문과 한겨레 기사의 경우엔 1개(사드), 한겨레 기사는 조선일보 1면 사이드 '진경준 처가 명의 회사 대기업과 수상한 거래'와 1개(하다)가 겹칩니다. 이를 그래프로 그리면 위 그림과 같습니다. 단어 중복수를 웨이트로 한 그래프에선 조선일보 '사드, 경북 성주에 배치한다'가 중심 노드가 되겠네요. 
 
@@ -73,17 +73,17 @@ $$\begin{pmatrix} { A }_{ 11 } & { A }_{ 12 } & ... & { A }_{ 1n } \\ { A }_{ 21
 
 이상 논의한 내용을 바탕으로 뉴스 제목의 중복 단어를 가중치로 하는 그래프를 구축했습니다. 각 노드의 중심성은 간선중심성과 고유벡터중심성 두 가지 지표를 구해 이를 곱하여 모두 고려했습니다. 분석 대상은 조선일보, 한겨레 등 10개 주요 조간 매체 10개월치 기사(2016년 1~10월) 20만7729건입니다. 위에서 예시로 든 2016년 7월 13일치 결과를 한번 보겠습니다.
 
-![result1](http://i.imgur.com/jNQ7Ysq.png)
+<a href="http://imgur.com/jNQ7Ysq"><img src="http://i.imgur.com/jNQ7Ysq.png" width="600px" title="source: imgur.com" /></a>
 
 위 표에서 degree는 간선중심성, eigen은 고유벡터중심성, result는 이 둘을 곱한 스코어를 뜻합니다. result 기준으로 정렬해 상위 7개를 뽑았습니다. (topic의 경우 일명 토픽모델링으로 불리는 **잠재디리클레할당**을 적용해 비슷한 토픽끼리 클러스터링한 것인데 이번 포스팅 주제와 동떨어져 있으므로 일단은 무시하셔도 됩니다) 이날은 '사드'가 중요한 이슈였던 모양입니다. 상위 기사에 '사드' 관련 기사가 모두 포진해있군요. section을 보시면 1~5면 사이의 기사가 상위에 랭크돼 있어 비교적 중요한 기사들이 뽑혔다는 사실 또한 알 수 있습니다.
 
-![result2](http://i.imgur.com/dcSDoOl.png)
+<a href="http://imgur.com/dcSDoOl"><img src="http://i.imgur.com/dcSDoOl.png" width="600px" title="source: imgur.com" /></a>
 
 위 그림은 같은 날짜 스코어 하위 기사들입니다. 보통 중요하지 않은 기사들이 대부분인데요, 빨간색으로 표시한 기사가 눈에 좀 띕니다. 스코어는 낮은데 1면에 보도된 기사입니다. 아무래도 이건 다른 언론사 기사와 제목이 완전히 다른 '차별성 있는 기사'인 것 같습니다. result 스코어를 section 정보와 동시에 고려한다면 중요도 지표가 낮은(제목이 특이한) 기사 가운데 앞쪽면 기사는 해당 언론사의 특종이나 단독기획 기사일 가능성이 높다고 해석해도 나쁘지 않을 것 같다는 생각이 듭니다.
 
 매일 전체 기사의 상위 3%를 중요기사라고 분류했습니다. 이 기사가 몇 면에 보도됐는지 매칭해 그 비율을 꼽아봤습니다.
 
-![result3](http://i.imgur.com/hxdLgom.png)
+<a href="http://imgur.com/hxdLgom"><img src="http://i.imgur.com/hxdLgom.png" width="500px" title="source: imgur.com" /></a>
 
 input은 분석대상 전체 기사 20만7729건 가운데 1~5면이 차지하는 비율을 뜻합니다. output은 중심성 스코어 상위 3% 기사 가운데 1~5면인 비율입니다. 지금까지 설명한 방법론이 앞쪽 면(비교적 중요) 기사를 걸러내는 데 효과적임을 알 수 있습니다.
 
