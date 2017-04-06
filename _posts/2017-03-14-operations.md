@@ -1,6 +1,6 @@
 ---
 title: 기초 행렬연산
-category: Machine Learning
+category: Linear Algebra
 tag: matrix
 html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---

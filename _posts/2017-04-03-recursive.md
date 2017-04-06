@@ -1,6 +1,6 @@
 ---
 title: Recursive Neural Networks
-category: Natural Language Processing
+category: Deep Learning
 tag: Recursive Neural Networks
 html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---

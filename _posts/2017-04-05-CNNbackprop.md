@@ -1,6 +1,6 @@
 ---
 title: Convolutional Neural Networks의 역전파(backpropagation)
-category: Machine Learning
+category: Deep Learning
 tag: Convolutional Neural Networks
 html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
