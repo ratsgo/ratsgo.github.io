@@ -42,6 +42,8 @@ $$M=U\Sigma { V }^{ T }\\ { U }^{ T }U={ V }^{ T }V=I\\M\overrightarrow { { v }_
 
 
 그러면 특이값 분해를 주성분 분석과 비교해보기 위해 행렬 M을 두번 곱해 보겠습니다. 이후 식을 정리하면 아래와 같습니다.
+
+
 $$
 \begin{align*}
 { M }^{ T }M&={ (U\Sigma { V }^{ T }) }^{ T }U\Sigma { V }^{ T }\\ 
