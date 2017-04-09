@@ -60,7 +60,7 @@ $$
 
 ## 잠재의미분석
 
-잠재의미분석이란 **단어-문서행렬(Word-Document Matrix)**, **단어-문맥행렬(window based co-occurrence matrix)** 등입력 데이터에 특이값분해를 수행해 데이터의 차원수를 줄여 계산 효율성을 키우는 한편 행간에 숨어있는(latent) 의미를 이끌어내기 위한 방법론입니다. 대략적인 개념은 아래 그림과 같습니다.
+잠재의미분석이란 **단어-문서행렬(Word-Document Matrix)**, **단어-문맥행렬(window based co-occurrence matrix)** 등 입력 데이터에 특이값 분해를 수행해 데이터의 차원수를 줄여 계산 효율성을 키우는 한편 행간에 숨어있는(latent) 의미를 이끌어내기 위한 방법론입니다. 대략적인 개념은 아래 그림과 같습니다.
 
 <a href="http://imgur.com/zsGpFOd"><img src="http://i.imgur.com/zsGpFOd.png" width="600px" title="source: imgur.com" /></a>
 
