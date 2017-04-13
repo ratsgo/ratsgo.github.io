@@ -1,5 +1,5 @@
 ---
-title: Convolutional Neural Networks의 역전파(backpropagation)
+title: Convolutional Neural Networks(CNN)의 역전파(backpropagation)
 category: Deep Learning
 tag: Convolutional Neural Networks
 html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
@@ -11,7 +11,7 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 ## CNN의 forward pass
 
-이미 많이들 보셨겠지만 CNN은 필터가 입력데이터를 슬라이딩하면서 지역적 특징(feature)을 추출합니다. 이후 이 특징을 최대값(**Max Pooling**)이나 평균값(**Average Pooling**)으로 압축해 다음 레이어로 보냅니다. 이런 과정을 반복해 분류 등 원하는 결과를 만들어내는 것이 CNN의 일반적인 구조입니다. CNN의 forward pass에 대해서는 이미 많은 글에서 소개된 바 있으므로 이번 포스팅에서는 아래 그림을 인용하는 것으로 설명을 간단히 마치겠습니다.
+CNN은 필터가 입력데이터를 슬라이딩하면서 지역적 특징(feature)을 추출합니다. 이후 이 특징을 최대값(**Max Pooling**)이나 평균값(**Average Pooling**)으로 압축해 다음 레이어로 보냅니다. 이런 과정을 반복해 분류 등 원하는 결과를 만들어내는 것이 CNN의 일반적인 구조입니다. CNN의 forward pass에 대해서는 이미 많은 글에서 소개된 바 있으므로 이번 포스팅에서는 아래 그림을 인용하는 것으로 설명을 간단히 마치겠습니다.
 
 <a href="http://imgur.com/OXwLhaf"><img src="http://i.imgur.com/OXwLhaf.gif" width="500px" title="source: imgur.com" /></a>
 
