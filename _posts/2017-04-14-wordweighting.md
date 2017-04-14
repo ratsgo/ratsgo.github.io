@@ -1,7 +1,7 @@
 ---
 title: Word Weighting(2)
-category: Machine Learning
-tag: MEMs, HMMs
+category: From frequency to semantics
+tag: Word Weighting
 html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
@@ -33,7 +33,6 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 이번 글에서 다루는 단어 가중치 계산 방법 10가지는 이처럼 특정 단어가 문서 분류라는 과업에 얼마나 중요한 역할을 하는지 수치화하는 걸 목적으로 합니다.
 
 
-
 ##Document Frequency (DF)
 
 Document Frequency(DF)는 $w$라는 단어가 몇 개의 문서에 등장했는지 빈도를 나타냅니다. 아래와 같이 정의됩니다.
@@ -41,8 +40,7 @@ Document Frequency(DF)는 $w$라는 단어가 몇 개의 문서에 등장했는�
 $$DF(w)={ N }_{ D }(w)$$
 
 
-
-## Accuracy(Acc)
+##Accuracy(Acc)
 
 Accuracy(Acc)는 $w$라는 단어가 긍정적인 문서에 나타난 빈도, $w$가 부정적인 문서에 나타낸 빈도 간 차이입니다. 
 
