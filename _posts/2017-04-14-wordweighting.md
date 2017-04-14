@@ -9,7 +9,7 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 
 
-##단어 가중치 계산 목적
+## 단어 가중치 계산 목적
 
 리뷰(Document) 10개, 단어(Term) 10개로 구성된 말뭉치가 주어졌다고 가정해 봅시다. **binary Term-Document Matrix**는 아래와 같습니다. 여기에서 binary라는 건 특정 단어가 한번 쓰였든 열번 쓰였든 해당 리뷰 안에 등장하면 1, 한번도 나타난 적이 없으면 0으로 표시했다는 뜻입니다. 표 맨 밑에 범주(class) 정보가 있습니다. 첫번째 리뷰(D1)부터 여섯번째 리뷰(D6)까지는 긍정(Positive)적인 문서임을 확인할 수 있네요. 나머지 리뷰는 부정(Negative)인 것 또한 확인 가능합니다.
 
@@ -35,14 +35,14 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 
 
-##Document Frequency (DF)
+## Document Frequency (DF)
 
 Document Frequency(DF)는 $w$라는 단어가 몇 개의 문서에 등장했는지 빈도를 나타냅니다. 아래와 같이 정의됩니다.
 
 $$DF(w)={ N }_{ D }(w)$$
 
 
-##Accuracy(Acc)
+## Accuracy(Acc)
 
 Accuracy(Acc)는 $w$라는 단어가 긍정적인 문서에 나타난 빈도, $w$가 부정적인 문서에 나타낸 빈도 간 차이입니다. 
 
