@@ -75,16 +75,22 @@ $$PR(w)=\frac { N(Pos,w) }{ N(Pos) } /\frac { N(Neg,w) }{ N(Neg) } $$
 ## Odds ratio (OddR)
 
 **승산(odds)**이란 임의의 사건 $A$가 발생하지 않을 확률 대비 일어날 확률 사이의 비율입니다. $P(A)/(1-P(A))$로 정의됩니다. 그렇다면 '긍정적인 문서에 $w$가 등장'한 경우를 사건 $A$라고 정의한다면 $A$에 대한 승산은 아래와 같이 쓸 수 있습니다.
+
+
 $$
 \begin{align*}
 Odd(A)&=\frac { P(A) }{ 1-P(A) } \\ &=\frac { P(w|Pos) }{ 1-P(w|Pos) } \\ &=\frac { \frac { N(Pos,w) }{ N(Pos) }  }{ 1-\frac { N(Pos,w) }{ N(Pos) }  } \\ &=\frac { N(Pos,w) }{ N(Pos)-N(Pos,w) } \\ &=\frac { N(Pos,w) }{ N(Pos,\bar { w } ) }
 \end{align*}
 $$
+
+
 위 식 마지막의 분모는 $w$가 포함되지 않은 긍정적인 문서의 개수를 뜻합니다. 한편 사건 $B$를 '부정적인 문서에 $w$가 등장'한 경우로 정의하면 사건 B의 승산은 아래와 같이 쓸 수 있습니다. 아래식 마지막의 분모 역시 $w$가 없는 부정적인 문서의 개수입니다.
 
 $$Odd(B)=\frac { N(Neg,w) }{ N(Neg,\bar { w } ) } $$
 
 사건 $A$의 승산과 사건 $B$의 승산은 사이의 비율, 즉 **Odds ratio(OddR)**은 아래와 같이 쓸 수 있습니다. OddR이 클수록 긍정 범주 판별에 유용한 단어라는 의미를 지닙니다.
+
+
 $$
 \begin{align*}
 OddR(w)&=\frac { Odd(A) }{ Odd(B) } \\ &=\frac { \frac { N(Pos,w) }{ N(Pos,\bar { w } ) }  }{ \frac { N(Neg,w) }{ N(Neg,\bar { w } ) }  } \\ &=\frac { N(Pos,w) }{ N(Neg,w) } \times \frac { N(Neg,\bar { w } ) }{ N(Pos,\bar { w } ) }
