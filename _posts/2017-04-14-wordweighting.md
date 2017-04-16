@@ -116,6 +116,8 @@ $$OddN(w)=N(Pos,W)\times N(Neg,\bar { w } )$$
 | Neg  | $c$  |  $d$  |
 
 위 표를 **머신러닝(Machine Learining)** 모델의 성능 측정을 위한 **혼동행렬(confusion matrix)**처럼 생각할 경우 **재현율(Recall)**은 $a/(a+b)$, **정밀도(precision)**는 $a/(a+c)$입니다. **F1**은 이 둘의 조화평균인데요. 임의의 단어 $w$에 대한 F1 지표는 아래와 같습니다. F1 역시 클수록 긍정 범주 판별에 유용한 단어라는 의미를 가집니다. 
+
+
 $$
 \begin{align*}
 Recall(w)&=\frac { N(Pos,w) }{ N(Pos,w)+N(Pos,\bar { w } ) } \\ Precision(w)&=\frac { N(Pos,w) }{ N(Pos,w)+N(Neg,w) } \\F1(w)&=\frac { 2\times Recall(w)\times Precision(w) }{ Recall(w)+Precision(w) } \\ &=\frac { 2\times N(Pos,w) }{ N(Pos)+N(w) } 
