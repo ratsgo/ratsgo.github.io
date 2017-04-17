@@ -25,43 +25,65 @@ Recursive Neural Networks(RNN)은 입력값으로 주어지는 몇 개 단어를
 
 <a href="http://imgur.com/Himmgu4"><img src="http://i.imgur.com/Himmgu4.png" width="500px" title="source: imgur.com" /></a>
 
-다만 RNN은 Recurrent Neural Networks나 CNN과 달리 트리 구조의 입력값을 반드시 필요로 합니다. 예컨대 아래와 같은데요. 이런 구조의 데이터를 생성하려면 대단히 많은 시간과 비용을 들여야 하기 때문에 RNN이 CNN이나 Recurrent Neural Networks에 비해 주목을 덜 받는 경향이 있는 것 같습니다.
+다만 RNN은 Recurrent Neural Networks나 CNN과 달리 트리 구조의 입력값을 반드시 필요로 합니다. 예컨대 아래와 같은데요. 이런 구조의 데이터를 생성하려면 대단히 많은 시간과 비용을 들여야 하는데다 계산도 복잡하기 때문에 RNN이 CNN이나 Recurrent Neural Networks에 비해 주목을 덜 받는 경향이 있는 것 같습니다.
 
-> (4 (2 (2 The) (2 actors)) (3 (4 (2 are) (3 fantastic)) (2 .)))
+> ( ( ( The ) ( actors ) ) ( ( ( are ) ( fantastic ) ) ( . ) ) )
+
+마지막으로 Recursive Neural Networks는 Recurrent Neural Networks의 특수 케이스라는 점을 짚어보겠습니다. 만약 Recursive Neural Networks가 모든 지역정보를 순서대로 빠짐없이 반영한다고 하면 아래와 같이 구조를 그릴 수 있는데요, 이를 각도 회전해놓고 보면 본질적으로 Recurrent Neural Networks와 같습니다.
+
+<a href="http://imgur.com/AwJAPQ0"><img src="http://i.imgur.com/AwJAPQ0.png" width="500px" title="source: imgur.com" /></a>
 
 
 
 ## RNN의 기본 구조
 
-단어의 연쇄(=문장)를 입력으로 받아 감성점수를 내는 RNN을 만든다고 칩시다. 그러면 가장 간단한 형태의 구조는 아래 그림처럼 나타낼 수 있습니다.
+RNN은 다음과 같이 여러 단어의 결합으로 이뤄진 표현을 벡터공간에 임베딩해 **파싱(parsing)**, **감성분석(sentiment analysis)** 등 특정과업을 수행하는 걸 목표로 합니다.
+
+<a href="http://imgur.com/2Vz4mg0"><img src="http://i.imgur.com/2Vz4mg0.png" width="500px" title="source: imgur.com" /></a>
+
+가장 간단한 형태의 RNN 구조는 아래 그림처럼 나타낼 수 있습니다.
 
 <a href="http://imgur.com/2InLlzA"><img src="http://i.imgur.com/2InLlzA.png" width="600px" title="source: imgur.com" /></a>
 
-위 그림을 천천히 살펴보면 **자식노드(child node)** 단어 c1과 c2에 대응하는 벡터 두 개가 **부모노드(parent node)** p1으로 합쳐지고, 단어 c3는 p1과 합쳐지는 모습을 확인할 수 있습니다. RNN은 단어 c3와 p1을 합쳐 p2를 만들 때 그에 해당하는 감성점수(1.3)도 함께 만듭니다. 만약 큰 문장 안에 a, b, c라는 단어가 포함되어 있을 경우 p2는 또 다른 부모노드와 합쳐지기 위해 또 다시 분석대상이 됩니다. 이를 도식화한 것이 우측 상단의 그림인데요, 실선 방향은 계산그래프의 **forward pass**, 점선 방향은 **backward pass**로 이해하시면 좋을 것 같습니다. 
+위 그림을 천천히 살펴보면 **자식노드(child node)**에 해당하는 단어벡터 $c_1$과 $c_2$가 1차적으로 **부모노드(parent node)** $p_1$으로 합쳐지고, $c_3$는 $p_1$과 함께 $p_2$를 만들고 있음 확인할 수 있습니다. RNN은 부모노드를 만들 때마다 점수(score)도 함께 생성합니다. 만약 파싱을 위한 RNN이라면 이 스코어는 합쳐진 단어들이 얼마나 말이 되는지를 나타내는 점수가 될 것이고, 감성분석을 위한 RNN이라면 해당 점수는 긍/부정 극성을 나타내는 지표가 됩니다.
 
-i번째 부모노드인 pi의 값은 아래처럼 정의됩니다. 각 파라메터의 차원수 또한 아래처럼 정의됩니다. 아래 식에서 pleft와 pright는 각각 i번째 부모노드의 좌측, 우측 자식노드입니다. 위 그림 기준으로 하면 p2의 pleft는 c3, pright는 p1이 되는 셈이죠. pi를 계산할 때 pleft와 pright를 단순히 합친(더하는 것이 아님에 주의) 다음 여기에 가중치 W와 bias b의 선형결합을 합니다. d는 은닉층의 차원수로서 사용자가 지정해주는 하이퍼파라메터입니다.
+한편 $p_2$는 또 다른 부모노드와 합쳐지기 위해 또 다시 분석대상이 됩니다. 이를 도식화한 것이 우측 상단의 그림인데요, 실선 방향은 계산그래프의 **forward pass**, 점선 방향은 그래디언트가 전파되는 **backward pass**로 이해하시면 좋을 것 같습니다. 
+
+$i$번째 부모노드인 $p_i$의 값은 아래처럼 정의됩니다. 각 파라메터의 차원수 또한 아래처럼 정의됩니다. 아래 식에서 pleft와 pright는 각각 $i$번째 부모노드의 좌측, 우측 자식노드입니다. 위 그림 기준으로 하면 $p_2$의 pleft는 $c_3$, pright는 $p_1$이 되는 셈이죠. $d$는 은닉층의 차원수로서 사용자가 지정해주는 하이퍼파라메터입니다. 
 
 $${ p }_{ i }=\tanh { (W\cdot \begin{bmatrix} { p }_{ left } \\ { p }_{ right } \end{bmatrix}+b) } \\ { p }_{ i }\in { R }^{ d },\quad b\in { R }^{ d },\quad W\in { R }^{ d\times 2d }\quad  $$
 
-사실 헷갈리실까봐 별도로 그려놓지는 않았는데요. CS224d에 소개된 아키텍처는 모든 부모노드에 스코어값들이 계산되는 구조입니다. 바꿔 말하면 p2뿐 아니라 p1에도 스코어가 출력됩니다. (물론 맨 마지막에만 스코어값들을 계산하게 만들 수도 있겠죠, 충분히 변형 가능합니다) i번째 부모노드의 스코어를 구하는 식은 다음과 같습니다.
+위 식에서 $W$와 pleft, pright의 결합은 아래와 같습니다.
+
+$$W\cdot \begin{bmatrix} { p }_{ left } \\ { p }_{ right } \end{bmatrix}=\begin{bmatrix} { w }_{ 1 } & { w }_{ 2 } \end{bmatrix}\cdot \begin{bmatrix} { p }_{ left } \\ { p }_{ right } \end{bmatrix}={ w }_{ 1 }{ \times p }_{ left }+{ w }_{ 2 }{ \times p }_{ right }$$
+
+$i$번째 부모노드의 스코어, $s_i$를 구하는 식은 다음과 같습니다.
 
 $${ s }_{ i }={ W }_{ s }{ p }_{ i }+{ b }_{ s }$$
 
-RNN은 이렇게 부모노드로부터 계산된 스코어와 문장의 부분에 해당하는 감성(정답레이블)과 비교한 후 오차를 최소화하는 방향으로 **역전파(backpropagation)**를 수행해 파라메터(W, b, Ws, bs)를 업데이트하는 방식으로 학습을 합니다. 
+RNN은 이렇게 부모노드로부터 계산된 스코어와 해당 부분에 해당하는 정답 레이블과 비교한 후 오차를 최소화하는 방향으로 **역전파(backpropagation)**를 수행해 파라메터($W$, $b$, $W_s$, $b_s$)를 업데이트하는 방식으로 학습을 합니다. 이와 더불어 말단노드의 입력값들에도 그래디언트를 역전파해 학습시킨다면 벡터공간에 임베딩된 단어벡터를 얻어낼 수 있을 겁니다.
+
+다만 여기서 주의할 것은 forward pass 수행 과정에서 경우의 수를 모두 고려해 스코어가 높은 선택지만을 뽑아 트리 구조를 만든다는 사실입니다. 아래 예시를 보면 처음 부모노드를 만들 때 그럭저럭 말이 되는 'The cat', 'the mat'만 결합시킵니다. 이후엔 'on the mat'을 만듭니다. 이런 식으로 반복 수행해서 전체 문장 'The cat sat on the mat'의 트리 구조를 구축하는데요. 학습 초기엔 이런 결합이 중구난방 이루어지다가 어느 정도 학습이 진행되면 정답과 유사하게 트리 구조가 만들어지게 됩니다.
+
+<a href="http://imgur.com/6C4vXGq"><img src="http://i.imgur.com/6C4vXGq.png" width="800px" title="source: imgur.com" /></a>
+
+그런데 학습 과정에서의 트리 탐색은 **탐욕적(greedy)**인 방식입니다. CS224d 강의에 따르면 트리 구조 탐색시 [Beam Search Algorithm](https://en.wikipedia.org/wiki/Beam_search) 등을 이용한다고 합니다. Beam Search 알고리즘은 아래([출처](https://www.google.co.kr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwit9JD13KrTAhUEGpQKHcxPBZYQFgghMAA&url=http%3A%2F%2Fcfile215.uf.daum.net%2Fattach%2F20365B3B4E70BAB80561F0&usg=AFQjCNHIKp3GH8tvXkfa0zFa2iSSoN3zZA&sig2=P6S7gvKmwn47Pg4s-tbrtA))와 같이 **최고우선탐색(Best-First Search)** 기법을 기본으로 하되 기억해야 하는 노드 수를 제한해 효율성을 높인 방식입니다.
+
+<a href="http://imgur.com/zl2on4w"><img src="http://i.imgur.com/zl2on4w.png" width="600px" title="source: imgur.com" /></a>
 
 
 
 ## RNN의 forward pass
 
-지금까지 이야기한 내용을 다시 그림으로 그리면 아래와 같습니다. 방향이 바뀌어서 헷갈리실 수도 있는데요, 계산그래프를 좀 더 예쁘게 그리려고 회전한 것이지 본질적으론 같은 그림이니 너무 놀라지 마셔요. 어쨌든 부모노드마다 스코어값이 모두 나온다는 점에 유의해서 보시면 좋을 것 같은데요, p1에서 나오는 스코어는 s1, 마찬가지로 p2는 s2입니다.
+지금까지 이야기한 내용을 다시 그림으로 그리면 아래와 같습니다. 방향이 바뀌어서 헷갈리실 수도 있는데요, 계산그래프를 좀 더 예쁘게 그리려고 회전한 것이지 본질적으론 같은 그림이니 너무 놀라지 마셔요. 어쨌든 부모노드마다 스코어값이 모두 나온다는 점에 유의해서 보시면 좋을 것 같은데요. $p_1$에서 나오는 스코어는 $s_1$이고요, 마찬가지로 $p_2$에선 $s_2$가 나옵니다.
 
 <a href="http://imgur.com/Dh2lAP4"><img src="http://i.imgur.com/Dh2lAP4.png" width="600px" title="source: imgur.com" /></a>
 
-위 그림을 토대로 forward compute pass를 그리면 아래 그림과 같습니다. 우선 첫번째 부모노드 p1이 만들어지는 과정을 보시죠. 이전 챕터에서 소개드린 수식을 계산그래프로 바꿔놓은 것일 뿐입니다.
+위 그림을 토대로 forward compute pass를 그리면 아래 그림과 같습니다. 우선 첫번째 부모노드 $p_1$이 만들어지는 과정을 보시죠. 이전 챕터에서 소개드린 수식을 계산그래프로 바꿔놓은 것일 뿐입니다.
 
 <a href="http://imgur.com/dBgYVFI"><img src="http://i.imgur.com/dBgYVFI.png" width="600px" title="source: imgur.com" /></a>
 
-이어서 p2를 만드는 과정을 소개해드립니다. p2는 위 그림에서 만들어진 p1과 아무런 처리를 하지 않은 c3을 결합해 만듭니다.
+이어서 $p_2$를 만드는 과정을 소개해드립니다. $p_2$는 $c_3$에 위 그림에서 만들어진 $p_1$을 결합해 만듭니다.
 
 <a href="http://imgur.com/Ja8GcTb"><img src="http://i.imgur.com/Ja8GcTb.png" width="600px" title="source: imgur.com" /></a>
 
@@ -73,15 +95,23 @@ RNN은 이렇게 부모노드로부터 계산된 스코어와 문장의 부분�
 
 <a href="http://imgur.com/RYmfwBJ"><img src="http://i.imgur.com/RYmfwBJ.png" width="600px" title="source: imgur.com" /></a>
 
-우선 forward pass 과정에서 산출된 s2와 정답을 비교해서 계산된 손실(Loss)값은 이미 구해졌다고 칩시다. 그렇다면 s2의 그래디언트, 즉 dL/ds2가 최초로 전파된 그래디언트값이 될 겁니다. 이를 편의상 ds2라고 적었습니다. 계산그래프에서 덧셈연산은 흘러들어온 그래디언트가 그대로 전파되므로 dL/dbs는 흘러들어온 그대로 ds2가 될 겁니다. 곱셈 연산은 [흘러들어온 그래디언트 * 로컬 그래디언트(상대방의 변화량)]이므로 dWs는 p2 * ds2가 됩니다. 마찬가지로 dp2는 Ws * ds2가 됩니다. **하이퍼볼릭탄젠트** tanh(x)의 로컬 그래디언트는 **1-tanh^2(x)**이므로 dp2raw는 여기에 흘러들어온 그래디언트 dp2를 곱해준 값이 됩니다. dp2raw는 덧셈 그래프를 타고 그대로 분배가 되기 때문에 db는 그대로 dp2raw가 됩니다. dW와 dp2concat의 로컬 그래디언트는 각각 p2concat, W이므로 여기에 흘러들어온 그래디언트 dp2raw를 곱해주면 dW와 dp2concat을 구할 수 있습니다. 
+우선 forward pass 과정에서 산출된 $s_2$와 정답을 비교해서 계산된 손실(Loss)값은 이미 구해졌다고 칩시다. 그렇다면 $s_2$의 그래디언트, 즉 $dL/ds_2$가 최초로 전파된 그래디언트값이 될 겁니다. 이를 편의상 $ds_2$라고 적었습니다. 계산그래프에서 덧셈연산은 흘러들어온 그래디언트가 그대로 전파되므로 $dL/db_s$는 흘러들어온 그대로 $ds_2$가 될 겁니다. 
 
-마지막 dc3와 dp1에 주의할 필요가 있는데요. c3(d차원 벡터)과 p1(d차원 벡터)은 사실 별도의 연산을 하지 않고 그냥 합치기만 한 후 (2d차원 x d차원) 크기의 가중치 행렬 W을 곱해 p2를 만들어 나가게 되는데요. 역전파를 할 때는 이 가중치 행렬의 절반이 c3의 그래디언트에, 나머지 절반이 p1의 그래디언트에 영향을 미치게 됩니다. 따라서 c3의 그래디언트는 dp2concat의 첫번째 절반, p1의 그래디언트는 dp2concat의 나머지 절반이 됩니다. 
+곱셈 연산은 [흘러들어온 그래디언트 * 로컬 그래디언트(상대방의 변화량)]이므로 $dW_s$는 $p_2 * ds_2$가 됩니다. 마찬가지로 $dp_2$는 $W_s * ds_2$가 됩니다. **하이퍼볼릭탄젠트** $tanh(x)$의 로컬 그래디언트는 $1-tanh^2(x)$이므로 $dp2raw$는 여기에 흘러들어온 그래디언트 $dp_2$를 곱해준 값이 됩니다. 
 
-그런데 제가 p1의 그래디언트, 즉 dp1은 별도로 **별표** 표시를 해두었는데요. Recursive Neural Networks는 이름 그대로 부모노드의 값을 재귀적으로 구해 나가는 구조이기 때문에 역전파 과정에서 그래디언트도 재귀적으로 반영되게 됩니다. 다음 그림에서 dp1이 어떻게 반영되는지를 살펴볼까요?
+$dp2raw$는 덧셈 그래프를 타고 그대로 분배가 되기 때문에 $db$는 그대로 $dp2raw$가 됩니다. $dW$와 $dp2concat$의 로컬 그래디언트는 각각 $p2concat$, $W$이므로 여기에 흘러들어온 그래디언트 $dp2raw$를 곱해주면 $dW$와 $dp2concat$을 구할 수 있습니다. 
+
+마지막 $dc_3$와 $dp_1$에 주의할 필요가 있는데요. $c_3$($d$차원 벡터)과 $p_1$($d$차원 벡터)은 사실 별도의 연산을 하지 않고 그냥 합치기만 한 후 ($2d$차원 x $d$차원) 크기의 가중치 행렬 $W$을 곱해 $p_2$를 만들어 나가게 되는데요. 역전파를 할 때는 이 가중치 행렬의 절반이 $c_3$의 그래디언트에, 나머지 절반이 $p_1$의 그래디언트에 영향을 미치게 됩니다. 
+
+따라서 $c_3$의 그래디언트는 $dp2concat$의 첫번째 절반, $p_1$의 그래디언트는 $dp2concat$의 나머지 절반이 됩니다. 혹시 헷갈리신다면 RNN의 기본구조 챕터에서 $W$와 pleft, pright의 결합 부분을 별도로 설명한 식을 보시면 좋을 것 같습니다.
+
+한편 $p_1$의 그래디언트, 즉 $dp_1$은 별도로 **별표** 표시를 해두었는데요. Recursive Neural Networks는 이름 그대로 부모노드의 값을 재귀적으로 구해 나가는 구조이기 때문에 역전파 과정에서 그래디언트도 재귀적으로 반영되게 됩니다. 다음 그림에서 $dp_1$이 어떻게 반영되는지를 살펴볼까요?
 
 <a href="http://imgur.com/TswcLDq"><img src="http://i.imgur.com/TswcLDq.png" width="600px" title="source: imgur.com" /></a>
 
-자, 이제 첫번째 부모노드 p1을 구하는 그래프로 왔습니다. 우선 p1을 통해서도 스코어 s1이 계산되기 때문에 여기에서 전파되어 들어오는 그래디언트가 있습니다. 이를 ■로 표시했습니다. 그리고 앞선 그림에서 설명드렸듯이 ★ 또한 역전파 과정에서 흘러들어오게 됩니다. 따라서 위 그림에서 dp1은 ■와 ★를 더해 만들어지게 되는 것이죠. 이후 역전파 과정은 이전에 설명했던 과정과 동일합니다. 지금은 이해를 돕기 위해 가장 단순한 구조의 RNN을 예로 들어서 설명을 드렸지만 이 구조가 깊어지면 각 층위마다 그래디언트가 재귀적으로 더해지면서 복잡한 양상을 띄게 됩니다.
+자, 이제 첫번째 부모노드 $p_1$을 구하는 그래프로 왔습니다. 우선 $p_1$을 통해서도 스코어 $s_1$이 계산되기 때문에 여기에서 전파되어 들어오는 그래디언트가 있습니다. 이를 ■로 표시했습니다. 그리고 앞선 그림에서 설명드렸듯이 ★ 또한 역전파 과정에서 흘러들어오게 됩니다. 따라서 위 그림에서 $dp_1$은 ■와 ★를 더해 만들어지게 되는 것이죠. 
+
+이후 역전파 과정은 이전에 설명했던 과정과 동일합니다. 지금은 이해를 돕기 위해 가장 단순한 구조의 RNN을 예로 들어서 설명을 드렸지만 이 구조가 깊어지면 각 층위마다 그래디언트가 재귀적으로 더해지면서 복잡한 양상을 띄게 됩니다.
 
 
 
