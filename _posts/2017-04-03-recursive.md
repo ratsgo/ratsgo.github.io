@@ -35,13 +35,13 @@ Recursive Neural Networks(RNN)은 입력값으로 주어지는 몇 개 단어를
 
 
 
-## RNN의 기본 구조
+## Simple RNN의 구조
 
 RNN은 다음과 같이 여러 단어의 결합으로 이뤄진 표현을 벡터공간에 임베딩해 **파싱(parsing)**, **감성분석(sentiment analysis)** 등 특정과업을 수행하는 걸 목표로 합니다.
 
 <a href="http://imgur.com/2Vz4mg0"><img src="http://i.imgur.com/2Vz4mg0.png" width="500px" title="source: imgur.com" /></a>
 
-가장 간단한 형태의 RNN 구조는 아래 그림처럼 나타낼 수 있습니다.
+가장 간단한 형태의 Simple RNN 구조는 아래 그림처럼 나타낼 수 있습니다.
 
 <a href="http://imgur.com/2InLlzA"><img src="http://i.imgur.com/2InLlzA.png" width="600px" title="source: imgur.com" /></a>
 
@@ -73,9 +73,9 @@ RNN은 이렇게 부모노드로부터 계산된 스코어와 해당 부분에 �
 
 
 
-## RNN의 forward pass
+## Simple RNN의 forward pass
 
-지금까지 이야기한 내용을 다시 그림으로 그리면 아래와 같습니다. 방향이 바뀌어서 헷갈리실 수도 있는데요, 계산그래프를 좀 더 예쁘게 그리려고 회전한 것이지 본질적으론 같은 그림이니 너무 놀라지 마셔요. 어쨌든 부모노드마다 스코어값이 모두 나온다는 점에 유의해서 보시면 좋을 것 같은데요. $p_1$에서 나오는 스코어는 $s_1$이고요, 마찬가지로 $p_2$에선 $s_2$가 나옵니다.
+지금까지 이야기한 simple RNN 구조를 다시 그림으로 그리면 아래와 같습니다. 방향이 바뀌어서 헷갈리실 수도 있는데요, 계산그래프를 좀 더 예쁘게 그리려고 회전한 것이지 본질적으론 같은 그림이니 너무 놀라지 마셔요. 어쨌든 부모노드마다 스코어값이 모두 나온다는 점에 유의해서 보시면 좋을 것 같은데요. $p_1$에서 나오는 스코어는 $s_1$이고요, 마찬가지로 $p_2$에선 $s_2$가 나옵니다.
 
 <a href="http://imgur.com/Dh2lAP4"><img src="http://i.imgur.com/Dh2lAP4.png" width="600px" title="source: imgur.com" /></a>
 
@@ -89,7 +89,7 @@ RNN은 이렇게 부모노드로부터 계산된 스코어와 해당 부분에 �
 
 
 
-## RNN의 backward pass
+## Simple RNN의 backward pass
 
 역전파 관련 내용이 생소하시거나 헷갈리시는 분은 미국 스탠포드대학의 [CS231n](http://cs231n.github.io/optimization-2/) 강의를 참고하시면 좋을 것 같습니다. 아시다시피 역전파는 계산과정의 맨 마지막 부분에서 시작되어야 합니다.
 
@@ -115,6 +115,16 @@ $dp2raw$는 덧셈 그래프를 타고 그대로 분배가 되기 때문에 $db$
 
 
 
+## Syntatically-Untied RNN
+
+**Syntatically-Unitied RNN(SU-RNN)**은 동사구, 명사구 등 기능이 다른 표현에 각기 다른 가중치를 적용하는 RNN 구조입니다. 반면 Simple RNN은 품사 정보에 상관없이 모든 구(phrase)에 같은 가중치를 씁니다. 둘의 비교는 아래 그림과 같습니다.
+
+<a href="http://imgur.com/3fZ2vDx"><img src="http://i.imgur.com/3fZ2vDx.png" width="500px" title="source: imgur.com" /></a>
+
+아래는 학습이 잘 된 SU-RNN의 가중치를 시각화한 그림입니다. 붉은색일수록 그 가중치가 높은데요. DT(관사)-NP(명사구)를 맡은 가중치 $W$를 보시면 DT를 커버하는 $w_1$의 대각성분보다 NP를 담당하는 $w_2$의 대각성분의 값이 큰 걸 확인할 수 있습니다. 이는 SU-RNN이 과업을 수행할 때 관사보다는 명사구를 중요하게 취급했다는 반증인데요. 실제로 'a cat', 'the cat' 같은 표현에서 a, the보다는 cat이라는 명사가 중요한 의미를 가지니 직관적으로 납득할 만한 결과인 것 같습니다. 반면 VP(동사구)-NP(명사구)의 경우 둘 모두 중요하게 취급하고 있는 점을 볼 수 있습니다.
+
+<a href="http://imgur.com/QFG8Piw"><img src="http://i.imgur.com/QFG8Piw.png" width="400px" title="source: imgur.com" /></a>
+
 ## 마치며
 
-이상으로 RNN과 Recurrent/Convolutional Neural Networks를 비교하고 RNN의 기본 구조와 foward/backward compute pass에 대해 살펴보았습니다. RNN 역시 다른 구조의 딥러닝 아키텍처와 마찬가지로 자연언어처리에 강점을 가진 구조로 널리 알려져 있는데요, 다음 기회엔 RNN의 발전된 모델들과 실험결과를 함께 이야기해 보려고 합니다. 이번 포스팅은 제가 공부할 목적으로 작성한 것이므로 오류가 얼마든지 있을 수 있습니다. 지적하실 내용이나 의견, 질문 있으시면 언제든지 댓글이나 이메일로 알려주시기 바랍니다. 여기까지 읽어주셔서 진심으로 감사드립니다.
+이상으로 RNN과 Recurrent/Convolutional Neural Networks를 비교하고 Simple RNN의 구조와 foward/backward compute pass에 대해 살펴보았습니다. RNN 역시 다른 구조의 딥러닝 아키텍처와 마찬가지로 자연언어처리에 강점을 가진 구조로 널리 알려져 있는데요, 다음 기회엔 발전된 RNN 모델들과 실험결과를 함께 이야기해 보려고 합니다. 이번 포스팅은 제가 공부할 목적으로 작성한 것이므로 오류가 얼마든지 있을 수 있습니다. 지적하실 내용이나 의견, 질문 있으시면 언제든지 댓글이나 이메일로 알려주시기 바랍니다. 여기까지 읽어주셔서 진심으로 감사드립니다.
