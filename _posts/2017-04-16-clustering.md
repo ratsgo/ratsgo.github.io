@@ -1,11 +1,11 @@
 ---
-title: Clustering 총론
+title: Clustering 개요
 category: Machine Learning
 tag: Clustering
 html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
-이번 글에서는 **클러스터링(Clustering;군집화)**의 전반적 내용에 대해 살펴보도록 하겠습니다. 이번 글은 고려대 강필성 교수님과 역시 같은 대학의 김성범 교수님 강의를 정리했음을 먼저 밝힙니다. 이 글은 클러스터링의 개괄적 내용을 설명하는 데 방점을 두었으니 [K-means 군집화](), [계층적 군집화]() 등 구체적 알고리즘을 살펴보시려면 링크를 클릭하시기 바랍니다. 그럼 시작하겠습니다.
+이번 글에서는 **클러스터링(Clustering;군집화)**의 전반적 내용에 대해 살펴보도록 하겠습니다. 이번 글은 고려대 강필성 교수님과 역시 같은 대학의 김성범 교수님 강의를 정리했음을 먼저 밝힙니다. 이 글은 클러스터링의 개괄적 내용을 설명하는 데 방점을 두었으니 [K-means 군집화](https://ratsgo.github.io/machine%20learning/2017/04/19/KC/), [계층적 군집화](https://ratsgo.github.io/machine%20learning/2017/04/18/HC/) 등 구체적 알고리즘을 살펴보시려면 링크를 클릭하시기 바랍니다. 그럼 시작하겠습니다.
 
 
 
@@ -14,7 +14,7 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 클러스터링의 목적은 간단합니다. 비슷한 개체끼리 한 그룹으로, 다른 개체는 다른 그룹으로 묶어보자는 겁니다. 이를 좀 있어보이게 표현하면 아래와 같습니다.
 
 <p class="message">
-(1) 군집 간 분산(inter-cluster variance) 최대화
+(1) 군집 간 분산(inter-cluster variance) 최대화<br>
 
 (2) 군집 내 분산(inner-cluster variance) 최소화
 
@@ -38,11 +38,13 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 ### Dunn Index
 
-Dunn Index는 군집 간 거리의 최소값(하단 좌측)을 분자, 군집 내 요소 간 거리의 최대값(하단 우측)을 분모로 하는 지표입니다. 군집 간 거리는 멀수록, 군집 내 분산은 작을 수록 좋은 군집화 결과라 말할 수 있는데요. 이 경우에 Dunn Index는 커지게 됩니다.
-
-<a href="http://imgur.com/TClWvss"><img src="http://i.imgur.com/TClWvss.png" width="500px" title="source: imgur.com" /></a>
+Dunn Index는 군집 간 거리의 최소값(하단 좌측)을 분자, 군집 내 요소 간 거리의 최대값(하단 우측)을 분모로 하는 지표입니다. 
 
 $$I(C)=\cfrac { \min _{ i\neq j }{ \{ { d }_{ c }({ C }_{ i },{ C }_{ j })\}  }  }{ \max _{ 1\le l\le k }{ \{ \triangle ({ C }_{ l })\}  }  } $$
+
+군집 간 거리는 멀수록, 군집 내 분산은 작을 수록 좋은 군집화 결과라 말할 수 있는데요. 이 경우에 Dunn Index는 커지게 됩니다.
+
+<a href="http://imgur.com/TClWvss"><img src="http://i.imgur.com/TClWvss.png" width="500px" title="source: imgur.com" /></a>
 
 
 
@@ -70,9 +72,9 @@ $$s(i)=\frac { b(i)-a(i) }{ \max { \{ a(i),b(i)\}  }  } $$
 >
 > **soft clustering** : 한 개체가 여러 군집에 속할 수 있습니다.
 
-> **pational clustering** : 전체 데이터의 영역을 특정 기준에 의해 동시에 구분하는 군집화 방법입니다. 각 개체들은 사전에 정의된 개수의 군집 가운데 하나에 속하게 됩니다. K-mean 군집화가 대표적입니다.
+> **pational clustering** : 전체 데이터의 영역을 특정 기준에 의해 동시에 구분하는 군집화 방법입니다. 각 개체들은 사전에 정의된 개수의 군집 가운데 하나에 속하게 됩니다. [K-mean 군집화](https://ratsgo.github.io/machine%20learning/2017/04/19/KC/)가 대표적입니다.
 >
-> **hiarchical clustering** : 개체들을 가까운 집단부터 차근차근 묶어나가는 방식입니다. 군집화 결과뿐 아니라 유사한 개체들이 결합되는 **덴드로그램(dendrogram)**을 생성합니다.
+> [**hiarchical clustering**](https://ratsgo.github.io/machine%20learning/2017/04/18/HC/) : 개체들을 가까운 집단부터 차근차근 묶어나가는 방식입니다. 군집화 결과뿐 아니라 유사한 개체들이 결합되는 **덴드로그램(dendrogram)**을 생성합니다.
 
 > **Self-Organizing Map** : 뉴럴넷 기반의 군집화 알고리즘입니다.
 >
