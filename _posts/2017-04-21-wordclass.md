@@ -105,5 +105,5 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 [Neural Network Language Model](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/29/NNLM/), [Word2Vec](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/30/word2vec/), [GloVe](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/04/09/glove/) 등 단어를 벡터로 바꾸는 방법론이 제안되었습니다. 이 방법론들의 특징은 학습말뭉치의 단어 분포 정보를 보존하는 방식으로 벡터를 바꾸게 되는데요, 자세한 내용은 [이곳](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/11/embedding/)을 참고하시면 좋을 것 같습니다. 
 
-어쨌든 이러한 모델들이 개별 단어의 어휘적 의미나 형태를 전혀 고려하지 않음에도 높은 성능을 낼 수 있었던 건 지금까지 설명해드렸던 것처럼 임베딩된 단어벡터들이 분포 정보를 내포하고 있기 때문인 것 같습니다. 이 분포 정보가 품사의 형식적 의미와 깊은 연관을 맺고 있기 때문에 임베딩 결과가 사람이 보기에도 그럴싸하게 나온다는 것이죠.
+어쨌든 이러한 모델들이 개별 단어의 형식적 의미나 형태를 전혀 고려하지 않음에도 높은 성능을 낼 수 있었던 건 지금까지 설명해드렸던 것처럼 임베딩된 단어벡터들이 분포 정보를 내포하고 있기 때문인 것 같습니다. 이 분포 정보가 단어의 기능이나 형식적 의미와 깊은 연관을 맺고 있기 때문에 임베딩 결과가 사람이 보기에도 그럴싸하게 나온다는 것이죠.
 
