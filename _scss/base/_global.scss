@@ -32,7 +32,11 @@ code {
 
 a.top {
   position: fixed;
-  left: 50%;
+  right: 15px;
   bottom: 50px;
-  display: none;
+  border-radius: 5px;
+  display: none; 
+  color: #ffffff;
+  background-color: rgba(50,50,50,0.8);
+  z-index: 999;
 }
