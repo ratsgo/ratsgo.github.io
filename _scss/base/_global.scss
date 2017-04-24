@@ -32,10 +32,14 @@ code {
 
 a.top {
   position: fixed;
-  right: 15%;
+  right: 10%;
   bottom: 15px;
   border-radius: 5px;
   background-color: #ac4142;
   display: none; 
   z-index: 9999;
+}
+
+img.top {
+  margin-bottom: 0;
 }
