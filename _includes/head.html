@@ -30,14 +30,14 @@
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script>
     $( window ).scroll( function() {
-      if ( $( this ).scrollTop() > 700 ) {
+      if ( $( this ).scrollTop() > 500 ) {
         $( '.top' ).fadeIn();
       } else {
         $( '.top' ).fadeOut();
       }
     } );
     $( '.top' ).click( function() {
-      $( 'html, body' ).stop().animate( { scrollTop : 0 });
+      $( 'html, body' ).stop().animate( { scrollTop : 0 }, 100);
       return false;
     } );
   </script>
