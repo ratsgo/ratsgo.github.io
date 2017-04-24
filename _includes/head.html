@@ -37,7 +37,7 @@
       }
     } );
     $( '.top' ).click( function() {
-      $( 'html, body' ).animate( { scrollTop : 0 });
+      $( 'html, body' ).stop().animate( { scrollTop : 0 });
       return false;
     } );
   </script>
