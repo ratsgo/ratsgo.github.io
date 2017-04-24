@@ -55,15 +55,7 @@ ga('create', '{{ site.google_analytics_token }}', 'auto');
 ga('send', 'pageview');
     </script>
     {% endif %}
-  <a id="toTop" href="#"><img src="http://i.imgur.com/2kIqmPp.png" width="48" height="48" alt="top"></a>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-  <script src="https://github.com/ratsgo/ratsgo.github.io/blob/master/public/jquery.scroll.pack.js"></script>
-  <script src="https://github.com/ratsgo/ratsgo.github.io/blob/master/public/jquery.easing.js"></script>
-  <script>
-  //<![CDATA[
-  $(function(){$("#toTop").scrollToTop({speed:500,ease:"easeOutBack",start:300})});
-  //]]>
-  </script>
+  <a href="#" class="top"><img src="http://i.imgur.com/2kIqmPp.png" width="48" height="48" alt="top"></a>
   </body>
   {% if site.disqus_short_name %}
   <script id="dsq-count-scr" src="//{{ site.disqus_short_name }}.disqus.com/count.js" async></script>

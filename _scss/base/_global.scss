@@ -6,7 +6,6 @@
 html,
 body {
   overflow-x: hidden;
-  #toTop{background:none; position:fixed; bottom:1px; right:1px; cursor:pointer; text-decoration:none; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; padding:5px}
 }
 
 html {
@@ -17,8 +16,8 @@ html {
   -webkit-text-size-adjust:100%;
   -ms-text-size-adjust:100%;
   text-rendering:optimizelegibility;
-  #toTop{background:none; position:fixed; bottom:1px; right:1px; cursor:pointer; text-decoration:none; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; padding:5px}
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-sans;
@@ -29,4 +28,11 @@ h1, h2, h3, h4, h5, h6 {
 
 code {
   color: #666;
+}
+
+a.top {
+  position: fixed;
+  left: 50%;
+  bottom: 50px;
+  display: none;
 }

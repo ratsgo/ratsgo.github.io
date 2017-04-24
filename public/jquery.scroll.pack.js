@@ -1,2 +1,0 @@
-(function($){$.fn.extend({scrollToTop:function(options){var defaults={speed:"slow",ease:"jswing",start:0}
-var options=$.extend(defaults,options);return this.each(function(){var o=options;var scrollDiv=$(this);$(this).hide().removeAttr("href").css("cursor","pointer");if($(window).scrollTop()>o.start){$(this).fadeIn("slow");}$(window).scroll(function(){if($(window).scrollTop()>o.start){$(scrollDiv).fadeIn("slow");}else{$(scrollDiv).fadeOut("slow");}});scrollDiv.click(function(event){$("html, body").animate({scrollTop:"0px"},o.speed,o.ease);});});}});})(jQuery);
