@@ -55,6 +55,15 @@ ga('create', '{{ site.google_analytics_token }}', 'auto');
 ga('send', 'pageview');
     </script>
     {% endif %}
+  <a id="toTop" href="#"><img src="http://i.imgur.com/2kIqmPp.png" width="48" height="48" alt="top"></a>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="./images/jquery.scroll.pack.js"></script>
+  <script src="./images/jquery.easing.js"></script>
+  <script>
+  //<![CDATA[
+  $(function(){$("#toTop").scrollToTop({speed:1000,ease:"easeOutBack",start:400})});
+  //]]>
+  </script>
   </body>
   {% if site.disqus_short_name %}
   <script id="dsq-count-scr" src="//{{ site.disqus_short_name }}.disqus.com/count.js" async></script>
