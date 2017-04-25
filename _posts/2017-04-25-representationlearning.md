@@ -40,6 +40,8 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 그럼 XOR 예시를 통해 뉴럴네트워크가 Representation Learining와 어떤 관련을 맺고 있는지 살펴보겠습니다. 아래 중앙 그림과 같은 XOR 문제를 풀기 위해 층이 두 개인 단순 뉴럴네트워크를 구축해 보겠습니다. 
 
 학습 결과 1층 첫번째 뉴런의 $h_1$이 아래 식처럼 도출될 경우 분류경계면은 하단 중앙의 연두색 선이 되고, 네트워크 전체 구조는 하단 좌측의 그림이 될 겁니다.
+
+
 $$
 { h }_{ 1 }={ x }_{ 1 }+{ x }_{ 2 }-\frac { 3 }{ 2 }
 $$
@@ -51,12 +53,16 @@ $$
 $${ z }_{ 1 }=g({ h }_{ 1 })=\begin{Bmatrix} 1\quad if\quad { h }_{ 1 }\ge 0 \\ 0\quad if\quad { h }_{ 1 }<0 \end{Bmatrix}$$
 
 이번엔 1층 두번째 뉴런의 출력값 $z_2$를 만들어 보겠습니다. $h_2$는 아래와 같고요, 활성함수는 $g$ 그대로 입니다.
+
+
 $$
 { h }_{ 2 }={ x }_{ 1 }+{ x }_{ 2 }-\frac { 5 }{ 2 },\quad  { z }_{ 2 }=g({ h }_{ 2 })
 $$
 <a href="http://imgur.com/oOHrFYK"><img src="http://i.imgur.com/oOHrFYK.png" width="700px" title="source: imgur.com" /></a>
 
 자, 이제 거의 다 왔습니다. 이번엔 전체 네트워크의 출력값 $z$를 만들어 보겠습니다. 학습 결과물은 다음과 같다고 칩시다. 
+
+
 $$
 { o }_{ 1 }={ z }_{ 1 }-{ z }_{ 2 }-1,\quad  z=g({ o }_{ 1 })
 $$
