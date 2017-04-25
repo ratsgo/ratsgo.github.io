@@ -7,7 +7,7 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 이번 글에서는 **representation learning** 개념에 대해 살펴보도록 하겠습니다. 딥뉴럴네트워크가 높은 성능을 내는 배경에는 복잡한 데이터 공간을 선형 분류가 가능할 정도로 단순화해 표현하기 때문이라는 이론인데요. 저도 공부하는 입장이니 많은 의견 부탁드립니다. 
 
-이번 글은 오일석 전북대 교수님이 쓰신 '패턴인식'과 미국 스탠포드 대학의 CS231n 강좌, 김현중 서울대 박사과정이 진행한 2017년 패스트캠퍼스 강의를 정리했음을 먼저 밝힙니다. 그럼 시작하겠습니다.
+이번 글은 김현중, 고태훈 서울대 박사과정이 진행한 2017년 패스트캠퍼스 강의를 정리했음을 먼저 밝힙니다. 그럼 시작하겠습니다.
 
 
 
@@ -27,7 +27,7 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 ## 뉴럴네트워크의 기본 구조
 
-뉴럴네트워크를 이해해 보겠다면서 선형모델의 한계를 먼저 언급하고 있는 이유는 뉴럴네트워크의 본질이 사실상 **선형 모델**이기 때문입니다. 아래 그림은 뉴럴네트워크를 구성하고 있는 하나의 **뉴런(neuron)**을 나타낸 것입니다. 보시다시피 **활성함수(activation function)** 적용 직전의 값들은 가중치($w_i$)와 입력값($x_i$) 사이의 **선형결합(linear combination)**임을 확인할 수 있습니다.
+뉴럴네트워크를 이해해 보겠다면서 선형모델의 한계를 먼저 언급하고 있는 이유는 뉴럴네트워크의 본질이 사실상 **선형 모델**이기 때문입니다. 아래 그림은 뉴럴네트워크를 구성하고 있는 하나의 **뉴런(neuron)**을 나타낸 것입니다. 보시다시피 **활성함수(activation function)** 적용 직전의 값들은 가중치($w_i$)와 입력값($x_i$) 사이의 **선형결합(linear combination)**임을 확인할 수 있습니다. (아래 그림은 미국 스탠포드대학의 CS231n 강좌에서 퍼왔습니다)
 
 <a href="http://imgur.com/euw7qQu"><img src="http://i.imgur.com/euw7qQu.png" width="500px" title="source: imgur.com" /></a>
 
