@@ -21,7 +21,9 @@ Recurrent Neural Networks는 입력값을 순서대로 받아 하나씩 순차�
 
 <a href="http://imgur.com/bfVzTm5"><img src="http://i.imgur.com/bfVzTm5.png" width="500px" title="source: imgur.com" /></a>
 
-Recursive Neural Networks(RNN)은 입력값으로 주어지는 몇 개 단어를 묶어서 분석한다는 점에 있어서는 CNN과 유사합니다. 하지만 CNN이 모든 지역정보를 생략없이 반영하는 데 비해 RNN은 일부 정보는 스킵한다는 점에 큰 차이를 보입니다. 예컨대 위 예시에서 'the country'는 'of my birth'의 수식을 받는 구조입니다. 또 'the country', 'my birth'는 'country of'나 'of my'보다는 응집성이 높은 표현입니다. CNN의 방식처럼 'the country', 'country of', 'of my'... 이렇게 모두 분석할 필요가 없다는 것이지요. RNN은 이러한 언어의 **hiarchy**한 성질을 네트워크 구조에 적극 차용한 모델이라고 볼 수 있습니다. 실제로 언어학에서는 문장을 아래와 같이 계층적으로 나누어 분석하고 있습니다.
+Recursive Neural Networks(RNN)은 입력값으로 주어지는 몇 개 단어를 묶어서 분석한다는 점에 있어서는 CNN과 유사합니다. 하지만 CNN이 모든 지역정보를 생략없이 반영하는 데 비해 RNN은 일부 정보는 스킵한다는 점에 큰 차이를 보입니다. 예컨대 위 예시에서 'the country'는 'of my birth'의 수식을 받는 구조입니다. 또 'the country', 'my birth'는 'country of'나 'of my'보다는 응집성이 높은 표현입니다. CNN의 방식처럼 'the country', 'country of', 'of my'... 이렇게 모두 분석할 필요가 없다는 것이지요. RNN은 이러한 언어의 **hiarchy**한 성질을 네트워크 구조에 적극 차용한 모델이라고 볼 수 있습니다. 
+
+실제로 언어학에서는 문장을 아래와 같이 계층적으로 나누어 분석하고 있습니다. 한국어 파싱과 관련해서는 [이곳](https://ratsgo.github.io/korean%20linguistics/2017/04/29/parsing/)을 참고하면 좋을 것 같습니다.
 
 <a href="http://imgur.com/Himmgu4"><img src="http://i.imgur.com/Himmgu4.png" width="500px" title="source: imgur.com" /></a>
 
