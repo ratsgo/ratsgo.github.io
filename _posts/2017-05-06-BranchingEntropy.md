@@ -108,7 +108,7 @@ $$
 
 사용법은 아래와 같습니다. 아래 코드에서 *MaxScoreTokenizer* 역시 김현중 박사과정이 만든 코드로 말뭉치에서 학습한 BE를 바탕으로 문장을 토큰으로 나눠주는 함수입니다.
 
-```Python
+```python
 import branching_entropy as tool
 branching = tool.BranchingEntropy()
 branching.train(reviews)
