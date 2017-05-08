@@ -120,6 +120,12 @@ $$A\cdot B=\begin{pmatrix} 11 & 20 \\ 32 & 31 \end{pmatrix}$$
 
 
 
+직관적으로 이해할 수 있는 예제 하나 더 첨부했습니다. ([출처](https://www.facebook.com/cpbeg/posts/1673363789639663))
+
+<a href="http://imgur.com/3PVaEXE"><img src="http://i.imgur.com/3PVaEXE.gif" width="400px" title="source: imgur.com" /></a>
+
+
+
 ### 역행렬(Inverse)
 
 $$AB=BA=I\\ B={ A }^{ -1 },\quad A={ B }^{ -1 }\\ A{ A }^{ -1 }=I$$
