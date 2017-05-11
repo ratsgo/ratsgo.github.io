@@ -1,5 +1,5 @@
 ---
-title: Word2Vec과 품사 정보
+title: Word2Vec과 품사 정보 (1)
 category: Natural Language Processing
 tag: word class
 html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
