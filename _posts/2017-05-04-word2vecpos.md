@@ -31,7 +31,9 @@ Word2Vec은 단어를 벡터로 바꾸는 **임베딩(Embedding)** 기법입니�
 
 ## 실험 설계
 
-이번 실험에 사용한 말뭉치는 영화 리뷰 사이트 '왓챠'에서 수집한 655만306개의 리뷰입니다. 여기에 **Branching Entropy(이하 BE)**와 **Cohesion Probability(이하 CP)** 기법을 적용해 각각 학습했습니다. BE와 CP는 모두 말뭉치를 글자 단위로 빈도를 세어서 단어일 가능성을 점수로 나타내는 기법인데요. BE는 단어의 외부 정보, CP는 단어의 내부 정보를 점수화한다는 점에 차이가 있습니다. BE에 대해 자세히 살펴보시려면 [이곳](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/05/06/BranchingEntropy/)을, CP에 관해서는 [이곳](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/05/05/cohesion/)을 참고하세요.
+이번 실험에 사용한 말뭉치는 영화 리뷰 사이트 '왓챠'에서 수집한 655만306개의 리뷰입니다. 여기에 **Branching Entropy(이하 BE)**와 **Cohesion Probability(이하 CP)** 기법을 적용해 각각 학습했습니다. BE와 CP는 모두 말뭉치를 글자 단위로 빈도를 세어서 단어일 가능성을 점수로 나타내는 기법인데요. BE는 단어의 외부 정보, CP는 단어의 내부 정보를 점수화한다는 점에 차이가 있습니다. 
+
+BE에 대해 자세히 살펴보시려면 [이곳](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/05/06/BranchingEntropy/)을, CP에 관해서는 [이곳](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/05/05/cohesion/)을 참고하세요. 아울러 코모란 형태소 분석기를 사용해 토크나이징을 한 뒤 실험을 수행한 결과를 보시려면 [이곳](https://ratsgo.github.io/natural%20language%20processing/2017/05/11/word2vecpos2/)을 참고하시면 좋을 것 같습니다.
 
 어쨌든 BE와 CP를 동시에 고려해 단어 점수 표를 만들고, 이를 바탕으로 말뭉치에 **tokenize**를 수행했습니다. 토크나이저 함수는 김현중 서울대 박사과정이 만든 토크나이저를 약간 커스터마이징했습니다. 아래와 같습니다.
 
