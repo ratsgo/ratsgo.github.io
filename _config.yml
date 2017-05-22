@@ -9,7 +9,6 @@ encoding: utf-8
 # Site configurations
 gems:
   - jekyll-paginate
-  - jekyll-toc
 markdown: kramdown
 kramdown:
   input: GFM
