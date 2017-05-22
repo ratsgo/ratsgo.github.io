@@ -11,7 +11,7 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 ## 행렬식의 정의
 
-**행렬식(determinant)**은 행렬을 대표하는 값으로 $n*n$ (2 이상)의 정방행렬 $A$에 대해 다음과 같이 정의됩니다. $detA_{11}$이란 $A$에서 1행과 1열을 제외한 행렬의 행렬식을 의미합니다. 2*2 행렬의 요소값이 $a,b,c,d$라고 할 때 행렬식은 $ad-bc$입니다.
+**행렬식(determinant)**은 행렬을 대표하는 값으로 n x n (n은 2 이상)의 정방행렬 $A$에 대해 다음과 같이 정의됩니다. $detA_{11}$이란 $A$에서 1행과 1열을 제외한 행렬의 행렬식을 의미합니다. 2 x 2 행렬의 요소값이 $a,b,c,d$라고 할 때 행렬식은 $ad-bc$입니다.
 
 
 $$
@@ -29,19 +29,20 @@ $$
 $detA$는 다음과 같이 계산할 수 있습니다.
 
 
+
 $$
 \begin{align*}
-detA&={ a }_{ 11 }det{ A }_{ 11 }-{ a }_{ 12 }det{ A }_{ 12 }+{ a }_{ 13 }det{ A }_{ 13 }\\ &=1\cdot det\begin{bmatrix} 4 & -1 \\ -2 & 0 \end{bmatrix}-5\cdot det\begin{bmatrix} 2 & -1 \\ 0 & 0 \end{bmatrix}+0\cdot det\begin{bmatrix} 2 & 4 \\ 0 & -2 \end{bmatrix}\\ &=1(0-2)-5(0-0)+0(-4-0)=-2
+detA&={ a }_{ 11 }det{ A }_{ 11 }-{ a }_{ 12 }det{ A }_{ 12 }+{ a }_{ 13 }det{ A }_{ 13 }\\\\ &=1\cdot det\begin{bmatrix} 4 & -1 \\ -2 & 0 \end{bmatrix}-5\cdot det\begin{bmatrix} 2 & -1 \\ 0 & 0 \end{bmatrix}+0\cdot det\begin{bmatrix} 2 & 4 \\ 0 & -2 \end{bmatrix}\\\\ &=1(0-2)-5(0-0)+0(-4-0)=-2
 \end{align*}
 $$
 
+지금까지는 행렬식을 구할 때 $A$의 첫번째 행을 쓰는 걸 기준으로 설명해드렸는데 사실 어떤 행이나 열을 택해서 구해도 행렬식은 같은 값이 나옵니다. 행렬식 계산을 일반화해서 나타내면 아래와 같습니다. 이 때 $C_{ij}$를 **(i,j)-cofactor**라고 합니다.
 
-지금까지는 행렬식을 구할 때 $A​$의 첫번째 행을 쓰는 걸 기준으로 설명해드렸는데 사실 어떤 행이나 열을 택해서 구해도 행렬식은 같은 값이 나옵니다. 행렬식 계산을 일반화해서 나타내면 아래와 같습니다. 이 때 $C_{ij}​$를 **(i,j)-cofactor**라고 합니다.
 
 
 $$
 \begin{align*}
-&{ C }_{ ij }={ (-1) }^{ i+j }det{ A }_{ ij }\\ use\quad ith\quad row\quad :\quad &detA={ a }_{ i1 }det{ C }_{ i1 }+{ a }_{ i2 }det{ C }_{ i2 }+...+{ a }_{ in }det{ C }_{ in }\\ use\quad jth\quad col\quad :\quad &detA={ a }_{ 1j }det{ C }_{ 1j }+{ a }_{ 2j }det{ C }_{ 2j }+...+{ a }_{ nj }det{ C }_{ nj }
+&{ C }_{ ij }={ (-1) }^{ i+j }det{ A }_{ ij }\\\\ use\quad ith\quad row\quad :\quad &detA={ a }_{ i1 }det{ C }_{ i1 }+{ a }_{ i2 }det{ C }_{ i2 }+...+{ a }_{ in }det{ C }_{ in }\\\\ use\quad jth\quad col\quad :\quad &detA={ a }_{ 1j }det{ C }_{ 1j }+{ a }_{ 2j }det{ C }_{ 2j }+...+{ a }_{ nj }det{ C }_{ nj }
 \end{align*}
 $$
 
