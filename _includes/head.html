@@ -45,7 +45,14 @@
   {% if site.mathjax %}
   <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"> </script>
   <script type="text/x-mathjax-config">
-MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });
+      MathJax.Hub.Config({ 
+        tex2jax: { 
+          inlineMath: [ ['$','$'], 
+          displayMath: ["\\(","\\)"] ], 
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        } 
+      });
   </script>
   {% endif %}
 </head>
