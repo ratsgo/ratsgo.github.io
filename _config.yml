@@ -12,6 +12,7 @@ gems:
 markdown: kramdown
 kramdown:
   input: GFM
+  parse_block_html: true
 excerpt_separator: "<!-- more -->"
 sass:
   style: compressed
