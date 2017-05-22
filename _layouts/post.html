@@ -15,6 +15,12 @@ layout: default
   </article>
 </div>
 
+<script src="/public/toc.js" type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
@@ -50,10 +56,3 @@ var disqus_config = function () {
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </div>
 {% endif %}
-
-<sript src="/public/toc.js"></sript>
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#toc').toc();
-});
-</script>
