@@ -1083,7 +1083,8 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 <p class="message">
 생활쓰레기(生活___), 쓰레기, 오물(汚物), 오염물질(汚染物質), 유해폐기물(有害廢棄物), 음식쓰레기(飮食___), 음식찌꺼기(飮食___), 찌끼, 폐기물(廢棄物), 폐기용품(廢棄用品), 폐수(廢水), 폐유(廢油), 하수(下水)
-<p class="message">
+</p>
+
 #### 부산물
 
 <p class="message">
