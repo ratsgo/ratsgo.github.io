@@ -2,6 +2,7 @@
 title: 표준국어대사전의 명사 분류 체계 (1)
 category: Korean Linguistics
 tag: noun
+toc: true
 html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
