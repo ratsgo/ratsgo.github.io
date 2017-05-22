@@ -25,7 +25,7 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 목차는 다음과 같습니다.
 
 {:toc}
-
+[TOC]
 
 
 ## 구체물
