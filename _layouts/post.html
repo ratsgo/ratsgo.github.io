@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }}</span>
@@ -11,6 +10,7 @@ layout: default
   {% endfor %}
   {% endif %}
   <article>
+    <div id="toc"></div>
     {{ content }}
   </article>
 </div>
@@ -50,3 +50,10 @@ var disqus_config = function () {
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </div>
 {% endif %}
+
+<sript src="/public/toc.js"></sript>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
