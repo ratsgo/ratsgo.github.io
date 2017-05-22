@@ -2,7 +2,6 @@
 title: Surjection vs Injection
 category: Linear Algebra
 tag: linear
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 글에서는 **전사함수**(全射函數;surjection)와 **단사함수**(單射函數;injection)를 선형대수학의 선형변환 관점에서 살펴보도록 하겠습니다. 이번 글 역시 고려대 박성빈 교수님 강의를 참고로 했습니다. 그러면 시작하겠습니다.

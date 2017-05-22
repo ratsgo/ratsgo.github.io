@@ -3,7 +3,6 @@ title: 표준국어대사전의 명사 분류 체계 (1)
 category: Korean Linguistics
 tag: noun
 toc: true
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 글에서는 국립국어원에서 만든 표준국어대사전의 명사 분류 체계에 대해 살펴보도록 하겠습니다. 자료는 [국립국어원 언어정보나눔터](https://ithub.korean.go.kr/)에서 내려받아 제 나름대로 정리한 것임을 밝힙니다. 그럼 시작하겠습니다.

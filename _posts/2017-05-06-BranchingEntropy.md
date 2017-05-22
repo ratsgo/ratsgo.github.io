@@ -2,7 +2,6 @@
 title: Branching Entropy
 category: From frequency to semantics
 tag: tokenize
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 이번 글에서는 말뭉치에서 단어를 추출하는 기법 가운데 하나인 **Branching Entropy(이하 BE)**에 대해 살펴보도록 하겠습니다. BE는 Jin&Tanaka(2006)이 제안한 모델인데요, 이 글은 김현중 서울대 박사과정이 진행한 2017 패스트캠퍼스 강의와 코드를 참고하였음을 먼저 밝힙니다. 그럼 시작하겠습니다.
 

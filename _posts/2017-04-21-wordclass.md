@@ -2,7 +2,6 @@
 title: 한국어 품사 분류와 분포(distribution)
 category: Korean Linguistics
 tag: word class
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 글에서는 한국어 품사 분류의 기준에 대해 간략히 살펴보고 단어의 **분포(distribution)**가 품사의 의미와 어떤 관계를 맺고 있는지 알아보도록 하겠습니다. 이번 글은 경희대 이선웅 교수님의 강의와 표준국어문법론을 정리했음을 먼저 밝힙니다. 그럼 시작하겠습니다.

@@ -2,7 +2,6 @@
 title: Linear independence, Linear Transformation
 category: Linear Algebra
 tag: linear
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 포스팅에서는 **선형독립(linear independence)**과 **선형변환(linear transformation)**에 대해 살펴보도록 하겠습니다. 이번 글 역시 [고려대 박성빈 교수님](http://info.korea.ac.kr/page_professor.php) 강의를 참고했음을 먼저 밝힙니다. 그럼 시작하겠습니다.

@@ -2,7 +2,6 @@
 title: 선형대수학 중간고사 정리
 category: Linear Algebra
 tag: summary
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 최근 선형대수학 중간고사를 보게 됐는데 제 개인적 정리 용도로 업로드하는 글입니다.

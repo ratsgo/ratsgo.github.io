@@ -2,7 +2,6 @@
 title: Representation Learning
 category: Deep Learning
 tag: Representation Learning
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 글에서는 **representation learning** 개념에 대해 살펴보도록 하겠습니다. 딥뉴럴네트워크가 높은 성능을 내는 배경에는 복잡한 데이터 공간을 선형 분류가 가능할 정도로 단순화해 표현하기 때문이라는 이론인데요. 저도 공부하는 입장이니 많은 의견 부탁드립니다. 

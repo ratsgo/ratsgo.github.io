@@ -2,7 +2,6 @@
 title: 그래프로 중요 기사 걸러내기 
 category: Natural Language Processing
 tag: graph-based news representation
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 포스팅에서는 '그래프'로 중요 기사를 걸러내 보도록 하겠습니다. 같은 시간대에 비슷한 제목의 기사가 많으면 중요한 이슈를 다루는 보도일 것이라는 가정이 깔려 있는 분석 방법론인데요, 매우 간단한 방법론이지만 생각보다 퍼포먼스가 좋아서 써먹을 일이 많을 것 같습니다. 자 시작해 볼까요?

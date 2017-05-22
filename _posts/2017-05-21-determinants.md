@@ -2,7 +2,6 @@
 title: 행렬식(determinant)
 category: Linear Algebra
 tag: determinant
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 글에서는 행렬식에 대해 살펴보겠습니다. 이번 글은 고려대 박성빈 교수님 강의와 David C. Lay의 Linear Algebra (4th edition)을 정리했음을 먼저 밝힙니다. 그럼 시작하겠습니다. 

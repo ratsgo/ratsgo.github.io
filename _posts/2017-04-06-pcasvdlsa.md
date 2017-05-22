@@ -2,7 +2,6 @@
 title: SVD와 PCA, 그리고 잠재의미분석(LSA)
 category: From frequency to semantics
 tag: SVD, PCA, LSA
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 포스팅에서는 **차원축소(dimension reduction)** 기법으로 널리 쓰이고 있는 **특이값분해(Singular Value Decomposion)**와 **주성분분석(Principal Component Analysis)**에 대해 알아보도록 하겠습니다. 마지막으로는 이러한 기법이 **잠재의미분석(Latent Sematic Analysis)**와 어떻게 연결되는지 이야기해보도록 하겠습니다. 이번 글은 고려대 강필성 교수님, 한양대 이상화 교수님 강의와 [quora](https://www.quora.com/What-is-an-intuitive-explanation-of-the-relation-between-PCA-and-SVD), 또 [다크프로그래머의 블로그](http://darkpgmr.tistory.com/106)를 참고했음을 미리 밝힙니다. 그럼 시작하겠습니다.

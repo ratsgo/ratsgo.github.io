@@ -2,7 +2,6 @@
 title: LU factorization
 category: Linear Algebra
 tag: linear
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 포스팅에선 **LU 분해(LU factorization)**에 대해 알아보도록 하겠습니다. 그에 앞서 LU factorization을 이해하기 위한 몇 가지 개념을 짚어보도록 하겠습니다. 이번 글은 [고려대 박성빈 교수님]([hyperspace@korea.ac.kr](mailto:hyperspace@korea.ac.kr))과 [한양대 이상화 교수님](http://www.kocw.net/home/search/kemView.do?kemId=977757) 강의를 참고했음을 먼저 밝힙니다. 그럼 시작하겠습니다.

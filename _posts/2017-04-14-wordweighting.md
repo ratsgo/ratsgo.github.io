@@ -2,7 +2,6 @@
 title: Word Weighting(2)
 category: From frequency to semantics
 tag: Word Weighting
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 글에서는 **TF-IDF**를 설명한 지난 [글](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/28/tfidf/)에 이어 단어에 대한 가중치를 부여하는 방법론 10가지에 대해 다뤄보려고 합니다. 이 가중치들은 문서의 특징을 추출하거나 분류하는 데 쓰입니다. 이번 글 역시 고려대 강필성 교수님 강의를 참고로 했음을 먼저 밝힙니다. 그럼 시작하겠습니다.

@@ -2,7 +2,6 @@
 title: Clustering 개요
 category: Machine Learning
 tag: Clustering
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 글에서는 **클러스터링(Clustering;군집화)**의 전반적 내용에 대해 살펴보도록 하겠습니다. 이번 글은 고려대 강필성 교수님과 역시 같은 대학의 김성범 교수님 강의를 정리했음을 먼저 밝힙니다. 이 글은 클러스터링의 개괄적 내용을 설명하는 데 방점을 두었으니 [K-means 군집화](https://ratsgo.github.io/machine%20learning/2017/04/19/KC/), [계층적 군집화](https://ratsgo.github.io/machine%20learning/2017/04/18/HC/) 등 구체적 알고리즘을 살펴보시려면 링크를 클릭하시기 바랍니다. 그럼 시작하겠습니다.

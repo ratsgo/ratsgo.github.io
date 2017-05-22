@@ -2,7 +2,6 @@
 title: Convolutional Neural Networks(CNN)의 역전파(backpropagation)
 category: Deep Learning
 tag: Convolutional Neural Networks
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 포스팅에서는 **Convolutional Neural Networks(CNN)**의 **역전파(backpropagation)**를 살펴보도록 하겠습니다. 많이 쓰는 아키텍처이지만 그 내부 작동에 대해서는 제대로 알지 못한다는 생각에 저 스스로도 정리해볼 생각으로 이번 글을 쓰게 됐습니다. 수학에 약한지라 최대한 수식은 배제하고 직관적으로 설명해볼까 합니다. 이번 글은 미국 스탠포드대학의 [CS231n 강의](http://cs231n.github.io/optimization-2/)와 [이곳](http://www.jefkine.com/general/2016/09/05/backpropagation-in-convolutional-neural-networks/)을 많이 참고하였습니다. 그런데 이들 설명도 저한테 확 와닿지 않아서 상당 부분은 제 스타일대로 그림을 다시 그리거나 해석했음을 미리 밝혀둡니다. 그럼 시작하겠습니다.

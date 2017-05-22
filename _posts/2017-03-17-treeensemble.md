@@ -2,7 +2,6 @@
 title: Random Forest, Rotation Forest
 category: Machine Learning
 tag: tree-based ensemble
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 포스팅에서는 트리 기반의 대표적인 앙상블 기법인 **랜덤포레스트(Random Forest)**와 **로테이션포레스트(Rotation Forest)**에 대해 알아보고자 합니다. 관련 R패키지를 소개하고, 저희 연구실 김해동 석사과정이 만든 코드와 성능 실험도 함께 소개해보고자 합니다. 그럼 시작해보겠습니다.

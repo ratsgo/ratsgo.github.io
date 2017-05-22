@@ -2,7 +2,6 @@
 title: Word2Vec과 품사 정보 (1)
 category: Natural Language Processing
 tag: word class
-html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
 ---
 
 이번 글에서는 **Word2Vec**으로 임베딩한 단어 벡터가 **품사**의 종류와 어떤 연관을 맺고 있는지 살펴보도록 하겠습니다. 그럼 시작하겠습니다.
