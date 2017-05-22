@@ -161,7 +161,8 @@ code {
 }
 pre {
   display: block;
-  overflow-x: auto;
+  max-width: 100%;
+  overflow-x: visible;
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 1rem;
