@@ -36,7 +36,7 @@ $${ A }^{ T }A=V\Lambda { V }^{ -1 }$$
 
 한편 대칭행렬은 그 전치와 역행렬이 같으므로 $V$와 공분산행렬 $A^TA$은 아래와 같이 쓸 수 있습니다.
 
-$${ V }^{ T }{ V }={ V }^{ -1 }V=I\\ { A }^{ T }A=V\Lambda { V }^{ T }$$
+$${ V }^{ T }{ V }={ V }^{ -1 }V=I\\ { A }^{ T }A=V\Lambda { V }^{ -1 }=V\Lambda { V }^{ T }$$
 
 
 
@@ -48,7 +48,9 @@ $$A=U\Sigma { V }^{ T }\\ $$
 
 <a href="http://imgur.com/lP44bGq"><img src="http://i.imgur.com/lP44bGq.png" width="600px" title="source: imgur.com" /></a>
 
-행렬 $U$와 $V$에 속한 열벡터는 **특이벡터(singular vector)**로 불리고요, 모든 특이벡터는 서로 직교하는 성질을 지닙니다. $U$와 $V$의 특이벡터는 각각 $AA^T$, $A^TA$의 고유벡터들입니다.
+행렬 $U$와 $V$에 속한 열벡터는 **특이벡터(singular vector)**로 불리고요, 모든 특이벡터는 서로 직교하는 성질을 지닙니다.
+
+
 
 $$U=\begin{bmatrix} \overrightarrow { { u }_{ 1 } }  & \overrightarrow { { u }_{ 2 } }  & ... & \overrightarrow { { u }_{ m } }  \end{bmatrix}\\ V=\begin{bmatrix} \overrightarrow { { v }_{ 1 } }  & \overrightarrow { v_{ 2 } }  & ... & \overrightarrow { { v }_{ n } }  \end{bmatrix}\\ \overrightarrow { { u }_{ k } } =\begin{bmatrix} { u }_{ k1 } \\ { u }_{ k2 } \\ ... \\ { u }_{ km } \end{bmatrix}\quad \overrightarrow { { v }_{ k } } =\begin{bmatrix} { v }_{ k1 } \\ v_{ k2 } \\ ... \\ { v }_{ kn } \end{bmatrix}\\ { \overrightarrow { { u }_{ k } }  }^{ T }\overrightarrow { { u }_{ k } } =1,\quad { U }^{ T }U=I\\ { \overrightarrow { { v }_{ k } }  }^{ T }\overrightarrow { { v }_{ k } } =1,\quad { V }^{ T }V=I$$
 
