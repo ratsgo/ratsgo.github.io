@@ -75,6 +75,7 @@ $$s(i)=\frac { b(i)-a(i) }{ \max { \{ a(i),b(i)\}  }  } $$
 >
 > [**hiarchical clustering**](https://ratsgo.github.io/machine%20learning/2017/04/18/HC/) : 개체들을 가까운 집단부터 차근차근 묶어나가는 방식입니다. 군집화 결과뿐 아니라 유사한 개체들이 결합되는 **덴드로그램(dendrogram)**을 생성합니다.
 
-> **Self-Organizing Map** : 뉴럴넷 기반의 군집화 알고리즘입니다.
+> [**Self-Organizing Map**](https://ratsgo.github.io/machine%20learning/2017/05/01/SOM/) : 뉴럴넷 기반의 군집화 알고리즘입니다.
 >
-> **Spectual clustering** : 그래프 기반의 군집화 방법론입니다
+> [**Spectual clustering**](https://ratsgo.github.io/machine%20learning/2017/04/27/spectral/) : 그래프 기반의 군집화 방법론입니다
+
