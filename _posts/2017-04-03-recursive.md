@@ -31,7 +31,7 @@ Recursive Neural Networks(RNN)은 입력값으로 주어지는 몇 개 단어를
 
 > ( ( ( The ) ( actors ) ) ( ( ( are ) ( fantastic ) ) ( . ) ) )
 
-마지막으로 Recursive Neural Networks는 Recurrent Neural Networks의 특수 케이스라는 점을 짚어보겠습니다. 만약 Recursive Neural Networks가 모든 지역정보를 순서대로 빠짐없이 반영한다고 하면 아래와 같이 구조를 그릴 수 있는데요, 이를 각도 회전해놓고 보면 본질적으로 Recurrent Neural Networks와 같습니다.
+마지막으로 Recurrent Neural Networks는 Recursive Neural Networks의 특수 케이스라는 점을 짚어보겠습니다. 만약 Recursive Neural Networks가 모든 지역정보를 순서대로 빠짐없이 반영한다고 하면 아래와 같이 구조를 그릴 수 있는데요, 이를 각도 회전해놓고 보면 본질적으로 Recurrent Neural Networks와 같습니다.
 
 <a href="http://imgur.com/AwJAPQ0"><img src="http://i.imgur.com/AwJAPQ0.png" width="500px" title="source: imgur.com" /></a>
 
@@ -69,9 +69,7 @@ RNN은 이렇게 부모노드로부터 계산된 스코어와 해당 부분에 �
 
 <a href="http://imgur.com/6C4vXGq"><img src="http://i.imgur.com/6C4vXGq.png" width="800px" title="source: imgur.com" /></a>
 
-그런데 학습 과정에서의 트리 탐색은 **탐욕적(greedy)**인 방식입니다. CS224d 강의에 따르면 트리 구조 탐색시 [Beam Search Algorithm](https://en.wikipedia.org/wiki/Beam_search) 등을 이용한다고 합니다. Beam Search 알고리즘은 아래([출처](https://www.google.co.kr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwit9JD13KrTAhUEGpQKHcxPBZYQFgghMAA&url=http%3A%2F%2Fcfile215.uf.daum.net%2Fattach%2F20365B3B4E70BAB80561F0&usg=AFQjCNHIKp3GH8tvXkfa0zFa2iSSoN3zZA&sig2=P6S7gvKmwn47Pg4s-tbrtA))와 같이 **최고우선탐색(Best-First Search)** 기법을 기본으로 하되 기억해야 하는 노드 수를 제한해 효율성을 높인 방식입니다.
-
-<a href="http://imgur.com/zl2on4w"><img src="http://i.imgur.com/zl2on4w.png" width="600px" title="source: imgur.com" /></a>
+그런데 학습 과정에서의 트리 탐색은 **탐욕적(greedy)**인 방식입니다. CS224d 강의에 따르면 트리 구조 탐색시 [Beam Search Algorithm](https://en.wikipedia.org/wiki/Beam_search) 등을 이용한다고 합니다. Beam Search 알고리즘은 **최고우선탐색(Best-First Search)** 기법을 기본으로 하되 기억해야 하는 노드 수를 제한해 효율성을 높인 방식입니다. Beam Search 알고리즘에 대해 좀 더 자세히 살펴보시려면 [이곳](https://ratsgo.github.io/deep%20learning/2017/06/26/beamsearch/)을 참고하시면 좋을 것 같습니다.
 
 
 
