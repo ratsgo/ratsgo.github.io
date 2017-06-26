@@ -127,4 +127,4 @@ $dp2raw$는 덧셈 그래프를 타고 그대로 분배가 되기 때문에 $db$
 
 ## 마치며
 
-이상으로 RNN과 Recurrent/Convolutional Neural Networks를 비교하고 Simple RNN의 구조와 foward/backward compute pass에 대해 살펴보았습니다. RNN 역시 다른 구조의 딥러닝 아키텍처와 마찬가지로 자연언어처리에 강점을 가진 구조로 널리 알려져 있는데요, 다음 기회엔 발전된 RNN 모델들과 실험결과를 함께 이야기해 보려고 합니다. 이번 포스팅은 제가 공부할 목적으로 작성한 것이므로 오류가 얼마든지 있을 수 있습니다. 지적하실 내용이나 의견, 질문 있으시면 언제든지 댓글이나 이메일로 알려주시기 바랍니다. 여기까지 읽어주셔서 진심으로 감사드립니다.
+이상으로 RNN과 Recurrent/Convolutional Neural Networks를 비교하고 Simple RNN의 구조와 foward/backward compute pass에 대해 살펴보았습니다. RNN 역시 다른 구조의 딥러닝 아키텍처와 마찬가지로 자연언어처리에 강점을 가진 구조로 널리 알려져 있는데요. 발전된 RNN 모델에 대해 살펴보시려면 [이곳](https://ratsgo.github.io/deep%20learning/2017/06/24/RNTN/)을 참고하시면 좋을 것 같습니다. 여기까지 읽어주셔서 진심으로 감사드립니다.
