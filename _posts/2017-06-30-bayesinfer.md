@@ -1,10 +1,10 @@
 ---
-title: 베이지안 추론
+title: 베이지안 추론(1)
 category: Statistics
 tag: Bayes
 ---
 
-이번 글에서는 베이지안 추론에 대해 살펴보도록 하겠습니다. 이 글은 '밑바탁부터 시작하는 데이터과학(조엘 그루스 지음, 인사이트 펴냄)'을 정리했음을 먼저 밝힙니다. 그럼 시작하겠습니다.
+이번 글에서는 베이지안 추론에 대해 살펴보도록 하겠습니다. 이 글은 '밑바탁부터 시작하는 데이터과학(조엘 그루스 지음, 인사이트 펴냄)'과 ‘Think Bayes(앨런 B. 다우니 지음, 권정민 옮김, 한빛미디어 펴냄)’을 정리했음을 먼저 밝힙니다. 그럼 시작하겠습니다.
 
 
 
@@ -52,7 +52,7 @@ $p$의 사전확률과 관련해 $α$는 성공(앞면), $β$는 실패(뒷면)�
 
 
 
-## 파이썬 코드
+## 시각화
 
 위 그림을 만드는 데 사용한 파이썬 코드는 다음과 같습니다.
 
@@ -75,4 +75,64 @@ plt.legend()
 plt.title('Beta pdfs')
 plt.show()
 ```
+
+
+
+
+
+## 구현
+
+동전을 250번 던졌는데 앞면은 140번, 뒷면은 110번 나왔다고 칩시다. 앞면이 나온 확률 x 100을 $x$라고 할 때 코드는 다음과 같습니다. thinkbayes.py는 [이곳](http://greenteapress.com/wp/think-bayes/)에서 내려받을 수 있습니다.
+
+```python
+import thinkbayes as tb
+
+class Euro(tb.Suite):
+    """Represents hypotheses 
+    about the probability of heads."""
+
+    def Likelihood(self, data, hypo):
+        """Computes the likelihood of the data 
+        under the hypothesis.
+        hypo: integer value of x, 
+        the probability of heads (0-100)
+        data: tuple of (number of heads, number of tails)
+        """
+        x = hypo / 100.0
+        heads, tails = data
+        # 이항분포의 우도함수
+        like = x**heads * (1-x)**tails
+        return like
+```
+
+Euro 클래스는 앞면과 뒷면이 나올 확률이 동일하다는 가정에서 출발해 관측 결과를 업데이트한 값을 반환합니다. 다음과 같이 관측 결과를 업데이트한 뒤 suite 객체에 포함된 MaximumLikelihood 함수를 호출하면 56(=140/250*100)이 반환됩니다. 
+
+한편 suite.Mean() 함수는 가설(x)에 사후확률을 곱한 값을 모두 더한 평균값을 반환하는데요. 호출 결과 55.95238095가 나왔습니다.
+
+```python
+# 가설 설정(x=1~100) 및 객체 선언
+suite = Euro(xrange(0,101))
+# 관측치 업데이트
+data = (140, 110)
+suite.Update(data)
+# 최대 우도에 해당하는 x 반환
+suite.MaximumLikelihood()
+# 평균 반환
+suite.Mean()
+```
+
+$x$의 사전분포는 베타분포입니다. 베타분포의 모양은 $α,  β$ 에 따라 달라지는데요. 만약 사전분포가 $α,  β$에 대한 베타분포이고, 앞면 $h$와 뒷면 $t$의 데이터를 가지고 있다면 사후확률은 $α+h,  β+t$에 대한 베타분포가 됩니다. 이를 구현한 코드는 다음과 같습니다.
+
+```python
+# 베타분포 선언, alpha=beta=1
+beta = tb.Beta()
+# 관측치 업데이트
+# alpha = 1 + 140
+# beta = 1 + 110
+beta.Update(data)
+# 베타분포의 중심(평균) 반환
+print beta.Mean()
+```
+
+beta.Mean()은 베타분포의 중심을 출력해줍니다. 그 결과는 0.5595238로 suite.Mean()의 결과와 동일합니다.
 
