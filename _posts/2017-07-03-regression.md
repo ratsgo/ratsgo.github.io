@@ -132,6 +132,8 @@ theta = [random.random(), random.random()] # alpha, beta
 $$
 {SE}_{i}={ \left\{ { y }_{ i }-\left( \beta { x }_{ i }+\alpha  \right)  \right\}  }^{ 2 }
 $$
+
+
 이를 'squared_error' 함수로 표현할 수 있습니다.
 
 ```python
@@ -154,6 +156,8 @@ gradient_fn은 다음과 같습니다. 목적함수인 'squared_error'를 'theta
 $$
 \frac { \partial { SE }_{ i } }{ \partial \alpha  } =-2\left\{ { y }_{ i }-\left( \beta { x }_{ i }+\alpha  \right)  \right\} \\ \frac { \partial { SE }_{ i } }{ \partial \beta  } =-2\left\{ { y }_{ i }-\left( \beta { x }_{ i }+\alpha  \right)  \right\} { x }_{ i }
 $$
+
+
 이를 코드로 나타내면 다음과 같습니다.
 
 ```python
