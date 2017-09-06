@@ -4,7 +4,7 @@ category: Data structure&Algorithm
 tag: sort
 ---
 
-이번 글에서는 알고리즘의 정의 및 **삽입 정렬(Insertion Sort)**, **병합 정렬(Merge Sort)**에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김선욱 교수님 강의를 정리했음을 먼저 밝힙니다. 그럼 시작하겠습니다.
+이번 글에서는 알고리즘의 정의 및 **삽입정렬(Insertion Sort)**, **합병정렬(Merge Sort)**에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김선욱 교수님 강의를 정리했음을 먼저 밝힙니다. 그럼 시작하겠습니다.
 
 
 
@@ -71,9 +71,12 @@ $$
 이번엔 worst case(즉 모든 $t_j$가 $j$인 상황)에 대해 살펴봅시다. 다음 식과 같습니다.
 
 
+
 $$
 T(n)={ c }_{ 1 }n+{ c }_{ 2 }(n-1)+{ c }_{ 4 }(n-1)+{ c }_{ 5 }(\frac { n(n+1) }{ 2 } -1)\\+{ c }_{ 6 }(\frac { n(n-1) }{ 2 } )+{ c }_{ 7 }(\frac { n(n-1) }{ 2 } )+{ c }_{ 8 }(n-1)
 $$
+
+
 위 식은 $an^2+bn+c$ 형태의 2차식입니다. 따라서 worst case일 때 삽입정렬의 계산복잡도는 $n^2$에 비례하여 증가합니다. 따라서 삽입정렬의 계산복잡도는 best와 worst case 어딘가쯤에 위치하게 될 겁니다.
 
 그런데 알고리즘의 계산복잡도를 구할 때 사실 이렇게까지 자세히 뜯어볼 필요는 없습니다. 가능한 경우의 수를 고려해 어림짐작하는 방법도 얼마든지 있어야 하니까요. best case일 때는 데이터 개수 $n$개만큼의 비교 연산을 수행하면 됩니다. worst case일 때는 $j$가 1일 때는 $t_j$가 1, 2일 땐 (1+2), 3일 땐 (1+2+3)... 이렇게 되므로 $Σn=n(n+1)/2$이 되는 걸 확인할 수 있습니다.
@@ -82,27 +85,36 @@ $$
 
 
 
-## 병합정렬
+## 합병정렬
 
-병합정렬은 다음과 같은 방식으로 동작합니다.
-
-
-
-<a href="https://imgur.com/EX7EdIi"><img src="https://i.imgur.com/EX7EdIi.png" width="400px" title="source: imgur.com" /></a>
-
-우선 데이터(initial array)를 잘게 쪼갭니다(divide). 위 예시에선 8개로 쪼갰습니다. 둘씩 크기를 비교해 정렬합니다(conquer). 이를 합칩니다(merge). 이를 더 이상 합칠 array가 없을 때까지 반복합니다. 
-
-데이터 개수가 홀수개여서 정확히 둘로 쪼갤 수 없을 때는 다음과 같이 수행합니다.
+합병정렬은 다음과 같은 방식으로 동작합니다. ([그림 출처](https://ko.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/overview-of-merge-sort))
 
 
 
-<a href="https://imgur.com/OlQe2SN"><img src="https://i.imgur.com/OlQe2SN.png" width="400px" title="source: imgur.com" /></a>
+<a href="https://imgur.com/ood27RZ"><img src="https://i.imgur.com/ood27RZ.png" width="400px" title="source: imgur.com" /></a>
 
 
 
-## 병합정렬의 계산복잡성
+우선 데이터를 잘게 쪼갭니다(divide). 위 예시에선 8개로 쪼갰습니다. 둘씩 크기를 비교해 정렬합니다(conquer). 이를 합칩니다(merge). 이를 더 이상 합칠 array가 없을 때까지 반복합니다. 데이터 개수가 홀수개여서 정확히 둘로 쪼갤 수 없을 때는 왼쪽 배열에 요소 하나를 더 포함시킵니다. 여기에서 $p$는 하위 배열의 시작점, $r$은 끝점입니다. $q$는 하위 배열을 가르는 기준점입니다. 합병정렬의 의사코드는 다음과 같습니다.
 
-한번 정렬하는 데 필요한 계산비용을 $c$, 데이터 개수가 $n$이라고 할 때 병합정렬의 계산복잡도는 $cn*lgn+cn$이라고 합니다. 이를 도식화해 나타낸 그림은 다음과 같습니다.
+
+
+<a href="https://imgur.com/qgqjupk"><img src="https://i.imgur.com/qgqjupk.png" width="700px" title="source: imgur.com" /></a>
+
+
+
+
+
+## 합병정렬의 계산복잡성
+
+데이터 개수가 $n$이라고 할 때 이를 정렬하는 데 $cn$의 시간이 걸린다고 칩시다. $c$는 컴퓨팅 파워 등과 관계 있는 어떤 상수를 나타냅니다. 우선 아래 그림을 봅시다.
+
+
 
 <a href="https://imgur.com/M6hih5n"><img src="https://i.imgur.com/M6hih5n.png" width="400px" title="source: imgur.com" /></a>
 
+
+
+예컨대 위에서부터 세 번째 층의 경우 원래 데이터를 4개로 쪼갰기 때문에 각각은 $cn/4$의 시간이 걸리지만, 데이터 덩어리 역시 4개이기 때문에 이에 해당하는 층의 계산시간은 $4*cn/4=cn$이 됩니다. 
+
+전체 층의 수가 $lgn$이 되는 이유는 $n$에 구체적인 수를 넣어보면 명확해집니다. 예컨대 데이터 개수($n$)가 8개라고 칩시다. 그러면 전체 층의 수는 3이 됩니다. 따라서 상수항($c$)을 무시하고 생각해보면 합병정렬의 계산복잡성은 $nlgn$(각 층의 계산시간 x 전체 층의 수)가 되는 것입니다.
