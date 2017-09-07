@@ -4,17 +4,7 @@ category: Data structure&Algorithm
 tag: sort
 ---
 
-이번 글에서는 알고리즘의 정의 및 **삽입정렬(Insertion Sort)**, **합병정렬(Merge Sort)**에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김선욱 교수님 강의를 정리했음을 먼저 밝힙니다. 그럼 시작하겠습니다.
-
-
-
-## 알고리즘 정의
-
-알고리즘의 정의는 다음과 같습니다.
-
-> **A precisely defined sequence of computational steps** that transform a given input into a desired output. (주어진 입력을 원하는 출력으로 변환하는, **명확하게 정의된 일련의 계산 단계**)
-
-알고리즘의 효율성 측정 기준은 연산시간(time)과 메모리(memory)입니다.
+이번 글에서는 **삽입정렬(Insertion Sort)**, **합병정렬(Merge Sort)**에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김선욱 교수님 강의를 정리했음을 먼저 밝힙니다. 그럼 시작하겠습니다.
 
 
 
