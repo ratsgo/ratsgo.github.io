@@ -21,12 +21,16 @@ tag: algorithm
 이를 수식으로 나타내면 다음과 같습니다.
 
 
+
 $$
 O\left( g\left( n \right)  \right) =\left\{ f\left( n \right) |0\le f\left( n \right) \le c\cdot g\left( n \right) \quad for\quad all\quad n\ge { n }_{ 0 }>0 \right\} \quad for\quad ∃c>0
 $$
 
 
-예를 들어보겠습니다. $2n^2=O(n^3)$입니다. 2($n_0$) 이상의 모든 $n$에 대해 $0≤2n^2≤cn^3$을 만족하는 $c$가 존재하기 때문입니다($c=1$). 이를 그림으로 나타내면 다음과 같습니다. (빨간색 선=점근 상한=$n^3$) 다시 말해 **이 알고리즘의 계산복잡도는 최악의 경우에도 빨간색 선보다는 작거나 같습니다.**
+
+예를 들어보겠습니다. $2n^2=O(n^3)$입니다. 2($n_0$) 이상의 모든 $n$에 대해 $0≤2n^2≤cn^3$을 만족하는 $c$가 존재하기 때문입니다($c=1$). 
+
+이를 그림으로 나타내면 다음과 같습니다. (빨간색 선=점근 상한=$n^3$) **이 알고리즘의 계산복잡도는 최악의 경우에도 빨간색 선보다는 작거나 같습니다.**
 
 
 
@@ -54,7 +58,9 @@ $$
 
 
 
- ## Big-Ω notation
+
+
+## Big-Ω notation
 
 대문자 Ω 표기법에서는 아래 그림을 만족하는 $f(n)$를 $Ω(g(n))$와 동치라고 봅니다. 이 때 $g(n)$는 $f(n)$의 **점근 하한(an asymptotic lower bound)**이라고 합니다. 어떤 알고리즘 $f(n)$의 계산복잡도가 $Ω(g(n))$이라면, $f(n)$의 계산복잡도는 최선의 경우를 상정하더라도 $g(n)$과 같거나 혹은 크다는 뜻입니다.
 
@@ -67,12 +73,16 @@ $$
 이를 수식으로 나타내면 다음과 같습니다.
 
 
+
 $$
 \Omega\left( g\left( n \right)  \right) =\left\{ f\left( n \right) |0\le c\cdot g\left( n \right) \le f\left( n \right) \quad for\quad all\quad n\ge { n }_{ 0 }>0 \right\} \quad for\quad ∃c>0
 $$
 
 
-예를 들어보겠습니다. $\sqrt{n}=Ω(\ln{n})$입니다. 2($n_0$) 이상의 모든 $n$에 대해 $0≤\ln{n}≤c\sqrt{n}$인 $c$가 존재하기 때문입니다($c=1$). 이를 그림으로 나타내면 다음과 같습니다. (녹색 선=점근 하한=$\ln{n}$) 다시 말해 **이 알고리즘의 계산복잡도는 최선의 경우에도 녹색 선보다는 크거나 같습니다.**
+
+예를 들어보겠습니다. $\sqrt{n}=Ω(\ln{n})$입니다. 2($n_0$) 이상의 모든 $n$에 대해 $0≤\ln{n}≤c\sqrt{n}$인 $c$가 존재하기 때문입니다($c=1$). 
+
+이를 그림으로 나타내면 다음과 같습니다. (녹색 선=점근 하한=$\ln{n}$) 다시 말해 **이 알고리즘의 계산복잡도는 최선의 경우에도 녹색 선보다는 크거나 같습니다.**
 
 
 
@@ -102,6 +112,8 @@ $$
 
 
 
+
+
 ## Big Θ-notation
 
 대문자 Θ 표기법에서는 아래 그림을 만족하는 $f(n)$를 $Θ(g(n))$과 동치라고 봅니다. 이 때 $g(n)$은 $f(n)$의 **점근적 상한과 하한의 교집합(an asymptotic tight bound)**이라고 합니다. 알고리즘 $f(n)$이 아무리 나쁘거나 좋더라도 그 계산복잡도는 $g(n)$의 범위 내에 있다는 뜻입니다. 다음과 같습니다.
@@ -115,12 +127,16 @@ $$
 이를 수식으로 나타내면 다음과 같습니다.
 
 
+
 $$
 \Theta \left( g\left( n \right)  \right) =\left\{ f\left( n \right) |0\le {c}_{1}\cdot g\left( n \right) \le f\left( n \right) \le {c}_{2}\cdot g\left( n \right) \quad for\quad all\quad n\ge { n }_{ 0 }>0 \right\} \quad for\quad ∃{c}_{1},{c}_{2}>0
 $$
 
 
-예를 들어보겠습니다. $n^2/2-2n=Θ(n^2)$입니다. 8($n_0$) 이상인 모든 $n$에 대하여 $0≤c_1n^2≤n^2/2-2n≤c_2n^2$을 만족하는 $c_1, c_2$가 존재하기 때문입니다($c_1=1/4, c_2=1/2$). 이를 그림으로 나타내면 다음과 같습니다. (노란색 선=점근 하한=$1/4n^2$, 검정색 선=점근 상한=$1/2n^2$) 다시 말해 **이 알고리즘의 계산복잡도는 최선의 경우에도 보라색 선보다는 크거나 같고, 최악의 경우에도 검정색 선보다는 작거나 같습니다.**
+
+예를 들어보겠습니다. $n^2/2-2n=Θ(n^2)$입니다. 8($n_0$) 이상인 모든 $n$에 대하여 $0≤c_1n^2≤n^2/2-2n≤c_2n^2$을 만족하는 $c_1, c_2$가 존재하기 때문입니다($c_1=1/4, c_2=1/2$). 
+
+이를 그림으로 나타내면 다음과 같습니다. (노란색 선=점근 하한=$1/4n^2$, 검정색 선=점근 상한=$1/2n^2$) 다시 말해 **이 알고리즘의 계산복잡도는 최선의 경우에도 보라색 선보다는 크거나 같고, 최악의 경우에도 검정색 선보다는 작거나 같습니다.**
 
 
 
@@ -141,9 +157,11 @@ $f(n)=Θ(g(n))$일 필요충분조건은 $f(n)=O(g(n))=Ω(g(n))$입니다. 이�
 $o(g(n))$의 정의는 다음과 같습니다.
 
 
+
 $$
 O\left( g\left( n \right)  \right) =\left\{ f\left( n \right) |0\le f\left( n \right) < c\cdot g\left( n \right) \quad for\quad all\quad n\ge { n }_{ 0 }>0 \right\} \quad for\quad ∀c>0 \\another \quad view:\quad\lim _{ n\rightarrow \infty  }{ \frac { f\left( x \right)  }{ g\left( x \right)  }  } =0
 $$
+
 
 
 그 예시는 다음과 같습니다
@@ -161,9 +179,12 @@ $$
 $ω(g(n))$의 정의는 다음과 같습니다.
 
 
+
 $$
 \Omega\left( g\left( n \right)  \right) =\left\{ f\left( n \right) |0< c\cdot g\left( n \right) \le f\left( n \right) \quad for\quad all\quad n\ge { n }_{ 0 }>0 \right\} \quad for\quad ∀c>0 \\another \quad view:\quad\lim _{ n\rightarrow \infty  }{ \frac { f\left( x \right)  }{ g\left( x \right)  }  } =\infty
 $$
+
+
 그 예시는 다음과 같습니다.
 
 > $n^{2.00001}=ω(n^2)$
