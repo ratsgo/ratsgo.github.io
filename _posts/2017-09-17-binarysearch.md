@@ -4,7 +4,7 @@ category: Data structure&Algorithm
 tag: algorithm
 ---
 
-이번 글에서는 **이진탐색(binary search)** 알고리즘에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김황남 교수님 강의를 정리하였음을 먼저 밝힙니다. 그럼 시작하겠습니다.
+이번 글에서는 **이진탐색(binary search)** 알고리즘에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김황남 교수님 강의를 정리하였음을 먼저 밝힙니다. 코드는 [이곳](github.com/TheAlgorithms/Python)을 참고하였습니다. 그럼 시작하겠습니다.
 
 
 
@@ -36,38 +36,29 @@ tag: algorithm
 
 
 
-## 의사코드
+## 파이썬 구현
 
-이진탐색 알고리즘의 **의사코드(pseudo code)**는 다음과 같습니다. 아래 코드에서 num은 찾고자 하는 값, A는 주어진 정렬된 리스트, left는 리스트의 왼쪽 끝 인덱스, right는 오른쪽 끝 인덱스를 의미합니다.
+이진탐색 알고리즘의 **의사코드(pseudo code)**는 다음과 같습니다. 아래 코드에서 *item*은 찾고자 하는 값, *sorted_collection*는 주어진 **정렬된** 리스트, *left*는 이 리스트의 왼쪽 끝 인덱스, *right*는 오른쪽 끝 인덱스를 의미합니다.
 
-```c
-Binary_Search(num, A[], left, right)
-{
-  if (left == right)
-  {
-    if (A[left] == num)
-    {
-      return(left) and exit;
-    }
-    else
-    {
-      conclude NOT PRESENT and exit;
-    }
-  }
-  center = ⌞(left + right)/2⌟
-  if (A[center] < num)
-    {
-      Binary_search(num, A[], center+1, right)
-    }
-  if (A[center] > num)
-    {
-      Binary_search(num, A[], left, center)
-    }
-  if (A[center] == num)
-    {
-      return(center) and exit;
-    }
-}
+```python
+def binary_search(sorted_collection, item):
+
+    left = 0
+    right = len(sorted_collection) - 1
+
+    while left <= right:
+        midpoint = (left + right) // 2
+        current_item = sorted_collection[midpoint]
+        if current_item == item:
+            return midpoint
+        else:
+            if item < current_item:
+                # 주어진 리스트의 오른쪽 절반은 탐색 대상서 제외
+                right = midpoint - 1
+            else:
+                # 주어진 리스트의 왼쪽 절반은 탐색 대상서 제외
+                left = midpoint + 1
+    return None
 ```
 
 
