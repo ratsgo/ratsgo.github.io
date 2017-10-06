@@ -90,7 +90,9 @@ $$
 
 
 $$
-L\left( X,y,\beta  \right) =-\sum _{ i=1 }^{ n }{ { y }_{ i }\left( { \beta  }_{ 0 }+{ \beta  }_{ 1 }{ x }_{ i1 }+...+{ \beta  }_{ p }{ x }_{ ip } \right)  }
+\begin{align*}
+L\left( X,y,\beta  \right) =&-\sum _{ i=1 }^{ n }{ { y }_{ i }\log { \left( { \beta  }_{ 0 }+{ \beta  }_{ 1 }{ x }_{ 1 }+...+{ \beta  }_{ p }{ x }_{ p } \right)  }  } \\ &-\sum _{ i=1 }^{ n }{ \left( 1-{ y }_{ i } \right) \log { \left( 1-{ \beta  }_{ 0 }-{ \beta  }_{ 1 }{ x }_{ 1 }-...-{ \beta  }_{ p }{ x }_{ p } \right)  }  } 
+\end{align*}
 $$
 
 
