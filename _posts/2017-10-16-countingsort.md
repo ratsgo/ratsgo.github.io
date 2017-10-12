@@ -25,9 +25,12 @@ tag: Algorithm
 이진트리의 높이가 $h$일 때 최대 $2^h$개의 말단노드를 가집니다. 그런데 데이터 수가 $n$개일 때 정렬 가능한 모든 경우의 수($n!$)보다 말단노드의 수가 커야 최악의 경우에도 데이터의 모든 요소값들을 정렬할 수 있을 것입니다. 다시 말해 $2^h≥n!$이 성립해야 한다는 말입니다. 이 부등식 양변에 밑이 2인 로그를 취하면 $h≥\log{n!}$이 됩니다. 한편 팩토리얼 연산의 성질에 의해 $n!>\sqrt{2πn}(n/e)^n$이라고 합니다. $n$이 1 이상일 때 $\sqrt{2πn}$ 역시 1보다 큰 값을 가지므로 여태까지 말씀드린 내용을 모두 종합해 식으로 표현하면 다음과 같습니다.
 
 
+
 $$
 h\ge \log { n! } >\log { \left\{ \sqrt { 2\pi n } { \left( \frac { n }{ e }  \right)  }^{ n } \right\}  } >\log { { \left( \frac { n }{ e }  \right)  }^{ n } } \\ \Rightarrow h>\log { { \left( \frac { n }{ e }  \right)  }^{ n } } \\ \Rightarrow h>O\left( n\log { n }  \right)
 $$
+
+
 최종 도출된 부등식의 의미는 이렇습니다. 두 값을 반복적으로 비교해 정렬하는 기법인 comparison sort는 아무리 알고리즘을 잘 짜도 계산복잡성이 $O(n\log{n})$보다 크다는 말입니다. 바꿔 말해 comparison sort 계산복잡성의 하한은 $O(n\log{n})$입니다. 예컨대 퀵 정렬(quick sort)의 계산복잡성이 $O(n^2)$이고, 힙 정렬(heap sort)이 $O(n\log{n})$이라는 점을 감안하면 이같은 내용이 들어맞음을 확인할 수 있습니다. 
 
 이 글에서 설명할 counting sort는 non-comparison sort 기법으로 정렬에 드는 계산복잡성을 $O(n)$으로 낮추려는 알고리즘입니다.
