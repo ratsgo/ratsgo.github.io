@@ -1,0 +1,81 @@
+---
+layout: post
+title:  DenseNet(Densely connected Convolutional Networks)
+category: Deep Learning
+description:  최근 image classification 딥러닝 네트워크 아키텍쳐를 보면 큰 진전이 없었습니다. 
+거의 기술적인 부분에서만 개선이 이루어지던 중 2017 CVPR 컨퍼런스에서 네트워크 구조에 획기적인 변화를 주는 연구 결과가 발표됩니다. 이 네트워크의 이름이 Densely connected Convolutional Networks입니다.
+---
+# Densely connected Convolutional Networks
+
+## DenseNet이전의 연구들
+
+ 최근 딥러닝 네트워크 아키텍쳐를 보면 큰 진전이 없었습니다. 2014년 까지의 네트워크 구조는 거의 아래와 같은 구조를 따르고 있습니다.
+
+$$ [\{ (Convolution+Activation)\times n+pooling\} \times m]+Fully-connected\quad network $$
+
+<a href="https://imgur.com/46RHa3L"><img src="https://i.imgur.com/46RHa3L.png" title="source: imgur.com" /></a>
+
+ 2014년 ILSVRC에서 1등을 수상한 GoogLeNet의 인셉션 모듈(Inception Module)이 참신한 구조 변화를 보여주었으나 그래도 저 큰 틀에서 벗어나진 못했습니다. 오히려 구조가 복잡하다는 이유로(위 그림만 봐도 굉장히 어지러운 구조를 가지고 있다는 것을 알 수 있습니다) 2등을 수상한 VGGNet이 더 많이 활용되고 있습니다. 비록 classfication 측면에서는 좋은 성능을 내었지만 구조의 복잡성으로 인해 사람들에게 활용 측면에서 떨어지는 결과까지 낳게 됩니다.
+
+<a href="https://imgur.com/tyM0DZj"><img src="https://i.imgur.com/tyM0DZj.png" title="source: imgur.com" /></a>
+
+ 그러다가 2015년에 되고나서는 딥러닝 구조의 가장 큰 문제점이었던 degradation problem을 해결했다고 주장하는 ResNet이 등장하게됩니다.
+
+
+<a href="https://imgur.com/CfanO19"><img src="https://i.imgur.com/CfanO19.png" title="source: imgur.com" /></a>
+
+하지만 ResNet이후로 이만큼 참신하게 네트워크 구조 자체에 참신함을 준 아이디어는 나오지 않게 됩니다. 
+
+심지어 네트워크와 배치사이즈가 달라짐에 따라 전력소모가 어떻게 바뀌는 연구까지 나오게 됩니다. 
+
+<a href="https://imgur.com/gnfrWgr"><img src="https://i.imgur.com/gnfrWgr.png" title="source: imgur.com" /></a>
+
+ResNet을 대상으로 배치 노말라이제이션(Batch Normalization)이나 ReLU(Rectified Linear Unit)순서를 어떻게 했을 때 가장 효과적인가에 대한 연구도 있었습니다. 이 논문에 관해서는 나중에 따로 포스팅을 하도록 하겠습니다. 
+
+이렇게 ResNet 이후로 나오는 연구들이 전부 기술적인 부분에만 관련있고 네트워크 구조에 획기적인 변화를 주는 경우가 없었습니다. 자체적인 변화보다는 ResNet을 큰 뼈대로 유지하고 약간의 트릭을 추가하는 연구들이 많이 진행됩니다.
+
+<a href="https://imgur.com/fNxkVKO"><img src="https://i.imgur.com/fNxkVKO.png" title="source: imgur.com" /></a>
+
+2016년 이미지넷 챌린지(ILSVRC)에 나오는 네트워크들도 전부 어떻게든 테스트 에러를 0.01%라도 줄여보려는, 어떤 측면에서 보면 테스트 데이터셋에 모델 자체를 오버피팅 시키려는(?) 앙상블 파티가 벌어지게 됩니다.  
+
+<br>
+## DenseNet - overview
+
+그러던 와중에 2017 CVPR 컨퍼런스에 Densely Connected Network라는 네트워크 구조에 획기적인 변화를 주는 연구 결과가 발표됩니다. 
+
+일반적인 네트워크 구조는 위에서 수식으로 간단히 나타냈지만 convolution, activation, pooling의 순차적인 조합입니다. ResNet은 이러한 네트워크에 skip connection을 추가해서 degradation problem을 (논문 저자들의 주장에 따르면)해소했습니다. 이에 더해 DenseNet에서는 Dense connectivity라는 새로운 개념을 추가하게 됩니다. 
+
+쉽게 얘기하자면 제가 쓰는 텐서플로우 기준으로 ResNet은 tf.add를 사용하여 직전 부분을 더해주는 것이고 DenseNet은 tf.concat을 써서 거쳐왔던 부분들을 전부 쌓는다고 보시면 됩니다.
+
+<a href="https://imgur.com/vsqXLzE"><img src="https://i.imgur.com/vsqXLzE.png" title="source: imgur.com" /></a>
+
+논문의 저자들은 다음과 같이 설명하면서 DenseNet의 장점을 어필합니다. 
+
+_**'As information passes through many layers, it can vanish and "wash out" by the time it reaches the end (or beginning) of the nework'**_
+
+즉, 네트워크가 깊어질수록 처음에 가지고 있던 정보가 사라지거나 "wash out"되어버릴 수 있다는 것입니다.  
+이 문제점을 다룬 연구들은 이전에도 많이 있었습니다. Stochastic depth를 사용하여 ResNet 레이어 자체를 dropout시켜서 초기 정보를 밑으로 더 많이 내려가게 한다거나 FractalNets처럼 평행한 여러개의 네트워크를 합친다거나 등등 이러한 연구들의 공통점은 전부 초반부 layer를 어떻게든 후반부 layer로 이어주려는 것이었습니다.
+
+DenseNet에서는 이 문제를 처음 쌓은 층을 네트워크가 깊어져도 계속 차곡차곡 쌓아가는 것으로 해결할 수 있다고 얘기합니다. 이렇게 차곡차곡쌓은 모습이 밀도가 굉장히 높은 모습을 보여주어 Dense Convolutional Network라고 이름을 붙였다고 합니다.
+
+<a href="https://imgur.com/FpaICot"><img src="https://i.imgur.com/FpaICot.png" title="source: imgur.com" /></a>
+
+이처럼 dense connectivity pattern을 가지면 다음과 같은 장점을 가질 수 있습니다. 먼저 모든 피쳐 맵(feature map)들을 쌓아오기 때문에 레이어 사이 사이 최대한 가치있는 정보가 지나다니게 만들 수 있습니다. 이 말을 쉽게 설명하자면 ResNet같은 경우는 네트워크 시작 지점 레이어의 정보가 깊은 망을 거치면서 뒤쪽으로 갈수록 희미해집니다. 실제로 최근 ResNet의 변형 구조에 관련된 연구서는 많은 레이어들이 거의 기여를 하지 못하고 학습 도중 거의 쓰이지 않고 사실상 탈락되었다고(dropped) 합니다. 결물론 skip-connection으로 어느 정도 해결을 하긴 했지만 dense connectivity pattern을 사용하면 아예 초반 레이어의 정보를 쌓아가며 뒤쪽 레이어까지 효율적으로 전달하게 됩니다. 이는 뒤집어 말하면 에러(error)를 다시 역전파 할때도 더 효율적으로 전달한다는 말이 됩니다. 다시말해서 모델의 학습(train)이 쉬워진다는 말이겠죠?
+
+<a href="https://imgur.com/IjrtBZT"><img src="https://i.imgur.com/IjrtBZT.png" width="600px" title="source: imgur.com" /></a>
+
+
+다음으로는 기존 전통적인 네트워크보다 파라미터의 수를 많이 줄일 수 있다는 것입니다. DenseNet의 레이어들은 다른 네트워크들에 비해 굉장히 좁습니다. 한 레이어당 대략 12개 정도의 필터를 가지며 이전의 feature map들을 계속 쌓아가면서 전체적인 네트워크 내부의 정보들을 효율적으로 가져갑니다. 이는 마지막 classifier(분류기)에  네트워크 내부의 전체 feature map을 골고루 입력할 수 있게 만들어주며 동시에 전체 파라미터의 갯수를 줄여도 네트워크가 충분히 학습이 가능하게 만들어줍니다. 이는 다시 말하면 low level feature를 네트워크가 깊어짐에 따라 버리지 않고 high level feature와 같이 효율적으로 섞어서 쓰는 것이라고 할 수도 있습니다. 요약하면 아래와 같습니다.
+
+사실 그림에 나오는 Advantage 1, 2, 3 모두 같은 말을 하고 있다고 볼 수 있겠습니다.
+
+__ResNet : the identity function and the output of H` are combined by summation, which may impede the information flow in the network.__
+
+__DenseNet : Can create uncorrelated features__
+
+
+<a href="https://imgur.com/6HzroMH"><img src="https://i.imgur.com/6HzroMH.png" title="source: imgur.com" /></a>
+
+
+<br></br>
+다음 포스트에서는 DenseNet 구조에 대해서 더 자세히 알아볼 예정입니다. 네트워크 구조를 어떻게 자세히 짰는지, 실험 결과는 어떻게 나왔는지 살펴봅시다.
