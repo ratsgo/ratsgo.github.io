@@ -139,9 +139,73 @@ def counting_sort(A, k):
 
 데이터 개수가 $n$일 때 $A$의 빈도를 세는 계산복잡성은 $O(n)$입니다. 데이터 전체를 한번씩 훑어야 하기 때문입니다. 출력어레이 $B$를 만들 때도 $O(n)$입니다. $A$의 요소값들을 역순으로 모두 훑어야 하기 때문입니다. 
 
-한편 카운팅어레이 $C$를 만들 때 $k+1$개의 요소값을 0으로 초기화하게 되므로 공간복잡성은 $O(k)$가 됩니다. 또한 $C$를 업데이트할 때 반복문이 $k$번 돌게 되므로 계산복잡성 또한 $O(k)$가 됩니다. 여기에서 $k$는 $A$의 요소값 가운데 최댓값을 가리킵니다. 위 예시에서는 $k=5$였습니다. 그런데 $A$가 만약 다음과 같다면 카운팅어레이 $C$의 크기가 10000+1이 되고, 반복문 또한 10000회를 돌게 되어 대단히 비효율적이게 됩니다.
+한편 $k$는 $A$의 요소값 가운데 최댓값을 가리킵니다. 위 예시에서는 $k=5$였습니다. 카운팅어레이 $C$를 만들 때 $k+1$개의 요소값을 0으로 초기화하게 되므로 공간복잡성은 $O(k)$가 됩니다. 또한 $C$를 업데이트할 때 반복문이 $k$번 돌게 되므로 계산복잡성 또한 $O(k)$가 됩니다. 그런데 $A$가 만약 다음과 같다면 카운팅어레이 $C$의 크기가 10000+1이 되고, 반복문 또한 10000회를 돌게 되어 대단히 비효율적이게 됩니다.
 
 > $A=[0, 10000]$
 
 요컨대 counting sort의 전체적인 계산복잡성은 $O(n+k)$가 되는데요. $k$가 충분히 작을 경우 $O(n)$이 되겠지만, $k$값이 커질 경우 $k$가 counting sort의 복잡성을 지배하게 됩니다.
 
+
+
+
+
+
+
+## Radix sort
+
+입력데이터 $A$의 최대값인 $k$가 커지면 counting sort의 효율성은 크게 떨어집니다. 하지만 각각의 자릿수를 기준으로 정렬을 하게 되면 계산복잡성을 낮출 수 있습니다. 예컨대 10진법으로 표기된 숫자를 정렬한다면 $k$는 9가 됩니다. 이러한 정렬 방식을 Radix sort라고 합니다.
+
+
+
+<a href="https://imgur.com/gcVBdYZ"><img src="https://i.imgur.com/gcVBdYZ.png" width="400px" title="source: imgur.com" /></a>
+
+
+
+단 여기에서 주의할 것은 각 자릿수를 기준으로 정렬할 때 정렬 대상 숫자들의 위치가 뒤바뀌지 않는 stable sort 알고리즘을 적용해야 한다는 것입니다. 특정 자릿수를 놓고 정렬할 때 그 위치가 바뀌게 되면 해당 숫자가 아예 다른 숫자가 되어버리기 때문입니다. 예컨대 unstable sort를 적용하면 다음과 같은 엉뚱한 결과가 나올 수 있습니다.
+
+> 1**4**, 2**1** ==> 1**1**, 2**4**
+
+counting sort도 대표적인 stable sort입니다. counting sort를 바탕으로 각 자릿수 기준 정렬하는 파이썬 코드는 다음과 같습니다.
+
+```python
+# 현재 자릿수(d)와 진법(base)에 맞는 숫자 변환
+# ex) 102, d = 1, base = 10, : 2
+def get_digit(number, d, base):
+  return (number // base ** d) % base
+
+# 자릿수 기준으로 counting sort
+# A : input array
+# position : 현재 자릿수, ex) 102, d = 1 : 2
+# base : 10진수라면 base = 10
+def counting_sort_with_digit(A, d, base):
+    # k : ex) 10진수의 최대값 = 9
+    k = base - 1
+    B = [-1] * len(A)
+    C = [0] * (k + 1)
+    # 현재 자릿수를 기준으로 빈도수 세기
+    for a in A:
+        C[get_digit(a, d, base)] += 1
+    # C 업데이트
+    for i in range(k):
+        C[i + 1] += C[i]
+    # 현재 자릿수를 기준으로 정렬
+    for j in reversed(range(len(A))):
+        B[C[get_digit(A[j], d, base)] - 1] = A[j]
+        C[get_digit(A[j], d, base)] -= 1
+    return B
+```
+
+다음은 Radix sort 코드입니다.
+
+```python
+from math import log
+def radix_sort(list, base=10):
+    # 입력된 리스트 가운데 최대값의 자릿수 확인
+    digit = int(log(max(list), base) + 1)
+    # 자릿수 별로 counting sort
+    for d in range(digit):
+        list = counting_sort_with_digit(list, d, base)
+    return list
+```
+
+Radix sort의 계산복잡성을 따져보겠습니다. counting sort이 $O(n+k)$이고 10진수를 예로 들 때 $k$는 9에 불과하므로, 특정 하나의 자릿수를 기준으로 counting sort하는 데 드는 비용은 $O(n)$이 될 것입니다. 그런데 전체 자릿수가 $d$라면 이를 $d$번 수행해야할 것입니다. 따라서 전체적인 복잡성은 $d×O(n)$이 됩니다. 1조($=10^12$)가 넘는 큰 숫자가 끼어 있어도 $d$는 12에 불과하기 때문에 선형시간에 가깝게 정렬을 수행할 수 있습니다.
