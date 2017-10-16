@@ -69,21 +69,35 @@ tag: HMMs
 
 위 32가지 경우의 수에 해당하는 결합확률의 합, 즉 우도는 0.001566021입니다. 이번엔 최적상태열을 구해보겠습니다. 
 
-| 항목          | 도출과정                                     | 최적상태(직전) | 비터비 확률                                   |
-| ----------- | ---------------------------------------- | -------- | ---------------------------------------- |
-| $v_1(hot)$  | P(hot\|start)×P(3\|hot)            | -        | .8×.4=.32                                |
-| $v_1(cold)$ | P(cold\|start)×P(3\|cold)          | -        | .2×.1=.02                                |
-| $v_2(hot)$  | max{$v_1$(hot)×P(hot\|hot)×P(1\|hot),$v_1$(cold)×P(hot\|cold)×P(1\|hot)\} | hot      | max(.32×.6×.2,.02×.4.×2)=.0384         |
-| $v_2(cold)$ | max\{$v_1$(hot)×P(cold\|hot)×P(1\|cold),$v_1$(cold)×P(cold\|cold)×P(1\|cold)\} | hot      | max(.32×.3×.5,.02×.5.×5)=.048         |
-| $v_3(hot)$  | max\{$v_2$(hot)×P(hot\|hot)×P(3\|hot),$v_2$(cold)×P(hot\|cold)×P(3\|hot)\} | hot      | max(.0384×.6×.4,.048×.4.×4)=.09216     |
-| $v_3(cold)$ | max\{$v_2$(hot)×P(cold\|hot)×P(3\|cold),$v_2$(cold)×P(cold\|cold)×P(3\|cold)\} | cold     | max(.0384×.3×.1,.048×.5.×1)=.0024      |
-| $v_4(hot)$  | max\{$v_3$(hot)×P(hot\|hot)×P(3\|hot),$v_3$(cold)×P(hot\|cold)×P(3\|hot)\} | hot      | max(.09126×.6×.4,.0024×.4.×4)=.0219024 |
-| $v_4(cold)$ | max\{$v_3$(hot)×P(cold\|hot)×P(3\|cold),$v_3$(cold)×P(cold\|cold)×P(3\|cold)\} | hot      | max(.09126×.3×.1,.0024×.5.×1)=.0027378 |
-| $v_5(hot)$  | max\{$v_4$(hot)×P(hot\|hot)×P(1\|hot),$v_4$(cold)×P(hot\|cold)×P(1\|hot)\} | hot      | max(.0219024×.6×.2,.0027378×.4.×2)=.002628288 |
-| $v_5(cold)$ | max\{$v_4$(hot)×P(cold\|hot)×P(1\|cold),$v_4$(cold)×P(cold\|cold)×P(1\|cold)\} | hot      | max(.0219024×.3×.5,.0027378×.5.×5)=.0027378 |
+| 항목          | 도출과정                                     | 
+| ----------- | ---------------------------------------- | 
+| $v_1(hot)$  | P(hot\|start)×P(3\|hot)            |
+| $v_1(cold)$ | P(cold\|start)×P(3\|cold)          | 
+| $v_2(hot)$  | max{$v_1$(hot)×P(hot\|hot)×P(1\|hot),$v_1$(cold)×P(hot\|cold)×P(1\|hot)\} |
+| $v_2(cold)$ | max\{$v_1$(hot)×P(cold\|hot)×P(1\|cold),$v_1$(cold)×P(cold\|cold)×P(1\|cold)\} |
+| $v_3(hot)$  | max\{$v_2$(hot)×P(hot\|hot)×P(3\|hot),$v_2$(cold)×P(hot\|cold)×P(3\|hot)\} |
+| $v_3(cold)$ | max\{$v_2$(hot)×P(cold\|hot)×P(3\|cold),$v_2$(cold)×P(cold\|cold)×P(3\|cold)\} |
+| $v_4(hot)$  | max\{$v_3$(hot)×P(hot\|hot)×P(3\|hot),$v_3$(cold)×P(hot\|cold)×P(3\|hot)\} |
+| $v_4(cold)$ | max\{$v_3$(hot)×P(cold\|hot)×P(3\|cold),$v_3$(cold)×P(cold\|cold)×P(3\|cold)\} |
+| $v_5(hot)$  | max\{$v_4$(hot)×P(hot\|hot)×P(1\|hot),$v_4$(cold)×P(hot\|cold)×P(1\|hot)\} |
+| $v_5(cold)$ | max\{$v_4$(hot)×P(cold\|hot)×P(1\|cold),$v_4$(cold)×P(cold\|cold)×P(1\|cold)\} |
+| $v_6(end)$ | max\{$v_5$(hot)×P(end\|hot),$v_5$(cold)×P(end\|cold)\} |
 
+위 표를 실제 계산하면 다음과 같습니다.
 
-
+| 항목          |최적상태(직전) | 비터비 확률                                   |
+|---|---|---|
+| $v_1(hot)$  |  -        | .8×.4=.32                                |
+| $v_1(cold)$ |  -        | .2×.1=.02                                |
+| $v_2(hot)$  |  max(**.32×.6×.2**,.02×.4.×2)=.0384         |
+| $v_2(cold)$ |  hot      | max(**.32×.3×.5**,.02×.5.×5)=.048         |
+| $v_3(hot)$  |  hot      | max(**.0384×.6×.4**,.048×.4.×4)=.09216     |
+| $v_3(cold)$ |  cold     | max(.0384×.3×.1,**.048×.5.×1**)=.0024      |
+| $v_4(hot)$  |  hot      | max(**.09126×.6×.4**,.0024×.4.×4)=.0219024 |
+| $v_4(cold)$ |  hot      | max(**.09126×.3×.1**,.0024×.5.×1)=.0027378 |
+| $v_5(hot)$  |  hot      | max(**.0219024×.6×.2**,.0027378×.4.×2)=.002628288 |
+| $v_5(cold)$ |  hot      | max(**.0219024×.3×.5**,.0027378×.5.×5)=.00328536 |
+| $v_6(end)$ |  cold      | max(.002628288×.3,**.00328536×.5**)=.00164268 |
 
 
 
