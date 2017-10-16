@@ -71,16 +71,16 @@ tag: HMMs
 
 | 항목          | 도출과정                                     | 최적상태(직전) | 비터비 확률                                   |
 | ----------- | ---------------------------------------- | -------- | ---------------------------------------- |
-| $v_1(hot)$  | $P(hot$\|$start)×P(3$\|$hot)$            | -        | .8×.4=.32                                |
-| $v_1(cold)$ | $P(cold$\|$start)×P(3$\|$cold)$          | -        | .2×.1=.02                                |
-| $v_2(hot)$  | $max\{$v_1(hot)×P(hot$\|$hot)×P(1$\|$hot),$v_1(cold)×P(hot$\|$cold)×P(1$\|$hot)\}$ | hot      | $max(.32×.6×.2,.02×.4.×2)=.0384$         |
-| $v_2(cold)$ | $max\{$v_1(hot)×P(cold$\|$hot)×P(1$\|$cold),$v_1(cold)×P(cold$\|$cold)×P(1$\|$cold)\}$ | hot      | $max(.32×.3×.5,.02×.5.×5)=.048$          |
-| $v_3(hot)$  | $max\{$v_2(hot)×P(hot$\|$hot)×P(3$\|$hot),$v_2(cold)×P(hot$\|$cold)×P(3$\|$hot)\}$ | hot      | $max(.0384×.6×.4,.048×.4.×4)=.09216$     |
-| $v_3(cold)$ | $max\{$v_2(hot)×P(cold$\|$hot)×P(3$\|$cold),$v_2(cold)×P(cold$\|$cold)×P(3$\|$cold)\}$ | cold     | $max(.0384×.3×.1,.048×.5.×1)=.0024$      |
-| $v_4(hot)$  | $max\{$v_3(hot)×P(hot$\|$hot)×P(3$\|$hot),$v_3(cold)×P(hot$\|$cold)×P(3$\|$hot)\}$ | hot      | $max(.09126×.6×.4,.0024×.4.×4)=.0219024$ |
-| $v_4(cold)$ | $max\{$v_3(hot)×P(cold$\|$hot)×P(3$\|$cold),$v_3(cold)×P(cold$\|$cold)×P(3$\|$cold)\}$ | hot      | $max(.09126×.3×.1,.0024×.5.×1)=.0027378$ |
-| $v_5(hot)$  | $max\{$v_4(hot)×P(hot$\|$hot)×P(1$\|$hot),$v_4(cold)×P(hot$\|$cold)×P(1$\|$hot)\}$ | hot      | $max(.0219024×.6×.2,.0027378×.4.×2)=.002628288$ |
-| $v_5(cold)$ | $max\{$v_4(hot)×P(cold$\|$hot)×P(1$\|$cold),$v_4(cold)×P(cold$\|$cold)×P(1$\|$cold)\}$ | hot      | $max(.0219024×.3×.5,.0027378×.5.×5)=.0027378$ |
+| $v_1(hot)$  | P(hot\|start)×P(3\|hot)            | -        | .8×.4=.32                                |
+| $v_1(cold)$ | P(cold\|start)×P(3\|cold)          | -        | .2×.1=.02                                |
+| $v_2(hot)$  | max{$v_1$(hot)×P(hot\|hot)×P(1\|hot),$v_1$(cold)×P(hot\|cold)×P(1\|hot)\} | hot      | max(.32×.6×.2,.02×.4.×2)=.0384         |
+| $v_2(cold)$ | max\{$v_1$(hot)×P(cold\|hot)×P(1\|cold),$v_1$(cold)×P(cold\|cold)×P(1\|cold)\} | hot      | max(.32×.3×.5,.02×.5.×5)=.048         |
+| $v_3(hot)$  | max\{$v_2$(hot)×P(hot\|hot)×P(3\|hot),$v_2$(cold)×P(hot\|cold)×P(3\|hot)\} | hot      | max(.0384×.6×.4,.048×.4.×4)=.09216     |
+| $v_3(cold)$ | max\{$v_2$(hot)×P(cold\|hot)×P(3\|cold),$v_2$(cold)×P(cold\|cold)×P(3\|cold)\} | cold     | max(.0384×.3×.1,.048×.5.×1)=.0024      |
+| $v_4(hot)$  | max\{$v_3$(hot)×P(hot\|hot)×P(3\|hot),$v_3$(cold)×P(hot\|cold)×P(3\|hot)\} | hot      | max(.09126×.6×.4,.0024×.4.×4)=.0219024 |
+| $v_4(cold)$ | max\{$v_3$(hot)×P(cold\|hot)×P(3\|cold),$v_3$(cold)×P(cold\|cold)×P(3\|cold)\} | hot      | max(.09126×.3×.1,.0024×.5.×1)=.0027378 |
+| $v_5(hot)$  | max\{$v_4$(hot)×P(hot\|hot)×P(1\|hot),$v_4$(cold)×P(hot\|cold)×P(1\|hot)\} | hot      | max(.0219024×.6×.2,.0027378×.4.×2)=.002628288 |
+| $v_5(cold)$ | max\{$v_4$(hot)×P(cold\|hot)×P(1\|$cold)$v_4$(cold)×P(cold\|cold)×P(1\|cold)\} | hot      | max(.0219024×.3×.5,.0027378×.5.×5)=.0027378 |
 
 
 
