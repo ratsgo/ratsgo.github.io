@@ -76,6 +76,8 @@ $$
 { \left( { \overrightarrow { u }  }-\overrightarrow { w }  \right)  }^{ T }{ \overrightarrow { w }  }=&{ \left( { \overrightarrow { u }  }-P\overrightarrow { u }  \right)  }^{ T }{ \left( P\overrightarrow { u }  \right)  }\\ =&\left( { { \overrightarrow { u }  }^{ T } }-{ \overrightarrow { u }  }^{ T }{ P }^{ T } \right) { \left( P\overrightarrow { u }  \right)  }\\ =&{ { \overrightarrow { u }  }^{ T } }P\overrightarrow { u } -{ \overrightarrow { u }  }^{ T }{ P }^{ T }P\overrightarrow { u } \\ =&{ { \overrightarrow { u }  }^{ T } }P\overrightarrow { u } -{ \overrightarrow { u }  }^{ T }P\overrightarrow { u } \\ =&0
 \end{align*}
 $$
+
+
 $P$가 멱등행렬이고 대칭행렬일 경우 해당 $P$는 orthogonal projection operator가 된다고 합니다.
 
 
@@ -89,8 +91,10 @@ $n$개 데이터가 있고 $x$의 변수가 $p$개 일 때 선형회귀 모델�
 
 
 <a href="https://imgur.com/ZbXnuyZ"><img src="https://i.imgur.com/ZbXnuyZ.png" width="400px" title="source: imgur.com" /></a>
+
+
 $$
-\overrightarrow { Y } ={ \beta  }_{ 0 }\overrightarrow { 1 } +{ \beta  }_{ 1 }\overrightarrow { X_{ 1 } } +...+{ \beta  }_{ p }\overrightarrow { X_{ P } } +\overrightarrow { \varepsilon  } \\ \overrightarrow { Y } =X\overrightarrow { \beta  } +\overrightarrow { \varepsilon  } 
+\overrightarrow { Y } ={ \beta  }_{ 0 }\overrightarrow { 1 } +{ \beta  }_{ 1 }\overrightarrow { X_{ 1 } } +...+{ \beta  }_{ p }\overrightarrow { X_{ P } } +\overrightarrow { \varepsilon  } \\ \overrightarrow { Y } =X\overrightarrow { \beta  } +\overrightarrow { \varepsilon  }
 $$
 
 
