@@ -25,10 +25,7 @@
               <img class="masthead-logo" src="{{ site.baseurl }}{{ site.logo }}"/>
             </a>
             <small>{{ site.tagline }}</small>
-            <!-- HTML elements for search -->
-            <a href="/search/"><img src="/public/search.png" width="27" height="27"
-            align="right" style="margin-top:5; margin-bottom:0;"
-            onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=0.5" alt="search"></a>
+            <img src="http://ratsgo.github.io/public/search.png" width="27" height="27" align="right" style="margin-top:5; margin-bottom:0;" data-toggle="modal" data-target="#myModal">
           </h3>
         </div>
       </div>
@@ -39,6 +36,57 @@
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search</h4>
+        </div>
+        <div class="modal-body">
+
+    <div id="search-container">
+      <input type="text" id="search-input" placeholder="검색어 입력" class="input" style="font-size: 14px; width: 100%; padding: 10px; border: 0px; outline: none; float: left; background: #cecece;">
+    </div>
+
+      <div id="results">
+        <h1></h1>
+      <ul class="results"></ul>
+      </div>
+
+    
+    <br><ul class="container" id="results-container"></ul>
+    </div>
+
+<!-- Script pointing to jekyll-search.js -->
+
+
+<script type="text/javascript">
+      SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/dest/search.json',
+        searchResultTemplate: '<br><a class="post-title" href="{url}" title="{desc}">{title}</a> <small>{category}</small>',
+        noResultsText: '<br>문서가 존재하지 않습니다.',
+        limit: 30,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+</script>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
 
     <script>
       (function(document) {
