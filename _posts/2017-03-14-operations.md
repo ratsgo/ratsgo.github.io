@@ -2,6 +2,7 @@
 title: 기초 행렬연산
 category: Linear Algebra
 tag: matrix
+description: 벡터, Vector, 스칼라, Scalar, 내적, inner product, 사영, projection, 행렬식, Determinant, 공분산, covariance, 독립, indepent, 코사인, cosine, 직교, orthogonal, 고유벡터, eigenvector, 고유값, eigenvalue
 ---
 
 이번 포스팅에서는 **머신러닝**, **데이터마이닝** 기초인 **행렬 연산(Matrix Operations)**에 대해 다뤄 보려고 합니다. 연산의 정의 정도를 간단히 다루는 것이니 깊은 내용을 원하시는 분들은 [이곳](http://darkpgmr.tistory.com/103)을 참고 바랍니다. 이번 포스팅은 기본적으로 [고려대 김성범 교수님](http://dmqm.korea.ac.kr/content/page.asp?tID=101&sID=108) 강의를 참고했습니다.
