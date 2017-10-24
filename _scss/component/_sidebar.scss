@@ -103,7 +103,7 @@ a.sidebar-nav-item:focus {
 /* Style the `label` that we use to target the `.sidebar-checkbox` */
 .sidebar-toggle {
   position: absolute;
-  top:  .8rem;
+  top:  1.2rem;
   @if $reverse-layout {
     left: auto;
     right: 1rem;
