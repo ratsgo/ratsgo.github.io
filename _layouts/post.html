@@ -10,9 +10,9 @@ layout: default
     <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
   {% endfor %}
   {% endif %}
-  <article>
+  <h4><article>
     {{ content }}
-  </article>
+  </article></h4>
 </div>
 
 {% for item in site.data.related %}

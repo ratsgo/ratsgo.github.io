@@ -1,9 +1,14 @@
 .post {
   margin-bottom: 4em;
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3 {
     font-weight: 700;
   }
+
+  h4, h5, h6 {
+    font-weight: 400;
+  }
+
 
   @media (min-width: 38rem) {
     font-size: .8rem;
@@ -42,7 +47,6 @@
   article {
     font-family: "PT Sans",Helvetica,Arial,sans-serif;
     line-height: 1.6rem;
-    font-size: 1rem;
   }
 }
 
