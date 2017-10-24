@@ -49,17 +49,15 @@
         </div>
         <div class="modal-body">
 
-    <div id="search-container">
+    <h4><div id="search-container">
       <input type="text" id="search-input" placeholder="검색어 입력" class="input" style="font-size: 1rem; width: 100%; padding: 10px; border: 0px; outline: none; float: left; background: #cecece;">
-    </div>
+    </div></h4><br>
 
       <div id="results">
         <h1></h1>
       <ul class="results"></ul>
       </div>
-
-    
-    <br><ul class="container" id="results-container"></ul>
+      <br><ul id="results-container"></ul>
     </div>
 
 <!-- Script pointing to jekyll-search.js -->
@@ -70,16 +68,13 @@
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
         json: '/dest/search.json',
-        searchResultTemplate: '<br><a class="post-title" href="{url}" title="{desc}">{title}</a> <small>{category}</small>',
-        noResultsText: '<br>문서가 존재하지 않습니다.',
-        limit: 30,
+        searchResultTemplate: '<h4 style="margin-bottom:-0.5rem;"><a class="post-title" style="color:#ac4142;" href="{url}" title="{desc}">{title}</a> <small>{category}</small></h4>',
+        noResultsText: '<h4><br>문서가 존재하지 않습니다.</h4>',
+        limit: 15,
         fuzzy: false,
         exclude: ['Welcome']
       })
 </script>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
       

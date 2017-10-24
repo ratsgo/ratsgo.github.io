@@ -43,6 +43,7 @@
       li {
         @include transition(all .1s ease-in-out);
         padding: 0 1rem;
+        margin-bottom:-0.7rem;
         &:hover {
           list-style-type: disc;
           padding: 0 .5rem;
