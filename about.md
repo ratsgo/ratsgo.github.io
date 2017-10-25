@@ -5,7 +5,7 @@ title: About
 
 안녕하세요. 반갑습니다. 현재 고려대학교 산업경영공학부에서 데이터마이닝 전공으로 석사과정 재학 중인 이기창이라고 합니다. 제 관심 분야는 다음과 같습니다.
 
-<p class="message">
+<p class="message" style="font-size: 1rem;">
 Natural Language Processing, Linguistics, Machine Learning
 </p>
 
