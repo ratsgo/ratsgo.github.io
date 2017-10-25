@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-<div style="font-size: 1.0rem; font-weight:400; font-family: "PT Sans",Helvetica,Arial,sans-serif; line-height: 1.6rem;">
+<div style="font-size: 1.0rem; font-weight:400; line-height: 1.6rem;">
 
 안녕하세요. 반갑습니다. 현재 고려대학교 산업경영공학부에서 데이터마이닝 전공으로 석사과정 재학 중인 이기창이라고 합니다. 제 관심 분야는 다음과 같습니다.
 
