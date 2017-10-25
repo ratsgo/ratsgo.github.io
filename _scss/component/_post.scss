@@ -16,7 +16,13 @@
     h3, h4, h5, h6 {
       margin: 2em 0 1em 0;
       font-size: 0.8rem;
+      line-height: 1.6;
     }
+  }
+
+  .blockquote {
+    font-size: 0.8rem;
+    font-weight: 400;
   }
 
   .post-title {
@@ -39,15 +45,6 @@
     }
   }
 
-  article {
-    font-family: "PT Sans",Helvetica,Arial,sans-serif;
-    line-height: 1.6rem;
-
-    .blockquote {
-      font-size: 0.8rem;
-    }
-
-  }
 }
 
 /* Related posts */
