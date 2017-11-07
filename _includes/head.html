@@ -41,6 +41,9 @@
       $( 'html, body' ).stop().animate( { scrollTop : 0 }, 100);
       return false;
     } );
+    $(function() {
+      $("#search-input").focus();
+    } );
   </script>
 
   {% if site.mathjax %}
