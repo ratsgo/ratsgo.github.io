@@ -4,7 +4,7 @@ category: Data structure&Algorithm
 tag: sort
 ---
 
-이번 글에서는 **삽입정렬(Insertion Sort)**에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김선욱 교수님 강의를 정리했고, 코드는 [이곳](https://github.com/TheAlgorithms/Python)을 참고했음을 먼저 밝힙니다. 그럼 시작하겠습니다.
+이번 글에서는 **삽입정렬(Insertion Sort)**에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김선욱 교수님과 역시 같은 대학의 김황남 교수님 강의를 정리했고, 코드는 [이곳](https://github.com/TheAlgorithms/Python)을 참고했음을 먼저 밝힙니다. 그럼 시작하겠습니다.
 
 
 
