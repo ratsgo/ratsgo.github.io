@@ -86,4 +86,8 @@ Average case의 경우에도 퀵 정렬은 $O(n\log{n})$의 계산복잡도를 �
 
 ## 퀵 정렬의 특징
 
-설명의 편의를 위해 피봇을 기준으로 작은 값을 왼쪽, 나머지를 오른쪽으로 보내는 과정을 재귀적으로 반복한다고 했습니다만, *original code*는 이보다는 살짝 더 복잡합니다. 정렬 수행 과정에서 별도 저장 공간을 필요로 하지 않는 *in-place sort*를 지향하고자 하기 때문인데요. *original code*의 수행 과정을 보시려면 [이곳](https://www.youtube.com/watch?v=tIYMCYooo3c&feature=share)을 참고하시면 좋을 것 같습니다. 이 과정에서 같은 값의 상대적 위치가 바뀔 수 있습니다(*unstable sort*)
+설명의 편의를 위해 피봇을 기준으로 작은 값을 왼쪽, 나머지를 오른쪽으로 보내는 과정을 재귀적으로 반복한다고 했습니다만, *original code*는 이보다는 살짝 더 복잡합니다. 정렬 수행 과정에서 별도 저장 공간을 필요로 하지 않는 *in-place sort*를 지향하고자 하기 때문인데요. *original code*의 수행 과정을 보시려면 [이곳](https://www.youtube.com/watch?v=tIYMCYooo3c&feature=share)을 참고하시면 좋을 것 같습니다. 수행과정을 도식화하면 다음 그림과 같습니다. 이 과정에서 같은 값의 상대적 위치가 바뀔 수 있습니다(*unstable sort*).
+
+
+
+<a href="https://imgur.com/1BFdNBc"><img src="https://i.imgur.com/1BFdNBc.jpg" width="500px" title="source: imgur.com" /></a>

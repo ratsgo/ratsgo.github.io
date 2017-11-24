@@ -1,10 +1,10 @@
 ---
-title: 카운팅 정렬(counting sort)
+title: 카운팅 정렬, 래딕스 정렬
 category: Data structure&Algorithm
-tag: Algorithm
+tag: [counting sort, radix sort]
 ---
 
-이번 글에서는 요소값을 명시적으로 비교하지 않아도 정렬할 수 있는 기법인 **카운팅 정렬(counting sort)**에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김선욱 교수님 강의와 위키피디아, 그리고 [이곳](http://www.cs.miami.edu/home/burt/learning/Csc517.091/workbook/countingsort.html)을 참고해 정리하였음을 먼저 밝힙니다. 파이썬 코드는 [이곳](http://www.geekviewpoint.com/python/sorting/countingsort)을 참고로 하였습니다. 그럼 시작하겠습니다.
+이번 글에서는 요소값을 명시적으로 비교하지 않아도 정렬할 수 있는 기법인 **카운팅 정렬(counting sort)**과 **래딕스 정렬(Radix sort)**에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김선욱 교수님 강의와 위키피디아, 그리고 [이곳](http://www.cs.miami.edu/home/burt/learning/Csc517.091/workbook/countingsort.html)을 참고해 정리하였음을 먼저 밝힙니다. 파이썬 코드는 [이곳](http://www.geekviewpoint.com/python/sorting/countingsort)을 참고로 하였습니다. 그럼 시작하겠습니다.
 
 
 
@@ -165,7 +165,15 @@ def counting_sort(A, k):
 
 > 1**4**, 2**1** ==> 1**1**, 2**4**
 
-counting sort도 대표적인 stable sort입니다. counting sort를 바탕으로 각 자릿수 기준 정렬하는 파이썬 코드는 다음과 같습니다.
+radix sort를 연결리스트(linked list)로 구현할 수도 있습니다. 10진수 첫번째 자리를 기준으로 정렬한 뒤, 두번째 자리를 기준으로 정렬합니다. 정렬 순서를 유지하기 위해 연결리스트 삽입시 *head*에 넣지 않고 *tail*에 삽입하는 것이 특징입니다. 예컨대 아래 그림과 같이 12가 이미 있는 2번 버킷에, 22를 삽입하는 경우 12 앞이 아니라 뒤에 넣습니다. 다음 그림과 같습니다.
+
+
+
+<a href="https://imgur.com/0kRMgFx"><img src="https://i.imgur.com/0kRMgFx.png" width="600px" title="source: imgur.com" /></a>
+
+
+
+counting sort를 바탕으로 raddix sort를 구현한 파이썬 코드는 다음과 같습니다. counting sort도 대표적인 stable sort입니다. 
 
 ```python
 # 현재 자릿수(d)와 진법(base)에 맞는 숫자 변환
