@@ -12,7 +12,7 @@ tag: [lexical aspect]
 
 ## '상'이란
 
-상이란 어떤 사태의 내적 시간 구성을 가리키는 문법 범주입니다. 한국어의 상에는 문법형태소로 표현되는 [문법상(grammatical aspect)](https://ratsgo.github.io/korean%20linguistics/2017/07/10/aspect/), 동사 어휘로 나타나는 **어휘상(lexical aspect)**가 있습니다. 이 글에서는 어휘상을 중심으로 살펴보도록 하겠습니다.
+상이란 어떤 사태의 내적 시간 구성을 가리키는 문법 범주입니다. 한국어의 상에는 문법형태소로 표현되는 [문법상(grammatical aspect)](https://ratsgo.github.io/korean%20linguistics/2017/07/10/aspect/), 동사 어휘로 나타나는 **어휘상(lexical aspect)**가 있습니다. 이 글에서는 어휘상을 중심으로 살펴보도록 하겠습니다. 이 글 역시 고려대 정연주 선생님 강의와 한국어문법총론(구본관 외 지음)을 정리하였음을 먼저 밝힙니다.
 
 
 
