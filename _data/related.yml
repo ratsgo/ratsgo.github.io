@@ -9,8 +9,8 @@
   related:
   - comparison
   - terms
-  - recursive
   - RLR
+  - recursive
   - CNNs
 - post: double
   related:
@@ -25,14 +25,14 @@
   - tree
   - DFS
   - bst
-  - heapsort
-- post: naive
+  - recursive
+- post: PCA
   related:
-  - wordweighting
-  - deepNLP
-  - CNN
-  - tfidf
-  - plsa
+  - pcasvdlsa
+  - FDR
+  - operations
+  - KNN
+  - tSNE
 - post: valency
   related:
   - parsing
@@ -40,6 +40,13 @@
   - noun
   - double
   - ida
+- post: MST
+  related:
+  - graph
+  - spectral
+  - CC
+  - bellmanford
+  - tree
 - post: operations
   related:
   - determinants
@@ -91,11 +98,11 @@
   - backprop
 - post: shortestpath
   related:
-  - graph
+  - bellmanford
   - gcd
-  - spectral
+  - graph
+  - dijkstra
   - greedy
-  - SCC
 - post: word2vec
   related:
   - embedding
@@ -138,13 +145,13 @@
   - double
   - noun
   - ida
-- post: PCA
+- post: naive
   related:
-  - pcasvdlsa
-  - FDR
-  - operations
-  - tSNE
-  - KNN
+  - wordweighting
+  - deepNLP
+  - CNN
+  - tfidf
+  - plsa
 - post: syntax
   related:
   - tfidf
@@ -159,6 +166,13 @@
   - ida
   - sentcomp
   - langtype
+- post: bellmanford
+  related:
+  - shortestpath
+  - graph
+  - spectral
+  - dijkstra
+  - SCC
 - post: avltree
   related:
   - augmentedDS
@@ -213,8 +227,8 @@
   - algorithm
   - recurrence
   - countingsort
-  - maxparam
-  - regression
+  - shortestpath
+  - bellmanford
 - post: pcasvdlsa
   related:
   - LUfactorization
@@ -225,10 +239,10 @@
 - post: BFS
   related:
   - DFS
+  - dijkstra
   - tree
   - graph
   - SCC
-  - augmentedDS
 - post: rbtree
   related:
   - avltree
@@ -292,13 +306,13 @@
   - shellsort
   - sort
   - binarysearch
-- post: apriori
+- post: BranchingEntropy
   related:
+  - word2vecpos
+  - cohesion
   - word2vecpos2
-  - viterbi
-  - columbus
-  - generate2
-  - SVM
+  - naive
+  - CNN
 - post: SVM3
   related:
   - PCA
@@ -410,7 +424,7 @@
   - wordweighting
   - median
   - biasvar
-  - tfidf
+  - normal
 - post: GPU
   related:
   - nounontology
@@ -437,8 +451,8 @@
   - LAsummary2
   - gcd
   - selectionsort
+  - shortestpath
   - gradient
-  - countingsort
 - post: MEMs
   related:
   - MEMMs
@@ -476,8 +490,8 @@
   - ida
 - post: projection
   related:
-  - linearity
   - Ldependence
+  - linearity
   - surinjection
   - operations
   - NNLM
@@ -506,9 +520,9 @@
   related:
   - DFS
   - tree
+  - dijkstra
   - SCC
-  - BFS
-  - graphnews
+  - graph
 - post: words
   related:
   - sentcomp
@@ -536,7 +550,7 @@
   - bayesinfer
   - tSNE
   - normal
-  - HMMs
+  - naive
 - post: boolean
   related:
   - glove
@@ -579,13 +593,13 @@
   - regression
   - bst
   - sort
-- post: senttopic
+- post: apriori
   related:
-  - sentcomp
-  - ida
-  - double
-  - plsa
-  - sov
+  - word2vecpos2
+  - viterbi
+  - columbus
+  - generate2
+  - SVM
 - post: DFS
   related:
   - Topological
@@ -607,6 +621,13 @@
   - FDR
   - computeHMMs
   - tSNE
+- post: dijkstra
+  related:
+  - BFS
+  - DFS
+  - Topological
+  - tree
+  - shortestpath
 - post: detertime
   related:
   - NP
@@ -707,8 +728,8 @@
   - terms
 - post: pointer
   related:
-  - funcall
   - langtype
+  - funcall
   - senttopic
   - treeensemble
   - order
@@ -775,13 +796,6 @@
   - bayesinfer
   - HMMs
   - naive
-- post: BranchingEntropy
-  related:
-  - word2vecpos
-  - cohesion
-  - word2vecpos2
-  - naive
-  - CNN
 - post: SVM2
   related:
   - SVM
@@ -794,8 +808,8 @@
   - nounontology2
   - word2vecpos2
   - word2vecpos
-  - deepNLP
   - summer
+  - deepNLP
 - post: sentcomp
   related:
   - ida
@@ -896,8 +910,8 @@
   - maxparam
 - post: gcd
   related:
-  - order
   - shortestpath
+  - order
   - MLE
   - maxparam
   - greedy
@@ -960,10 +974,10 @@
 - post: spectral
   related:
   - graph
-  - CC
   - SCC
+  - CC
   - backprop
-  - DFS
+  - MST
 - post: regression
   related:
   - RLR
@@ -985,6 +999,13 @@
   - deepNLP
   - word2vecpos2
   - bayes2
+- post: senttopic
+  related:
+  - sentcomp
+  - ida
+  - double
+  - plsa
+  - sov
 - post: treeensemble
   related:
   - comparison
@@ -998,7 +1019,7 @@
   - MEMs
   - treecode
   - maxparam
-  - MEMMs
+  - MLE
 - post: words2
   related:
   - ends
@@ -1017,8 +1038,8 @@
   related:
   - sentcomp
   - syntax
-  - nounontology2
   - senttopic
+  - nounontology2
   - modality
 - post: heapsort
   related:
@@ -1096,7 +1117,7 @@
   - CC
   - SCC
   - DFS
-  - tree
+  - MST
 - post: sov
   related:
   - sentcomp
@@ -1151,8 +1172,8 @@
   - LDA
   - lda
   - tfidf
-  - word2vec
   - lexicon
+  - word2vec
 - post: augmentedDS
   related:
   - avltree
