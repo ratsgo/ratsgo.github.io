@@ -29,3 +29,20 @@ tag: [Topological Sort, Graph]
 
 
 `Topological Sort`의 계산복잡성은 깊이우선탐색에 비례합니다. 따라서 $O($\|$V$\|$+$\|$E$\|$)$가 됩니다.
+
+
+
+
+
+## DAG 최단거리
+
+`Topological Sort`와 *[edge relaxation](https://ratsgo.github.io/data%20structure&algorithm/2017/11/25/shortestpath/)* 기법을 활용해 **Directed Acyclic Graph(DAG)**의 최단거리를 구할 수 있습니다. 그 과정은 다음과 같습니다.
+
+- 주어진 DAG에 대해 `Topological Sort`를 수행한다.
+- 시작노드를 0, 나머지의 거리를 무한대로 초기화한다.
+- 각 노드별 모든 엣지에 대해 *edge relaxation*을 수행한다.
+
+
+
+<a href="https://imgur.com/Vh4U9rD"><img src="https://i.imgur.com/Vh4U9rD.png" title="source: imgur.com" /></a>
+

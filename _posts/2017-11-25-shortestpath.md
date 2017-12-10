@@ -19,7 +19,7 @@ tag: [Shortest path, Graph]
 - **단일 쌍(single-pair) 최단 경로** : 주어진 꼭지점 $u$와 $v$에 대해 $u$에서 $v$까지의 최단 경로를 찾는 문제.
 - **전체 쌍(all-pair) 최단 경로** : 그래프 내 모든 노드 쌍들 사이의 최단 경로를 찾는 문제.
 
-다익스트라 알고리즘은 여기서 단일 출발 최단경로 문제를 푸는 데 적합합니다. 하지만 여기에서 조금 더 응용하면 나머지 세 문제도 풀 수 있습니다. 
+[다익스트라 알고리즘](https://ratsgo.github.io/data%20structure&algorithm/2017/11/26/dijkstra/), [벨만-포드 알고리즘](https://ratsgo.github.io/data%20structure&algorithm/2017/11/27/bellmanford/)은 여기서 단일 출발 최단경로 문제를 푸는 데 적합합니다. 하지만 여기에서 조금 더 응용하면 나머지 세 문제도 풀 수 있습니다. 
 
 
 
@@ -97,3 +97,22 @@ edge relaxation은 최단경로 알고리즘을 수행하는 과정에서 경로
 
 
 
+## 전체쌍 최단경로
+
+전체쌍(All-pair) 최단경로 문제는 `Floyd-Warshall 알고리즘`이 널리 쓰인다고 합니다. 최단경로 문제의 *optimal substructure*를 활용한 것으로 의사코드는 다음과 같습니다.
+
+
+
+<a href="https://imgur.com/AigMqRx"><img src="https://i.imgur.com/AigMqRx.png" width="400px" title="source: imgur.com" /></a>
+
+
+
+작동 예시는 다음과 같습니다. 
+
+
+
+<a href="https://imgur.com/WFAJSUW"><img src="https://i.imgur.com/WFAJSUW.png" width="400px" title="source: imgur.com" /></a>
+
+
+
+다만 노드가 다르다면 단일쌍 최단경로 문제는 서로 독립적이기 때문에, 최근엔 단일쌍 문제에 적합한 다익스트라/벨만-포드 알고리즘을 GPU를 활용해 병렬처리하는 방식으로 전체쌍 최단경로를 푸는 경우가 많다고 합니다.
