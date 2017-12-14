@@ -37,7 +37,7 @@ tag: [Shortest path, Graph]
 
 
 
-<a href="https://imgur.com/4s5a0iz"><img src="https://i.imgur.com/4s5a0iz.png" width="400px" title="source: imgur.com" /></a>
+<a href="https://imgur.com/4s5a0iz"><img src="https://i.imgur.com/4s5a0iz.png" width="300px" title="source: imgur.com" /></a>
 
 
 
@@ -65,19 +65,19 @@ $$
 
 ## edge relaxation
 
-최단경로를 구하는 알고리즘은 edge relaxation(변 경감)을 기본 연산으로 합니다. 이는 지금까지 이야기한 최단경로 문제의 *optimal structure*에서 파생된 것입니다.
+최단경로를 구하는 알고리즘은 *edge relaxation*(변 경감)을 기본 연산으로 합니다. 이는 지금까지 이야기한 최단경로 문제의 *optimal structure*에서 파생된 것입니다.
 
 우선 시작노드 $s$에서 임의의 노드 $z$로의 최단경로를 구한다고 칩시다. 그리고 현재 시점에서 우리가 알고 있는 $s,z$ 사이의 최단거리 $d(z)$는 75, $s,u$ 사이의 최단거리 $d(u)$는 50이라고 두겠습니다. 
 
-그런데 탐색 과정에서 엣지 $e$를 경유하는 경로의 거리가 총 60이라고 한다면, 기존에 우리가 알고 있는 $d(z)$보다 짧아서 기존 $d(z)$가 최단경로라고 말할 수 없게 됩니다. 이에 최단경로를 구성하고 있는 노드와 엣지 정보, 그리고 거리의 합을 업데이트해줍니다. 이것이 바로 edge relaxation입니다. 
+그런데 탐색 과정에서 엣지 $e$를 경유하는 경로의 거리가 총 60이라고 한다면, 기존에 우리가 알고 있는 $d(z)$보다 짧아서 기존 $d(z)$가 최단경로라고 말할 수 없게 됩니다. 이에 최단경로를 구성하고 있는 노드와 엣지 정보, 그리고 거리의 합을 업데이트해줍니다. 이것이 바로 *edge relaxation*입니다. 
 
 
 
-<a href="https://imgur.com/nqdnANR"><img src="https://i.imgur.com/nqdnANR.png" width="400px" title="source: imgur.com" /></a>
+<a href="https://imgur.com/nqdnANR"><img src="https://i.imgur.com/nqdnANR.png" width="350px" title="source: imgur.com" /></a>
 
 
 
-edge relaxation은 최단경로 알고리즘을 수행하는 과정에서 경로를 구성하고 있는 edge 가중치의 합을 줄여나간다(relax)는 취지로 이런 이름이 붙은 것 같습니다.
+*edge relaxation*은 최단경로 알고리즘을 수행하는 과정에서 경로를 구성하고 있는 엣지 가중치의 합을 줄여나간다(relax)는 취지로 이런 이름이 붙은 것 같습니다.
 
 
 
@@ -85,13 +85,7 @@ edge relaxation은 최단경로 알고리즘을 수행하는 과정에서 경로
 
 ## 알고리즘 특성별 비교
 
-
-
-**negative weight**
-
-**negative cycle**
-
-**complexity**
+최단경로 알고리즘은 크게 [다익스트라](https://ratsgo.github.io/data%20structure&algorithm/2017/11/26/dijkstra/)와 [벨만-포드](https://ratsgo.github.io/data%20structure&algorithm/2017/11/27/bellmanford/) 알고리즘 두 가지가 있습니다. 다익스트라 알고리즘은 엣지 가중치가 음수일 경우 동작하지 않습니다. 벨만-포드 알고리즘의 경우 엣지 가중치가 음수여도 동작하나, *negative cycle*이 있을 경우 동작하지 않습니다. 다익스트라 알고리즘의 계산복잡성은 $O($\|$V$\|$^2+$\|$E$\|$)$이며, 벨만-포드는 $O($\|$V$\|\|$E$\|$)$입니다.
 
 
 
