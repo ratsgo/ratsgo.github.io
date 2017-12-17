@@ -1,45 +1,59 @@
-- post: loss
+- post: war
   related:
-  - maxparam
-  - MLE
-  - softmax
-  - information
-  - MEMs
-- post: noun
-  related:
+  - nounontology2
+  - word2vecpos2
+  - nounontology
+  - word2vecpos
   - ida
-  - parsing
-  - sentcomp
-  - generate2
-  - double
-- post: backprop
+- post: modality
   related:
-  - recursive
-  - CNNbackprop
-  - GRU
-  - spectral
-  - graph
-- post: bayes2
+  - words2
+  - ida
+  - noun
+  - tense
+  - nounontology2
+- post: pcasvdlsa
   related:
-  - bayes
-  - prob
-  - bayesinfer
-  - graphnews
-  - HMMs
-- post: lda
-  related:
-  - LDA
+  - LUfactorization
+  - operations
+  - PCA
+  - determinants
   - plsa
-  - lexicon
-  - tfidf
-  - word
-- post: words2
+- post: tense
   related:
-  - ends
-  - morpheme
-  - ida
+  - detertime
   - modality
-  - lexicon
+  - nounontology2
+  - ida
+  - advp
+- post: docclassification
+  related:
+  - deepNLP
+  - CNNs
+  - loss
+  - naive
+  - plsa
+- post: Topological
+  related:
+  - DFS
+  - tree
+  - dijkstra
+  - SCC
+  - graph
+- post: FDR
+  related:
+  - PCA
+  - KNN
+  - treeensemble
+  - RLR
+  - docsim
+- post: rbtree
+  related:
+  - avltree
+  - tree
+  - bst
+  - augmentedDS
+  - DFS
 - post: dynamic
   related:
   - pcasvdlsa
@@ -47,62 +61,111 @@
   - nounontology2
   - recurrence
   - CRF
-- post: tree
+- post: lexicon
   related:
+  - morpheme
+  - wordclass
+  - plsa
+  - LDA
+  - deepNLP
+- post: LDA
+  related:
+  - lda
+  - plsa
+  - lexicon
+  - tfidf
+  - docsim
+- post: taste
+  related:
+  - nounontology
+  - nounontology2
+  - word2vecpos2
+  - word2vecpos
+  - parsing
+- post: network
+  related:
+  - representationlearning
+  - NNtricks
+  - deepNLP
+  - manning
+  - pcasvdlsa
+- post: heapsort
+  related:
+  - tree
   - augmentedDS
   - avltree
-  - bst
   - DFS
-  - heapsort
-- post: generate
+  - greedy
+- post: avltree
   related:
-  - deepNLP
-  - beamsearch
-  - s2s
-  - LM
-  - NNtricks
-- post: surinjection
-  related:
-  - Ldependence
-  - spaces
-  - linearity
-  - projection
-  - RNTN
-- post: sentcomp
-  related:
-  - ida
-  - senttopic
-  - verb
-  - nounad
-  - double
-- post: LM
-  related:
-  - tfidf
-  - deepNLP
-  - frequency
-  - word2vec
-  - plsa
-- post: MEMMs
-  related:
-  - MEMs
-  - HMMs
-  - loss
-  - MLE
-  - maxparam
-- post: disjointset
-  related:
-  - CC
+  - bst
   - augmentedDS
   - tree
-  - avltree
-  - bst
-- post: docsim
+  - rbtree
+  - beamsearch
+- post: lda
   related:
+  - LDA
+  - plsa
+  - lexicon
   - tfidf
-  - frequency
-  - embedding
-  - NNLM
+  - word
+- post: KNN
+  related:
+  - FDR
+  - PCA
+  - recurrence
+  - biasvar
+  - comparison
+- post: shellsort
+  related:
+  - mergesort
+  - sort
+  - insmersort
+  - list
+  - countingsort
+- post: RNNsty
+  related:
+  - rnnlstm
+  - recursive
+  - NNtricks
+  - GRU
+  - backprop
+- post: detertime
+  related:
+  - nounad
+  - tense
+  - advp
+  - morpheme
+  - ida
+- post: wordclass
+  related:
+  - nounad
+  - lexicon
+  - ida
+  - morpheme
+  - verb
+- post: senttopic
+  related:
+  - sentcomp
+  - ida
+  - double
+  - plsa
+  - sov
+- post: information
+  related:
+  - loss
+  - MEMs
+  - treecode
+  - maxparam
+  - MEMMs
+- post: naive
+  related:
+  - wordweighting
+  - deepNLP
   - CNN
+  - tfidf
+  - plsa
 - post: apriori
   related:
   - word2vecpos2
@@ -110,75 +173,19 @@
   - columbus
   - generate2
   - SVM
-- post: median
+- post: loss
   related:
-  - normal
-  - biasvar
-  - order
-  - KNN
-  - prob
-- post: beamsearch
+  - MLE
+  - maxparam
+  - softmax
+  - information
+  - MEMs
+- post: plsa
   related:
-  - bst
-  - recursive
-  - augmentedDS
-  - avltree
-  - tree
-- post: boolean
-  related:
-  - glove
-  - naive
-  - fasttext
-  - CNN
-  - BranchingEntropy
-- post: BFS
-  related:
-  - DFS
-  - dijkstra
-  - tree
-  - graph
-  - SCC
-- post: order
-  related:
-  - countingsort
-  - sort
-  - binarysearch
-  - regression
-  - selectionsort
-- post: recurrence
-  related:
-  - mergesort
-  - countingsort
-  - tSNE
-  - asymptotic
-  - KNN
-- post: verb
-  related:
-  - sentcomp
-  - ida
-  - aspect
-  - nounad
-  - wordclass
-- post: graphnews
-  related:
-  - nounontology2
-  - s2s
-  - deepNLP
-  - word2vecpos2
-  - bayes2
-- post: bellmanford
-  related:
-  - shortestpath
-  - graph
-  - spectral
-  - dijkstra
-  - SCC
-- post: s2s
-  related:
-  - deepNLP
-  - manning
-  - CNN
-  - nounontology2
+  - LDA
+  - lda
+  - tfidf
+  - lexicon
   - word2vec
 - post: summer
   related:
@@ -187,20 +194,6 @@
   - word2vecpos
   - word2vecpos2
   - s2s
-- post: syntax
-  related:
-  - tfidf
-  - word
-  - lexicon
-  - comsent
-  - sentcomp
-- post: binomial
-  related:
-  - prob
-  - bayesinfer
-  - tSNE
-  - normal
-  - naive
 - post: binarysearch
   related:
   - list
@@ -208,244 +201,83 @@
   - mergesort
   - order
   - sort
-- post: tense
+- post: double
   related:
-  - detertime
-  - nounontology2
-  - modality
   - ida
-  - advp
-- post: Topological
-  related:
-  - DFS
-  - tree
-  - dijkstra
-  - SCC
-  - graph
-- post: start
-  related:
-  - insmersort
-  - deepNLP
-  - representationlearning
-  - word2vecpos
-  - countingsort
-- post: selectionsort
-  related:
-  - bubblesort
-  - bucketsort
-  - order
-  - sort
-  - countingsort
-- post: langtype
-  related:
-  - lexicon
-  - morpheme
-  - LM
-  - sov
-  - nounad
-- post: words
-  related:
   - sentcomp
-  - nounontology2
-  - SOM
-  - word2vecpos2
-  - ida
-- post: glove
-  related:
-  - NNLM
-  - fasttext
-  - embedding
-  - word2vec
-  - RNTN
-- post: pointer
-  related:
-  - langtype
-  - funcall
+  - noun
   - senttopic
-  - treeensemble
-  - order
-- post: word2vec
+  - thetarole
+- post: projection
   related:
-  - embedding
-  - NNLM
-  - frequency
-  - RNTN
-  - tfidf
-- post: comsent
-  related:
-  - consen
-  - advp
-  - sentcomp
-  - lexicon
-  - ends
-- post: KC
-  related:
-  - clustering
-  - HC
-  - honorification
-  - war
-  - spectral
-- post: comparison
-  related:
-  - logistic
-  - biasvar
-  - RLR
-  - terms
-  - regression
-- post: nounad
-  related:
-  - morpheme
-  - wordclass
-  - ida
-  - sentcomp
-  - verb
-- post: bubblesort
-  related:
-  - selectionsort
-  - sort
-  - bucketsort
-  - insmersort
-  - countingsort
-- post: Ldependence
-  related:
+  - Ldependence
   - linearity
   - surinjection
-  - projection
-  - spaces
+  - operations
   - NNLM
-- post: ida
+- post: cohesion
   related:
-  - sentcomp
-  - nounad
-  - wordclass
-  - noun
-  - double
-- post: graph
-  related:
-  - spectral
-  - CC
-  - SCC
-  - MST
-  - DFS
-- post: heapsort
-  related:
-  - tree
-  - augmentedDS
-  - avltree
-  - DFS
-  - greedy
-- post: CC
-  related:
-  - graph
-  - SCC
-  - spectral
-  - disjointset
-  - MST
-- post: josa
-  related:
-  - sentcomp
-  - syntax
-  - nounontology2
-  - senttopic
-  - modality
-- post: fasttext
-  related:
-  - glove
-  - deepNLP
-  - naive
-  - embedding
-  - word2vec
-- post: normal
-  related:
-  - prob
-  - median
-  - binomial
-  - bayesinfer
-  - biasvar
-- post: NNtricks
-  related:
-  - gradient
-  - representationlearning
-  - rnnlstm
-  - CRF
-  - deepNLP
-- post: CRF
-  related:
-  - maxparam
-  - logistic
-  - MLE
-  - loss
-  - NNtricks
-- post: queue
-  related:
-  - BFS
-  - list
-  - recurrence
-  - mergesort
-  - countingsort
-- post: lexicon
-  related:
-  - morpheme
-  - wordclass
-  - plsa
-  - LDA
-  - deepNLP
-- post: sort
-  related:
-  - countingsort
-  - bubblesort
-  - shellsort
-  - mergesort
-  - bucketsort
-- post: bayes
-  related:
-  - bayes2
-  - prob
-  - bayesinfer
-  - HMMs
-  - naive
-- post: terms
-  related:
-  - loss
-  - comparison
-  - deepNLP
-  - biasvar
-  - MLE
-- post: CNNs
-  related:
-  - recursive
-  - deepNLP
-  - CNN
-  - plsa
-  - biasvar
-- post: greedy
-  related:
-  - augmentedDS
-  - tree
-  - DFS
-  - bst
-  - heapsort
-- post: columbus
-  related:
-  - nounontology2
-  - apriori
-  - nounontology
   - word2vecpos2
   - word2vecpos
-- post: valency
+  - BranchingEntropy
+  - nounontology2
+  - nounontology
+- post: NNLM
   related:
-  - parsing
-  - thetarole
-  - noun
-  - double
-  - ida
-- post: MST
+  - embedding
+  - word2vec
+  - RNTN
+  - frequency
+  - surinjection
+- post: word2vecpos
   related:
-  - graph
-  - spectral
-  - CC
-  - tree
+  - word2vecpos2
+  - nounontology2
+  - nounontology
+  - cohesion
+  - BranchingEntropy
+- post: boolean
+  related:
+  - glove
+  - naive
+  - fasttext
+  - CNN
+  - BranchingEntropy
+- post: countingsort
+  related:
+  - order
+  - sort
+  - insmersort
+  - recurrence
+  - recursive
+- post: recurrence
+  related:
+  - mergesort
+  - countingsort
+  - tSNE
+  - KNN
+  - asymptotic
+- post: word2vecpos2
+  related:
+  - nounontology2
+  - nounontology
+  - word2vecpos
+  - cohesion
+  - s2s
+- post: tree
+  related:
+  - augmentedDS
+  - avltree
+  - bst
+  - DFS
+  - heapsort
+- post: shortestpath
+  related:
   - bellmanford
+  - gcd
+  - graph
+  - dijkstra
+  - spectral
 - post: operations
   related:
   - determinants
@@ -453,118 +285,20 @@
   - surinjection
   - LUfactorization
   - PCA
-- post: pcasvdlsa
+- post: CRF
   related:
-  - LUfactorization
-  - operations
-  - PCA
-  - determinants
-  - plsa
-- post: LAsummary2
-  related:
-  - LAsummary
-  - maxflow
-  - gradient
-  - shellsort
-  - countingsort
-- post: maxparam
-  related:
-  - MLE
-  - loss
-  - CRF
+  - maxparam
   - logistic
-  - softmax
-- post: bayesinfer
-  related:
-  - binomial
-  - prob
-  - bayes2
-  - normal
-  - tSNE
-- post: tSNE
-  related:
-  - prob
-  - HMMs
-  - recurrence
-  - PCA
-  - binomial
-- post: softmax
-  related:
-  - loss
-  - maxparam
-  - candidate
-  - recursive
-  - terms
-- post: gcd
-  related:
-  - shortestpath
-  - order
-  - maxflow
   - MLE
-  - maxparam
-- post: dijkstra
-  related:
-  - BFS
-  - DFS
-  - Topological
-  - shortestpath
-  - tree
-- post: representationlearning
-  related:
+  - loss
   - NNtricks
-  - s2s
-  - biasvar
-  - deepNLP
-  - graphnews
-- post: LAsummary
+- post: SOM
   related:
-  - LAsummary2
-  - maxflow
-  - gcd
-  - selectionsort
-  - shortestpath
-- post: bst
-  related:
-  - avltree
-  - augmentedDS
-  - tree
-  - beamsearch
-  - rbtree
-- post: LDA
-  related:
-  - lda
-  - plsa
-  - lexicon
-  - tfidf
-  - docsim
-- post: generate2
-  related:
-  - noun
-  - ida
-  - sentcomp
-  - parsing
-  - ends
-- post: SVM
-  related:
-  - SVM2
-  - RLR
   - projection
-  - KNN
-  - PCA
-- post: frequency
-  related:
-  - embedding
-  - tfidf
-  - word2vec
+  - words
+  - linearity
+  - Ldependence
   - NNLM
-  - docsim
-- post: senttopic
-  related:
-  - sentcomp
-  - ida
-  - double
-  - plsa
-  - sov
 - post: SVM2
   related:
   - SVM
@@ -572,13 +306,286 @@
   - SVM3
   - word2vecpos2
   - recursive
-- post: detertime
+- post: surinjection
   related:
-  - nounad
-  - tense
-  - advp
-  - morpheme
+  - Ldependence
+  - spaces
+  - linearity
+  - projection
+  - RNTN
+- post: negative
+  related:
+  - sentcomp
   - ida
+  - nounad
+  - voice
+  - verb
+- post: bayes
+  related:
+  - bayes2
+  - prob
+  - bayesinfer
+  - HMMs
+  - naive
+- post: rnnlstm
+  related:
+  - RNNsty
+  - recursive
+  - GRU
+  - CNNbackprop
+  - NNtricks
+- post: maxparam
+  related:
+  - MLE
+  - loss
+  - CRF
+  - softmax
+  - logistic
+- post: start
+  related:
+  - insmersort
+  - deepNLP
+  - representationlearning
+  - word2vecpos
+  - countingsort
+- post: logistic
+  related:
+  - MLE
+  - comparison
+  - CRF
+  - regression
+  - maxparam
+- post: ends
+  related:
+  - words2
+  - comsent
+  - generate2
+  - ida
+  - modality
+- post: augmentedDS
+  related:
+  - avltree
+  - tree
+  - bst
+  - disjointset
+  - beamsearch
+- post: linearity
+  related:
+  - Ldependence
+  - projection
+  - surinjection
+  - NNLM
+  - spaces
+- post: quicksort
+  related:
+  - order
+  - mergesort
+  - sort
+  - countingsort
+  - binarysearch
+- post: columbus
+  related:
+  - nounontology2
+  - apriori
+  - nounontology
+  - word2vecpos2
+  - word2vecpos
+- post: verb
+  related:
+  - cause
+  - voice
+  - sentcomp
+  - ida
+  - aspect
+- post: biasvar
+  related:
+  - comparison
+  - terms
+  - RLR
+  - recursive
+  - CNNs
+- post: spaces
+  related:
+  - surinjection
+  - Ldependence
+  - linearity
+  - projection
+  - operations
+- post: tfidf
+  related:
+  - word
+  - docsim
+  - frequency
+  - embedding
+  - word2vec
+- post: SCC
+  related:
+  - graph
+  - CC
+  - spectral
+  - recursive
+  - backprop
+- post: prob
+  related:
+  - binomial
+  - HMMs
+  - bayesinfer
+  - normal
+  - tSNE
+- post: word2vec
+  related:
+  - embedding
+  - NNLM
+  - frequency
+  - RNTN
+  - tfidf
+- post: sov
+  related:
+  - sentcomp
+  - senttopic
+  - words2
+  - double
+  - ida
+- post: DFS
+  related:
+  - Topological
+  - tree
+  - BFS
+  - graph
+  - spectral
+- post: dijkstra
+  related:
+  - BFS
+  - bellmanford
+  - graph
+  - DFS
+  - SCC
+- post: bubblesort
+  related:
+  - selectionsort
+  - sort
+  - bucketsort
+  - insmersort
+  - countingsort
+- post: NP
+  related:
+  - graph
+  - spectral
+  - greedy
+  - shortestpath
+  - SCC
+- post: spectral
+  related:
+  - graph
+  - SCC
+  - CC
+  - backprop
+  - MST
+- post: selectionsort
+  related:
+  - bubblesort
+  - order
+  - bucketsort
+  - sort
+  - countingsort
+- post: algorithm
+  related:
+  - asymptotic
+  - recurrence
+  - nounontology2
+  - maxflow
+  - countingsort
+- post: sort
+  related:
+  - countingsort
+  - bubblesort
+  - shellsort
+  - mergesort
+  - bucketsort
+- post: NNtricks
+  related:
+  - gradient
+  - representationlearning
+  - rnnlstm
+  - CRF
+  - deepNLP
+- post: bellmanford
+  related:
+  - shortestpath
+  - graph
+  - dijkstra
+  - spectral
+  - SCC
+- post: advp
+  related:
+  - consen
+  - comsent
+  - sentcomp
+  - cause
+  - ida
+- post: thetarole
+  related:
+  - valency
+  - parsing
+  - double
+  - noun
+  - ida
+- post: PCA
+  related:
+  - pcasvdlsa
+  - FDR
+  - operations
+  - KNN
+  - tSNE
+- post: determinants
+  related:
+  - LUfactorization
+  - operations
+  - pcasvdlsa
+  - surinjection
+  - RNTN
+- post: generate2
+  related:
+  - noun
+  - ida
+  - sentcomp
+  - parsing
+  - ends
+- post: MLE
+  related:
+  - maxparam
+  - loss
+  - logistic
+  - CRF
+  - terms
+- post: deepNLP
+  related:
+  - manning
+  - s2s
+  - CNN
+  - naive
+  - CNNs
+- post: gcd
+  related:
+  - shortestpath
+  - order
+  - maxflow
+  - MLE
+  - maxparam
+- post: LAsummary
+  related:
+  - LAsummary2
+  - maxflow
+  - gcd
+  - selectionsort
+  - gradient
+- post: nounontology
+  related:
+  - nounontology2
+  - word2vecpos2
+  - word2vecpos
+  - deepNLP
+  - summer
 - post: gradient
   related:
   - NNtricks
@@ -586,6 +593,405 @@
   - recursive
   - softmax
   - CRF
+- post: sentimentdict
+  related:
+  - naive
+  - wordweighting
+  - median
+  - biasvar
+  - normal
+- post: softmax
+  related:
+  - loss
+  - maxparam
+  - candidate
+  - recursive
+  - terms
+- post: queue
+  related:
+  - BFS
+  - list
+  - recurrence
+  - mergesort
+  - countingsort
+- post: terms
+  related:
+  - loss
+  - comparison
+  - deepNLP
+  - biasvar
+  - MLE
+- post: mergesort
+  related:
+  - MSSP
+  - list
+  - shellsort
+  - sort
+  - binarysearch
+- post: Ldependence
+  related:
+  - linearity
+  - surinjection
+  - projection
+  - spaces
+  - NNLM
+- post: words2
+  related:
+  - ends
+  - morpheme
+  - ida
+  - modality
+  - sentcomp
+- post: recursive
+  related:
+  - CNNbackprop
+  - backprop
+  - rnnlstm
+  - GRU
+  - beamsearch
+- post: treecode
+  related:
+  - information
+  - loss
+  - MEMs
+  - FDR
+  - treeensemble
+- post: cause
+  related:
+  - verb
+  - voice
+  - sentcomp
+  - advp
+  - parsing
+- post: LM
+  related:
+  - deepNLP
+  - tfidf
+  - frequency
+  - word2vec
+  - plsa
+- post: candidate
+  related:
+  - word2vec
+  - NNLM
+  - embedding
+  - softmax
+  - tfidf
+- post: BFS
+  related:
+  - DFS
+  - dijkstra
+  - tree
+  - graph
+  - SCC
+- post: s2s
+  related:
+  - deepNLP
+  - manning
+  - CNN
+  - nounontology2
+  - word2vec
+- post: glove
+  related:
+  - NNLM
+  - fasttext
+  - embedding
+  - word2vec
+  - RNTN
+- post: HC
+  related:
+  - clustering
+  - KC
+  - honorification
+  - spectral
+  - KNN
+- post: backprop
+  related:
+  - recursive
+  - CNNbackprop
+  - GRU
+  - spectral
+  - graph
+- post: gibbs
+  related:
+  - prob
+  - HMMs
+  - FDR
+  - computeHMMs
+  - tSNE
+- post: manning
+  related:
+  - attention
+  - deepNLP
+  - s2s
+  - CNNs
+  - CNN
+- post: attention
+  related:
+  - manning
+  - NNLM
+  - RNTN
+  - Ldependence
+  - spaces
+- post: wordweighting
+  related:
+  - naive
+  - tfidf
+  - docsim
+  - CNN
+  - sentimentdict
+- post: parsing
+  related:
+  - valency
+  - noun
+  - sentcomp
+  - morpheme
+  - verb
+- post: valency
+  related:
+  - parsing
+  - thetarole
+  - noun
+  - double
+  - ida
+- post: lexicalaspect
+  related:
+  - verb
+  - voice
+  - words2
+  - cause
+  - aspect
+- post: consen
+  related:
+  - comsent
+  - advp
+  - sentcomp
+  - lexicon
+  - words2
+- post: honorification
+  related:
+  - clustering
+  - KC
+  - HC
+  - ends
+  - nounontology2
+- post: sentcomp
+  related:
+  - ida
+  - senttopic
+  - verb
+  - nounad
+  - double
+- post: beamsearch
+  related:
+  - bst
+  - recursive
+  - augmentedDS
+  - avltree
+  - tree
+- post: comparison
+  related:
+  - logistic
+  - biasvar
+  - RLR
+  - terms
+  - regression
+- post: bayesinfer
+  related:
+  - binomial
+  - prob
+  - bayes2
+  - normal
+  - tSNE
+- post: GPU
+  related:
+  - nounontology
+  - nounontology2
+  - word2vecpos2
+  - NNtricks
+  - cohesion
+- post: order
+  related:
+  - countingsort
+  - sort
+  - binarysearch
+  - regression
+  - selectionsort
+- post: binomial
+  related:
+  - prob
+  - bayesinfer
+  - tSNE
+  - normal
+  - naive
+- post: graph
+  related:
+  - spectral
+  - CC
+  - SCC
+  - MST
+  - DFS
+- post: pointer
+  related:
+  - langtype
+  - funcall
+  - senttopic
+  - treeensemble
+  - order
+- post: MEMMs
+  related:
+  - MEMs
+  - HMMs
+  - loss
+  - MLE
+  - maxparam
+- post: ida
+  related:
+  - sentcomp
+  - nounad
+  - noun
+  - wordclass
+  - double
+- post: insmersort
+  related:
+  - countingsort
+  - shellsort
+  - bubblesort
+  - sort
+  - recurrence
+- post: words
+  related:
+  - sentcomp
+  - nounontology2
+  - SOM
+  - word2vecpos2
+  - ida
+- post: CNN
+  related:
+  - deepNLP
+  - RNTN
+  - NNLM
+  - word2vec
+  - embedding
+- post: word
+  related:
+  - tfidf
+  - embedding
+  - frequency
+  - word2vec
+  - syntax
+- post: graphnews
+  related:
+  - nounontology2
+  - s2s
+  - deepNLP
+  - word2vecpos2
+  - bayes2
+- post: CC
+  related:
+  - graph
+  - SCC
+  - spectral
+  - disjointset
+  - MST
+- post: normal
+  related:
+  - prob
+  - median
+  - binomial
+  - bayesinfer
+  - biasvar
+- post: tSNE
+  related:
+  - prob
+  - HMMs
+  - recurrence
+  - PCA
+  - binomial
+- post: generate
+  related:
+  - deepNLP
+  - beamsearch
+  - s2s
+  - LM
+  - NNtricks
+- post: noun
+  related:
+  - ida
+  - parsing
+  - sentcomp
+  - generate2
+  - double
+- post: GRU
+  related:
+  - backprop
+  - recursive
+  - CNNbackprop
+  - rnnlstm
+  - RNNsty
+- post: maxflow
+  related:
+  - spectral
+  - graph
+  - gcd
+  - algorithm
+  - shortestpath
+- post: RLR
+  related:
+  - regression
+  - comparison
+  - biasvar
+  - SVM
+  - PCA
+- post: asymptotic
+  related:
+  - algorithm
+  - recurrence
+  - shortestpath
+  - countingsort
+  - maxparam
+- post: BranchingEntropy
+  related:
+  - word2vecpos
+  - cohesion
+  - word2vecpos2
+  - naive
+  - CNN
+- post: quote
+  related:
+  - advp
+  - comsent
+  - ends
+  - modality
+  - consen
+- post: MST
+  related:
+  - graph
+  - spectral
+  - CC
+  - tree
+  - bellmanford
+- post: list
+  related:
+  - binarysearch
+  - mergesort
+  - CC
+  - MSSP
+  - sort
+- post: josa
+  related:
+  - sentcomp
+  - syntax
+  - senttopic
+  - nounontology2
+  - modality
+- post: voice
+  related:
+  - cause
+  - verb
+  - sentcomp
+  - parsing
+  - lexicalaspect
 - post: LUfactorization
   related:
   - determinants
@@ -600,524 +1006,13 @@
   - MEMMs
   - tSNE
   - binomial
-- post: deepNLP
+- post: median
   related:
-  - manning
-  - s2s
-  - CNN
-  - naive
-  - CNNs
-- post: thetarole
-  related:
-  - valency
-  - parsing
-  - double
-  - noun
-  - ida
-- post: FDR
-  related:
-  - PCA
-  - KNN
-  - treeensemble
-  - RLR
-  - docsim
-- post: treeensemble
-  related:
-  - comparison
-  - FDR
-  - regression
-  - logistic
-  - KNN
-- post: embedding
-  related:
-  - word2vec
-  - NNLM
-  - frequency
-  - tfidf
-  - RNTN
-- post: advp
-  related:
-  - consen
-  - comsent
-  - sentcomp
-  - ida
-  - words2
-- post: recursive
-  related:
-  - CNNbackprop
-  - backprop
-  - rnnlstm
-  - GRU
-  - beamsearch
-- post: manning
-  related:
-  - attention
-  - deepNLP
-  - s2s
-  - CNNs
-  - CNN
-- post: honorification
-  related:
-  - clustering
-  - KC
-  - HC
-  - ends
-  - nounontology2
-- post: docclassification
-  related:
-  - deepNLP
-  - CNNs
-  - loss
-  - naive
-  - plsa
-- post: plsa
-  related:
-  - LDA
-  - lda
-  - tfidf
-  - word2vec
-  - lexicon
-- post: information
-  related:
-  - loss
-  - MEMs
-  - treecode
-  - maxparam
-  - MLE
-- post: MLE
-  related:
-  - maxparam
-  - loss
-  - logistic
-  - CRF
-  - terms
-- post: consen
-  related:
-  - comsent
-  - advp
-  - sentcomp
-  - lexicon
-  - words2
-- post: linearity
-  related:
-  - Ldependence
-  - projection
-  - surinjection
-  - NNLM
-  - spaces
-- post: avltree
-  related:
-  - augmentedDS
-  - bst
-  - tree
-  - rbtree
-  - beamsearch
-- post: bucketsort
-  related:
-  - bubblesort
-  - sort
-  - selectionsort
-  - hash
-  - mergesort
-- post: double
-  related:
-  - ida
-  - sentcomp
-  - noun
-  - senttopic
-  - thetarole
-- post: mergesort
-  related:
-  - MSSP
-  - list
-  - shellsort
-  - sort
-  - binarysearch
-- post: RNNsty
-  related:
-  - rnnlstm
-  - recursive
-  - NNtricks
-  - GRU
-  - backprop
-- post: logistic
-  related:
-  - MLE
-  - comparison
-  - CRF
-  - regression
-  - maxparam
-- post: hash
-  related:
-  - bucketsort
-  - recurrence
-  - regression
-  - bst
-  - sort
-- post: prime
-  related:
-  - softmax
-  - candidate
-  - algorithm
-  - binarysearch
-  - nounontology2
-- post: biasvar
-  related:
-  - comparison
-  - terms
-  - RLR
-  - recursive
-  - CNNs
-- post: sentimentdict
-  related:
-  - naive
-  - wordweighting
-  - median
-  - biasvar
   - normal
-- post: DFS
-  related:
-  - Topological
-  - tree
-  - BFS
-  - graph
-  - spectral
-- post: lexicalaspect
-  related:
-  - verb
-  - words2
-  - aspect
-  - morpheme
-  - sentcomp
-- post: taste
-  related:
-  - nounontology
-  - nounontology2
-  - word2vecpos2
-  - word2vecpos
-  - parsing
-- post: candidate
-  related:
-  - word2vec
-  - NNLM
-  - embedding
-  - softmax
-  - tfidf
-- post: word
-  related:
-  - tfidf
-  - embedding
-  - frequency
-  - word2vec
-  - lexicon
-- post: visual
-  related:
-  - rnnlstm
-  - comparison
-  - treeensemble
-  - treecode
-  - KNN
-- post: CNN
-  related:
-  - deepNLP
-  - RNTN
-  - NNLM
-  - word2vec
-  - embedding
-- post: augmentedDS
-  related:
-  - avltree
-  - tree
-  - bst
-  - rbtree
-  - beamsearch
-- post: word2vecpos
-  related:
-  - word2vecpos2
-  - nounontology2
-  - nounontology
-  - cohesion
-  - BranchingEntropy
-- post: quote
-  related:
-  - advp
-  - comsent
-  - ends
-  - consen
-  - manning
-- post: regression
-  related:
-  - RLR
-  - logistic
-  - comparison
-  - order
-  - recurrence
-- post: MEMs
-  related:
-  - MEMMs
-  - loss
-  - information
-  - maxparam
-  - NNLM
-- post: HC
-  related:
-  - clustering
-  - KC
-  - honorification
-  - spectral
-  - KNN
-- post: KNN
-  related:
-  - FDR
-  - PCA
-  - recurrence
   - biasvar
-  - comparison
-- post: cohesion
-  related:
-  - word2vecpos2
-  - word2vecpos
-  - BranchingEntropy
-  - nounontology2
-  - nounontology
-- post: NP
-  related:
-  - graph
-  - spectral
-  - greedy
-  - SCC
-  - shortestpath
-- post: wordweighting
-  related:
-  - naive
-  - tfidf
-  - CNN
-  - docsim
-  - sentimentdict
-- post: sov
-  related:
-  - sentcomp
-  - senttopic
-  - words2
-  - double
-  - ida
-- post: CNNbackprop
-  related:
-  - recursive
-  - backprop
-  - GRU
-  - rnnlstm
-  - SCC
-- post: busan
-  related:
-  - nounontology2
-  - nounontology
-  - word2vecpos2
-  - word2vecpos
-  - BranchingEntropy
-- post: quicksort
-  related:
   - order
-  - mergesort
-  - sort
-  - countingsort
-  - binarysearch
-- post: insmersort
-  related:
-  - countingsort
-  - shellsort
-  - bubblesort
-  - sort
-  - recurrence
-- post: maxflow
-  related:
-  - spectral
-  - graph
-  - gcd
-  - algorithm
-  - SCC
-- post: war
-  related:
-  - nounontology2
-  - word2vecpos2
-  - nounontology
-  - word2vecpos
-  - ida
-- post: countingsort
-  related:
-  - order
-  - sort
-  - insmersort
-  - recurrence
-  - recursive
-- post: algorithm
-  related:
-  - asymptotic
-  - recurrence
-  - nounontology2
-  - maxflow
-  - countingsort
-- post: treecode
-  related:
-  - information
-  - loss
-  - MEMs
-  - FDR
-  - treeensemble
-- post: rnnlstm
-  related:
-  - RNNsty
-  - recursive
-  - GRU
-  - CNNbackprop
-  - NNtricks
-- post: SVM3
-  related:
-  - PCA
-  - SVM
-  - recurrence
-  - SVM2
   - KNN
-- post: aspect
-  related:
-  - verb
-  - lexicalaspect
-  - sentcomp
-  - tense
-  - nounontology2
-- post: computeHMMs
-  related:
-  - HMMs
   - prob
-  - CRF
-  - MEMMs
-  - tSNE
-- post: genegram
-  related:
-  - generate2
-  - senttopic
-  - ida
-  - sentcomp
-  - langtype
-- post: tfidf
-  related:
-  - word
-  - docsim
-  - frequency
-  - embedding
-  - word2vec
-- post: asymptotic
-  related:
-  - algorithm
-  - recurrence
-  - countingsort
-  - shortestpath
-  - maxparam
-- post: funcall
-  related:
-  - pointer
-  - mergesort
-  - regression
-  - logistic
-  - softmax
-- post: NNLM
-  related:
-  - embedding
-  - word2vec
-  - RNTN
-  - frequency
-  - surinjection
-- post: parsing
-  related:
-  - valency
-  - noun
-  - sentcomp
-  - morpheme
-  - verb
-- post: morpheme
-  related:
-  - nounad
-  - lexicon
-  - words2
-  - wordclass
-  - ida
-- post: word2vecpos2
-  related:
-  - nounontology2
-  - nounontology
-  - word2vecpos
-  - cohesion
-  - s2s
-- post: rbtree
-  related:
-  - avltree
-  - tree
-  - augmentedDS
-  - bst
-  - DFS
-- post: ends
-  related:
-  - words2
-  - comsent
-  - generate2
-  - modality
-  - ida
-- post: spectral
-  related:
-  - graph
-  - SCC
-  - CC
-  - backprop
-  - MST
-- post: wordclass
-  related:
-  - nounad
-  - lexicon
-  - ida
-  - morpheme
-  - verb
-- post: PCA
-  related:
-  - pcasvdlsa
-  - FDR
-  - operations
-  - KNN
-  - tSNE
-- post: SOM
-  related:
-  - projection
-  - words
-  - linearity
-  - Ldependence
-  - NNLM
-- post: GRU
-  related:
-  - backprop
-  - recursive
-  - CNNbackprop
-  - rnnlstm
-  - RNNsty
-- post: nounontology2
-  related:
-  - nounontology
-  - word2vecpos2
-  - word2vecpos
-  - deepNLP
-  - s2s
-- post: determinants
-  related:
-  - LUfactorization
-  - operations
-  - pcasvdlsa
-  - surinjection
-  - RNTN
-- post: attention
-  related:
-  - manning
-  - NNLM
-  - RNTN
-  - Ldependence
-  - spaces
 - post: viterbi
   related:
   - computeHMMs
@@ -1125,34 +1020,27 @@
   - tSNE
   - SVM2
   - apriori
-- post: nounontology
+- post: CNNbackprop
   related:
-  - nounontology2
-  - word2vecpos2
-  - word2vecpos
-  - deepNLP
-  - summer
-- post: BranchingEntropy
+  - recursive
+  - backprop
+  - GRU
+  - rnnlstm
+  - SCC
+- post: funcall
   related:
-  - word2vecpos
-  - cohesion
-  - word2vecpos2
-  - naive
-  - CNN
-- post: gibbs
+  - pointer
+  - mergesort
+  - regression
+  - logistic
+  - softmax
+- post: treeensemble
   related:
-  - prob
-  - HMMs
+  - comparison
   - FDR
-  - computeHMMs
-  - tSNE
-- post: GPU
-  related:
-  - nounontology
-  - nounontology2
-  - word2vecpos2
-  - NNtricks
-  - cohesion
+  - regression
+  - logistic
+  - KNN
 - post: MSSP
   related:
   - mergesort
@@ -1160,76 +1048,20 @@
   - list
   - order
   - sort
-- post: projection
+- post: genegram
   related:
-  - linearity
-  - Ldependence
-  - surinjection
-  - operations
-  - NNLM
-- post: RLR
-  related:
-  - regression
-  - comparison
-  - biasvar
-  - SVM
-  - FDR
-- post: prob
-  related:
-  - binomial
-  - HMMs
-  - bayesinfer
-  - normal
-  - tSNE
-- post: RNTN
-  related:
-  - NNLM
-  - surinjection
-  - word2vec
-  - CNN
-  - embedding
-- post: network
-  related:
-  - representationlearning
-  - NNtricks
-  - deepNLP
-  - manning
-  - pcasvdlsa
-- post: naive
-  related:
-  - wordweighting
-  - deepNLP
-  - CNN
-  - tfidf
-  - plsa
-- post: modality
-  related:
-  - words2
+  - generate2
+  - senttopic
   - ida
-  - ends
-  - nounontology2
-  - tense
-- post: shellsort
+  - sentcomp
+  - langtype
+- post: frequency
   related:
-  - mergesort
-  - sort
-  - insmersort
-  - list
-  - countingsort
-- post: SCC
-  related:
-  - graph
-  - CC
-  - spectral
-  - recursive
-  - backprop
-- post: list
-  related:
-  - binarysearch
-  - mergesort
-  - CC
-  - MSSP
-  - sort
+  - embedding
+  - tfidf
+  - word2vec
+  - NNLM
+  - docsim
 - post: postag
   related:
   - word2vecpos
@@ -1237,6 +1069,55 @@
   - wordclass
   - lexicon
   - naive
+- post: comsent
+  related:
+  - consen
+  - advp
+  - sentcomp
+  - lexicon
+  - ends
+- post: busan
+  related:
+  - nounontology2
+  - nounontology
+  - word2vecpos2
+  - word2vecpos
+  - negative
+- post: CNNs
+  related:
+  - recursive
+  - deepNLP
+  - CNN
+  - plsa
+  - biasvar
+- post: fasttext
+  related:
+  - glove
+  - deepNLP
+  - naive
+  - embedding
+  - word2vec
+- post: disjointset
+  related:
+  - CC
+  - augmentedDS
+  - tree
+  - avltree
+  - bst
+- post: nounad
+  related:
+  - morpheme
+  - wordclass
+  - ida
+  - sentcomp
+  - verb
+- post: MEMs
+  related:
+  - MEMMs
+  - loss
+  - information
+  - maxparam
+  - NNLM
 - post: stack
   related:
   - list
@@ -1244,13 +1125,34 @@
   - countingsort
   - mergesort
   - CRF
-- post: shortestpath
+- post: visual
   related:
-  - bellmanford
-  - gcd
-  - graph
-  - dijkstra
-  - greedy
+  - rnnlstm
+  - comparison
+  - treeensemble
+  - treecode
+  - KNN
+- post: morpheme
+  related:
+  - nounad
+  - lexicon
+  - words2
+  - wordclass
+  - ida
+- post: regression
+  related:
+  - RLR
+  - logistic
+  - comparison
+  - order
+  - recurrence
+- post: bst
+  related:
+  - avltree
+  - augmentedDS
+  - tree
+  - beamsearch
+  - rbtree
 - post: clustering
   related:
   - HC
@@ -1258,10 +1160,129 @@
   - honorification
   - war
   - spectral
-- post: spaces
+- post: langtype
   related:
-  - surinjection
-  - Ldependence
-  - linearity
+  - lexicon
+  - morpheme
+  - LM
+  - sov
+  - parsing
+- post: syntax
+  related:
+  - tfidf
+  - word
+  - lexicon
+  - comsent
+  - sentcomp
+- post: bucketsort
+  related:
+  - bubblesort
+  - sort
+  - selectionsort
+  - hash
+  - mergesort
+- post: representationlearning
+  related:
+  - NNtricks
+  - s2s
+  - biasvar
+  - deepNLP
+  - graphnews
+- post: greedy
+  related:
+  - augmentedDS
+  - tree
+  - DFS
+  - dijkstra
+  - bst
+- post: SVM3
+  related:
+  - PCA
+  - SVM
+  - recurrence
+  - SVM2
+  - KNN
+- post: LAsummary2
+  related:
+  - LAsummary
+  - gradient
+  - maxflow
+  - shellsort
+  - countingsort
+- post: computeHMMs
+  related:
+  - HMMs
+  - prob
+  - CRF
+  - MEMMs
+  - tSNE
+- post: embedding
+  related:
+  - word2vec
+  - NNLM
+  - frequency
+  - tfidf
+  - RNTN
+- post: SVM
+  related:
+  - SVM2
+  - RLR
   - projection
-  - operations
+  - KNN
+  - PCA
+- post: RNTN
+  related:
+  - NNLM
+  - surinjection
+  - word2vec
+  - CNN
+  - embedding
+- post: aspect
+  related:
+  - verb
+  - cause
+  - voice
+  - lexicalaspect
+  - sentcomp
+- post: hash
+  related:
+  - bucketsort
+  - recurrence
+  - regression
+  - bst
+  - sort
+- post: bayes2
+  related:
+  - bayes
+  - prob
+  - bayesinfer
+  - graphnews
+  - HMMs
+- post: docsim
+  related:
+  - tfidf
+  - frequency
+  - embedding
+  - NNLM
+  - CNN
+- post: prime
+  related:
+  - softmax
+  - candidate
+  - algorithm
+  - binarysearch
+  - nounontology2
+- post: KC
+  related:
+  - clustering
+  - HC
+  - honorification
+  - war
+  - spectral
+- post: nounontology2
+  related:
+  - nounontology
+  - word2vecpos2
+  - word2vecpos
+  - deepNLP
+  - s2s
