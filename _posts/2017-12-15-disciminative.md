@@ -23,10 +23,14 @@ tag: [linear regression, logistic regression]
 선형회귀는 **제곱오차(squared error)**를 최소화하는 선형식을 찾는 것이 목적입니다. 이 글에서는 선형회귀를 확률모형 관점에서 살펴보겠습니다. 선형회귀는 잔차(error)가 **IID Zero Mean Gaussian**을 따른다고 가정합니다. 다음과 같습니다.
 
 
+
 $$
 \overrightarrow { e } =\overrightarrow { y } -X\overrightarrow { \beta  } ,\quad \overrightarrow { e } \sim N(E(\overrightarrow { e } ),V(\overrightarrow { e } ))\\ E(\overrightarrow { e } )=\begin{bmatrix} 0 \\ 0 \\ ... \\ 0 \end{bmatrix},\quad V(\overrightarrow { e } )={ \sigma  }^{ 2 }I
 $$
+
+
 잔차와 모델 파라메터 $β$에 대한 로그우도(log-likelihood) 함수는 다음과 같습니다. 아래 로그우도 함수를 최대화하는 $β$가 바로 우리가 찾고자 하는 값입니다.
+
 
 
 $$
@@ -34,6 +38,7 @@ $$
 l(\overrightarrow { \beta  } )=&\log { L(\overrightarrow { \beta  } ) } \\ =&\log { \prod _{ i=1 }^{ m }{ \frac { 1 }{ \sqrt { 2\pi  } \sigma  } exp\left( -\frac { { \left( { y }^{ (i) }-{ \overrightarrow { \beta  }  }^{ T }{ x }^{ (i) } \right)  }^{ 2 } }{ 2{ \sigma  }^{ 2 } }  \right)  }  } \\ =&m\log { \frac { 1 }{ \sqrt { 2\pi  } \sigma  }  } -\frac { 1 }{ { \sigma  }^{ 2 } } \frac { 1 }{ 2 } \sum _{ i=1 }^{ m }{ { \left( { y }^{ (i) }-{ \overrightarrow { \beta  }  }^{ T }{ x }^{ (i) } \right)  }^{ 2 } } 
 \end{align*}
 $$
+
 
 
 위 식에서 $m$는 데이터 수, $π$는 상수, $σ$는 사용자가 지정하는 하이퍼파라메터로 위의 로그우도 함수 최대화에 영향을 끼치는 값이 아닙니다. 따라서 선형회귀 모델의 로그우도 함수를 최대화하는 것은 제곱오차를 최소화하는 것과 정확히 같은 일이 됩니다.
@@ -51,8 +56,8 @@ $$
 p=\frac { 1 }{ 1+exp\left( -{ \overrightarrow { \beta  }  }^{ T }x \right)  } =\sigma ({ \overrightarrow { \beta  }  }^{ T }x)
 $$
 
-
 로지스틱회귀의 로그우도 함수는 다음과 같습니다.
+
 
 
 $$
@@ -60,4 +65,6 @@ $$
 l(\overrightarrow { { \beta  } } )=&\log { L(\overrightarrow { { \beta  } } ) } \\ =&\log { \prod _{ i }^{  }{ { \sigma (\overrightarrow { { \beta  } } ^{ T }{ x }_{ i }) }^{ { y }_{ i } }{ \left\{ 1-\sigma (\overrightarrow { { \beta  } } ^{ T }{ x }_{ i }) \right\}  }^{ 1-{ y }_{ i } } }  } \\ =&\sum _{ i }^{  }{ { y }_{ i }\log { \left\{ \sigma (\overrightarrow { { \beta  } } ^{ T }{ x }_{ i }) \right\}  }  } +\sum _{ i }^{  }{ \left( 1-{ y }_{ i } \right) \log { \left\{ 1-\sigma (\overrightarrow { { \beta  } } ^{ T }{ x }_{ i }) \right\}  }  } 
 \end{align*}
 $$
+
+
 최종 도출된 로그우도 함수는 음의 [크로스엔트로피](https://ratsgo.github.io/deep%20learning/2017/09/24/loss/)인 점을 확인할 수 있습니다. 따라서 로지스틱회귀 모델의 로그우도 함수를 최대화하는 것은 크로스엔트로피를 최소화하는 것과 정확히 같은 일이 됩니다.
