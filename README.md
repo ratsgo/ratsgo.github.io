@@ -4,4 +4,4 @@
 
 E-mail : gichang_lee@korea.ac.kr
 
-blog : https://ratsgo.gitgub.io
+blog : https://ratsgo.github.io
