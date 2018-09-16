@@ -14,6 +14,6 @@ Natural Language Processing, Linguistics, Machine Learning
 
 다만 올해 초부터 회사를 다니고 있어서 업무 핑계로 제때 답하지 못하는 경우가 많아졌습니다. 늦게라도 최대한 답을 드리려고 노력하고 있습니다만, 이 점 배려해주시면 감사하겠습니다.
 
-제 CV는 [이곳](http://ratsgo.github.io/public/CV.pdf)에서 확인할 수 있습니다. 
+제 CV는 <a href="http://ratsgo.github.io/public/CV.pdf">이곳</a>에서 확인할 수 있습니다. 
 
 </div>
