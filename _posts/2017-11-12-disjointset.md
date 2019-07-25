@@ -4,7 +4,7 @@ category: Data structure&Algorithm
 tag: [partition]
 ---
 
-이번 글에서는 **디스조인트 셋(Disjoint Set)**에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김황남 교수님 강의와 위키피디아, 그리고 [이곳](http://bowbowbow.tistory.com/26)을 참고해 정리하였음을 먼저 밝힙니다. 예시 그림과 파이썬 코드는 [이곳](http://interactivepython.org/runestone/static/pythonds/SortSearch/TheShellSort.html)을 참고하였습니다. 그럼 시작하겠습니다.
+이번 글에서는 **디스조인트 셋(Disjoint Set)**에 대해 살펴보도록 하겠습니다. 이 글은 고려대 김황남 교수님 강의와 위키피디아, 그리고 [이곳](http://bowbowbow.tistory.com/26)을 참고해 정리하였음을 먼저 밝힙니다. 그럼 시작하겠습니다.
 
 
 
@@ -43,7 +43,7 @@ tag: [partition]
 
 *find(4)*는 4가 속한 셋의 대표값을 출력하라는 뜻입니다. 따라서 이 예에서는 3이 됩니다. 마찬가지로 *find(3)* 또한 출력 결과가 3입니다. 
 
-이번엔 다른 디스조인트 셋 $B=\{1,2\}$가 있다고 치겠습니다. $B$의 대표값은 루트노드인 3입니다. $A$와 $B$를 합칠 때는 루트노드들끼리 이어줍니다. 다음과 같습니다.
+이번엔 다른 디스조인트 셋 $B=\{1,2\}$가 있다고 치겠습니다. $B$의 대표값은 루트노드인 1입니다. $A$와 $B$를 합칠 때는 루트노드들끼리 이어줍니다. 다음과 같습니다.
 
 
 
