@@ -12,15 +12,15 @@ tag: linear
 
 아래 조건을 만족하는 유한한 $n$개의 벡터는 **선형종속**(線型從屬, linear dependence)이라고 정의됩니다.
 
-$$S=\left\{ { v }_{ 1 },{ v }_{ 2 },...,{ v }_{ n } \right\} 에\quad 대해\\{ c }_{ 1 }{ v }_{ 1 }+{ c }_{ 2 }{ v }_{ 2 }+...+{ c }_{ n }=0을\quad만족하는\\0이\quad 아닌\quad { c }_{ 1 },{ c }_{ 2 },...,{ c }_{ n }이\quad존재한다$$
+$$S=\left\{ { v }_{ 1 },{ v }_{ 2 },...,{ v }_{ n } \right\} 에\quad 대해\\{ c }_{ 1 }{ v }_{ 1 }+{ c }_{ 2 }{ v }_{ 2 }+...+{ c }_{ n }{v}_{n}=0을\quad만족하는\\0이\quad 아닌\quad { c }_{ 1 },{ c }_{ 2 },...,{ c }_{ n }이\quad존재한다$$
 
-반대로 c가 모두 0일 때만 위 조건을 만족하는 경우에는 **선형독립**(線型獨立, linear independence)이라고 합니다. 그 정의에 의해 **동차선형방정식(homogeneous linear equation)** $Ax=0$가 자명해($x=0$)를 유일한 해로 가질 때 **계수행렬(coefficient matrix)** $A$의 **열벡터(column vector)**들은 서로 선형독립입니다. 
+반대로 c가 모두 0일 때만 위 조건을 만족하는 경우에는 **선형독립**(線型獨立, linear independence)이라고 합니다. 그 정의에 의해 **동차선형방정식(homogeneous linear equation)** $Ax=0​$가 자명해($x=0​$)를 유일한 해로 가질 때 **계수행렬(coefficient matrix)** $A​$의 **열벡터(column vector)**들은 서로 선형독립입니다. 
 
 무슨 말인지 알쏭달쏭하시죠? 예를 들어보겠습니다. 다음과 같은 두 개의 1차 연립방정식이 있습니다.
 
-$$3{ x }_{ 1 }+6{ x }_{ 2 }=0\\ 2{ x }_{ 1 }+2{ x }_{ 2 }=0$$
+$$3{ x }_{ 1 }+6{ x }_{ 2 }=0\\ 2{ x }_{ 1 }+2{ x }_{ 2 }=0​$$
 
-위 연립방정식의 계수행렬 $A$는 아래와 같습니다. $A$의 열벡터와 $x$의 선형결합으로 위 연립방정식을 다시 표현한 것 또한 아래와 같습니다.
+위 연립방정식의 계수행렬 $A​$는 아래와 같습니다. $A​$의 열벡터와 $x​$의 선형결합으로 위 연립방정식을 다시 표현한 것 또한 아래와 같습니다.
 
 $$A=\begin{bmatrix} 3 & 6 \\ 2 & 2 \end{bmatrix},\quad x=\begin{bmatrix} { x }_{ 1 } \\ { x }_{ 2 } \end{bmatrix}\\ { x }_{ 1 }\begin{bmatrix} 3 \\ 2 \end{bmatrix}+{ x }_{ 2 }\begin{bmatrix} 6 \\ 2 \end{bmatrix}=\begin{bmatrix} 0 \\ 0 \end{bmatrix}$$
 
