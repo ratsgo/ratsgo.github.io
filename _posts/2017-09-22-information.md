@@ -38,7 +38,7 @@ $$
 
 
 $$
-H\left( P \right) =H\left( x\right) ={ E }_{ X\sim P }\left[ I\left( x \right)  \right] =-{ E }_{ X\sim P }\left[ \log { P(x) }  \right]
+H\left( P \right) =H\left( x\right) ={ E }_{ X\sim P }\left[ I\left( x \right)  \right] ={ E }_{ X\sim P }\left[ -\log { P(x) }  \right]
 $$
 
 
