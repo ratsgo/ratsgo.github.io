@@ -82,7 +82,7 @@ $$
 
 
 $$
-{ D }_{ KL }\left( P||Q \right) ={ E }_{ X\sim P }\left[ \log { \frac { Q\left( x \right)  }{ P(x) }  }  \right]
+{ D }_{ KL }\left( P||Q \right) ={ E }_{ X\sim P }\left[ \log { \frac { P\left( x \right)  }{ Q(x) }  }  \right]={ E }_{ X\sim P }\left[ -\log { \frac { Q\left( x \right)  }{ P(x) }  }  \right]
 $$
 
 
@@ -98,7 +98,7 @@ $P$와 $Q$가 동일한 확률분포일 경우 KLD는 정의에 따라 그 값�
 
 
 $$
-H\left( P,Q \right) =-{ E }_{ X\sim P }\left[ \log { Q(x) }  \right] =-\sum _{ x }^{  }{ P({ x })\log { Q({ x }) }  }
+H\left( P,Q \right) ={ E }_{ X\sim P }\left[ -\log { Q(x) }  \right] =-\sum _{ x }^{  }{ P({ x })\log { Q({ x }) }  }
 $$
 
 
@@ -107,7 +107,7 @@ $$
 
 $$
 \begin{align*}
-{ D }_{ KL }\left( P||Q \right) =&{ E }_{ X\sim P }\left[ \log { \frac { Q\left( x \right)  }{ P(x) }  }  \right] \\=&-\sum _{ x }^{  }{ P({ x })\log { \left( \frac { Q\left( x \right)  }{ P(x) }  \right)  }  } \\=&-\sum _{ x }^{  }{ P({ x })\left\{ \log { Q(x) } -\log { P(x) }  \right\}  } \\=&-\sum _{ x }^{  }{ \left\{ P({ x })\log { Q(x) } -P(x)\log { P(x) }  \right\}  } \\=&-\sum _{ x }^{  }{ P({ x })\log { Q(x) }  } +\sum _{ x }^{  }{ P(x)\log { P(x) }  } \\ =&H(P,Q)-H(P)
+{ D }_{ KL }\left( P||Q \right) =&-\sum _{ x }^{  }{ P({ x })\log { \left( \frac { Q\left( x \right)  }{ P(x) }  \right)  }  } \\=&-\sum _{ x }^{  }{ P({ x })\left\{ \log { Q(x) } -\log { P(x) }  \right\}  } \\=&-\sum _{ x }^{  }{ \left\{ P({ x })\log { Q(x) } -P(x)\log { P(x) }  \right\}  } \\=&-\sum _{ x }^{  }{ P({ x })\log { Q(x) }  } +\sum _{ x }^{  }{ P(x)\log { P(x) }  } \\ =&H(P,Q)-H(P)
 \end{align*}
 $$
 
