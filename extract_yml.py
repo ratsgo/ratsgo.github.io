@@ -2,21 +2,20 @@ import frontmatter
 import glob
 import yaml
 import string
-from konlpy.tag import Komoran
+from konlpy.tag import Mecab
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 def get_posts(folder='./_posts'):
     result = {}
+    fm = frontmatter.Frontmatter()
     for filepath in glob.glob(folder + "/*"):
         filename = filepath.split('/')[-1]
         slug = filename[11:-3]
-        post = frontmatter.parse(filepath)
-        if "slug" in post.keys():
-            slug = post["slug"]
-        result[slug] = post['content'].replace('\n', ' ').replace('  ', ' ')
+        post = fm.read_file(filepath)
+        result[slug] = post['body'].replace('\n', ' ').replace('  ', ' ')
     return result
 
-def write_result_to_file(related, file=',/_data/related.yml'):
+def write_result_to_file(related, file='./_data/related.yml'):
     data = []
     for r in related:
         r = {
@@ -27,7 +26,7 @@ def write_result_to_file(related, file=',/_data/related.yml'):
     with open(file, 'w') as f:
         yaml.dump(data, f, default_flow_style=False)
 
-stemmer = Komoran()
+stemmer = Mecab()
 
 def tokenize(text):
     stems = stemmer.nouns(text)
