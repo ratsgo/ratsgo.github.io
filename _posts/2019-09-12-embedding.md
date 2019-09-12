@@ -17,15 +17,16 @@ tag: embedding
 임베딩에는 말뭉치(corpus)의 의미, 문법 정보가 응축돼 있습니다. 임베딩은 벡터이기 때문에 사칙연산이 가능하며, 단어/문서 관련도(relevance) 역시 계산할 수 있습니다. 
 
 최근 들어 임베딩이 중요해진 이유는 따로 있습니다. 바로 전이 학습(transfer learning) 때문입니다. 전이 학습이란 특정 문제를 풀기 위해 학습한 모델을 다른 문제를 푸는 데 재사용하는 기법을 의미합니다. 예컨대 대규모 말뭉치를 미리 학습(pretrain)한 임베딩을 문서 분류 모델의 입력값으로 쓰고, 해당 임베딩을 포함한 모델 전체를 문서 분류 과제를 잘할 수 있도록 업데이트(fine-tuning)하는 방식이 바로 그것입니다. 물론 전이 학습은 문서 분류 이외의 다양한 다른 과제에도 적용할 수 있습니다. 
+
 전이 학습 혹은 프리트레인-파인 튜닝 메커니즘은 사람의 학습과 비슷한 점이 있습니다. 사람은 무언가를 배울 때 제로 베이스에서 시작하지 않습니다. 사람이 새로운 사실을 빠르게 이해할 수 있는 이유는 그가 이해를 하는 데에 평생 쌓아 온 지식을 동원하기 때문입니다. 자연어 처리 모델 역시 제로에서 시작하지 않습니다. 우선 대규모 말뭉치를 학습시켜 임베딩을 미리 만들어 놓습니다**(프리트레인)**. 이 임베딩에는 의미, 문법 정보가 녹아 있습니다. 이후 임베딩을 포함한 모델 전체를 문서 분류 과제에 맞게 업데이트합니다**(파인 튜닝)**. 이로써 전이 학습 모델은 제로부터 학습한 모델보다 문서 분류 과제를 빠르게 잘 수행할 수 있습니다. 
 
 다음은 [네이버 영화 리뷰 말뭉치(NSMC)](https://github.com/e9t/nsmc)를 가지고 영화 리뷰 문서의 극성(polarity)을 예측하는 모델의 정확도(accuracy)와 학습 손실(training loss)를 그래프로 나타낸 것입니다. `FastText`는 이 모델의 입력값을 단어 임베딩 기법의 일종인 FastText를 사용한 것이고, `Random`은 랜덤 임베딩을 썼다는 뜻입니다. 후자는 다시 말해 학습을 제로에서부터 시작했다는 뜻입니다. 그래프를 보면 아시겠지만 임베딩 품질이 좋으면 수행하려는 태스크(극성 분류)의 성능이 올라갑니다. 아울러 모델의 수렴(converge) 역시 빨라집니다.
 
 
 
-<a href="https://imgur.com/u8yHOqM"><img src="https://i.imgur.com/u8yHOqM.png" title="source: imgur.com" width=500/></a>
+<a href="https://imgur.com/u8yHOqM"><img src="https://i.imgur.com/u8yHOqM.png" title="source: imgur.com" width="500px" /></a>
 
-<a href="https://imgur.com/5R661Va"><img src="https://i.imgur.com/5R661Va.png" width=500 title="source: imgur.com" /></a>
+<a href="https://imgur.com/5R661Va"><img src="https://i.imgur.com/5R661Va.png" width="500px" title="source: imgur.com" /></a>
 
 
 
