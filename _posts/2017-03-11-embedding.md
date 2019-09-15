@@ -30,9 +30,9 @@ Word2Vec은 **[Distributional Hypothesis](https://ratsgo.github.io/from%20freque
 
 $$p(o|c)=\frac { exp({ u }_{ o }^{ T }{ v }_{ c }) }{ \sum _{ w=1 }^{ W }{ exp({ u }_{ w }^{ T }{ v }_{ c } } )}$$
 
-식 좌변의 의미를 곱씹어 볼까요? $o​$는 주변단어(context word), c는 중심단어(center word)입니다. 다시 말해 $p(o|c)​$는 중심단어($c​$)가 주어졌을 때 주변단어($o​$)가 등장할 **조건부확률**을 뜻합니다. 이 식을 최대화하는 것은 중심단어로 주변단어를 잘 맞춘다는 의미입니다. 즉 '외나무다리'가 등장했을 때 '원수'라는 표현이 나올 것이라는 사실을 예측하는 것이지요.
+식 좌변의 의미를 곱씹어 볼까요? $o$는 주변단어(context word), c는 중심단어(center word)입니다. 다시 말해 $p(o$$|c)$는 중심단어($c$)가 주어졌을 때 주변단어($o$)가 등장할 **조건부확률**을 뜻합니다. 이 식을 최대화하는 것은 중심단어로 주변단어를 잘 맞춘다는 의미입니다. 즉 '외나무다리'가 등장했을 때 '원수'라는 표현이 나올 것이라는 사실을 예측하는 것이지요.
 
-Word2Vec 저자들은 $p(o|c)$을 위 식 우변과 같이 정의했습니다. $u$와 $v$는 단어벡터들입니다. 예컨대 '외나무다리'라는 중심단어 벡터가 $v_c$, '원수'라는 주변단어 벡터가 $u_o$입니다. 사실 엄밀히 얘기하면 $u$와 $v$는 다른 벡터들입니다. 
+Word2Vec 저자들은 $p(o$$|c)$을 위 식 우변과 같이 정의했습니다. $u$와 $v$는 단어벡터들입니다. 예컨대 '외나무다리'라는 중심단어 벡터가 $v_c$, '원수'라는 주변단어 벡터가 $u_o$입니다. 사실 엄밀히 얘기하면 $u$와 $v$는 다른 벡터들입니다. 
 
 하지만 임베딩이 잘 되어 있다면 학습 결과로 도출된 $u$, $v$ 가운데 어떤 걸 써도 상관없다고 합니다. 이 때문에 이후 설명에서 큰 차이를 두지 않았습니다. Word2Vec의 학습 과정에 대해 좀 더 알고 싶은 분은 [이곳](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/30/word2vec/)을 참고하세요.
 
@@ -48,13 +48,13 @@ $cos(θ)$는 단위원 내 벡터들끼리의 **내적(inner product)**과 같�
 
 그렇다면 위 식 우변을 최대화한다는 말은 어떤 의미를 지니는 걸까요? 분자를 키우고, 분모를 줄이면 최대화 목표를 달성할 수 있겠죠. 우선 분자 부분을 봅시다. 
 
-$$exp({ u }_{ o }^{ T }{ v }_{ c })$$
+$$\exp({ u }_{ o }^{ T }{ v }_{ c })$$
 
-분자를 증가시킨다는 건 exp의 지수를 크게 한다는 걸 뜻합니다. $exp$의 지수는 두 벡터의 내적값이 됩니다. 이 값이 커진다는 건 앞서 언급했던 것처럼 벡터들 사이의 θ를 줄인다(즉 유사도를 높인다)는 말이 될 것 같습니다. 다시 말해 중심단어(c)와 주변단어(o)를 벡터공간에 뿌릴 때 인근에 위치시킨다(θ를 줄인다=유사도를 높인다)는 의미로 해석할 수 있다는 얘기입니다.
+분자를 증가시킨다는 건 $\exp$의 지수를 크게 한다는 걸 뜻합니다. $\exp$의 지수는 두 벡터의 내적값이 됩니다. 이 값이 커진다는 건 앞서 언급했던 것처럼 벡터들 사이의 θ를 줄인다(즉 유사도를 높인다)는 말이 될 것 같습니다. 다시 말해 중심단어(c)와 주변단어(o)를 벡터공간에 뿌릴 때 인근에 위치시킨다(θ를 줄인다=유사도를 높인다)는 의미로 해석할 수 있다는 얘기입니다.
 
 분모 줄이기는 어떻게 받아들여야 할까요? 분모는 아래와 같습니다.
 
-$$\sum _{ w=1 }^{ W }{ exp({ u }_{ w }^{ T }{ v }_{ c })}$$
+$$\sum _{ w=1 }^{ W }{ \exp({ u }_{ w }^{ T }{ v }_{ c })}$$
 
 따라서 분모는 중심단어(c)와 학습 말뭉치 내 모든 단어를 각각 내적한 것의 총합입니다. 분모를 줄이려면 주변에 등장하지 않은 단어와 중심단어와의 내적값은 작아져야 합니다. 즉 중심단어 주변에 등장하지 않은 단어에 해당하는 벡터와 중심단어 벡터 사이의 θ를 키운다(**코사인 유사도를 줄인다**)는 의미가 되겠습니다.
 
@@ -68,19 +68,17 @@ $$\sum _{ w=1 }^{ W }{ exp({ u }_{ w }^{ T }{ v }_{ c })}$$
 
 다시 말해 Word2Vec은 window 내에 등장하지 않는 단어에 해당하는 벡터는 중심단어 벡터와 벡터공간상에서 멀어지게끔(**내적값 줄이기**), 등장하는 주변단어 벡터는 중심단어 벡터와 가까워지게끔(**내적값 키우기**) 한다는 것이죠. 
 
-그럼 이렇게 생각해보는건 어떨까요? window 내에 등장하지 않으면 **결과값을 줄이고**, 등장할 경우 **결과값을 키우는** 건? 정확히 이 방식으로 작동하는 알고리즘이 오래 전부터 제안돼 왔습니다. 예컨대 주변 단어를 몇 개 볼지를 정하고 동시에 등장하는 단어의 빈도수를 세어서 행렬로 변환한 '[단어-문맥행렬](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/10/frequency/)'이 대표적입니다. 
+그럼 이렇게 생각해보는건 어떨까요? window 내에 등장하지 않으면 **결과값을 줄이고**, 등장할 경우 **결과값을 키우는** 건? 이 정보를 명시적으로 보존하는 행렬이 있습니다. 주변 단어를 몇 개 볼지를 정하고 동시에 등장하는 단어의 빈도수를 세어 놓은 '[단어-문맥행렬](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/10/frequency/)'이 바로 그것입니다. 
 
-바꿔 말하면 Word2Vec은 기존 count 기반 방법론처럼 자주 같이 등장하는 단어들의 정보(Co-occurrence)를 보존한다는 얘기입니다. [Omer and Yoav(2014)](https://papers.nips.cc/paper/5477-neural-word-embedding-as-implicit-matrix-factorization.pdf)도 Word2Vec은 본질적으로 기존 count 기반의 방법론과 다르지 않다는 점을 논증해 눈길을 끕니다.
+바꿔 말하면 Word2Vec은 기존 count 기반 방법론처럼 자주 같이 등장하는 단어들의 정보(co-occurrence)를 보존한다는 얘기입니다. [Omer and Yoav(2014)](https://papers.nips.cc/paper/5477-neural-word-embedding-as-implicit-matrix-factorization.pdf)도 Word2Vec은 본질적으로 기존 count 기반의 방법론과 다르지 않다는 점을 논증해 눈길을 끕니다.
 
 
 
 ## 그렇다면 GloVe, Fasttext는?
 
-[GloVe](http://nlp.stanford.edu/projects/glove/)는 2014년 미국 스탠포드대학 연구팀에서 개발한 단어 임베딩 방법론입니다. GloVe 연구진이 명시적으로 밝혔듯 GloVe가 보존하려는 정보는 단어 동시 등장 여부입니다. GloVe로 임베딩된 단어 벡터끼리의 내적은 동시 등장확률의 로그값과 같습니다. *(their dot product equals the logarithm of the words' probability of co-occurrence)* Word2Vec이 임베딩된 두 단어벡터의 내적이 코사인 유사도라면 GloVe는 동시 등장 확률인 셈이죠. 그럼 GloVe 연구팀이 직접 든 예시를 볼까요?
+[GloVe](http://nlp.stanford.edu/projects/glove/)는 2014년 미국 스탠포드대학 연구팀에서 개발한 단어 임베딩 방법론입니다. GloVe 연구진이 명시적으로 밝혔듯 GloVe가 보존하려는 정보는 단어 동시 등장 여부입니다. GloVe로 임베딩된 단어 벡터끼리의 내적은 동시 등장확률의 로그값과 같습니다. *(their dot product equals the logarithm of the words' probability of co-occurrence)* Word2Vec이 임베딩된 두 단어벡터의 내적이 코사인 유사도라면 GloVe는 동시 등장 확률인 셈이죠. GloVe의 학습 방식을 자세히 살펴보고 싶으신 분은 [이곳](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/04/09/glove/)을 참고하시면 좋을 것 같습니다.
 
-<a href="http://imgur.com/WhWPkMm"><img src="http://i.imgur.com/WhWPkMm.png" width="500px" title="source: imgur.com" /></a>
-
-GloVe는 위 표를 기준으로 할 때 P(k\|ice)/P(k\|steam)로 표현되는 **동시 등장 정보 간 비율**을 보존해 단어를 벡터로 바꾸고자 합니다. 예컨대 'solid'라는 단어를 벡터공간에 임베딩할 때 'ice', 'steam' 중 'ice' 쪽에 가깝게 임베딩한다는 이야기이죠. GloVe의 학습 방식을 자세히 살펴보고 싶으신 분은 [이곳](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/04/09/glove/)을 참고하시면 좋을 것 같습니다. 한편 페이스북이 2016년 발표한 [Fasttext](https://research.fb.com/projects/fasttext/)는 원래 단어를 **부분단어(subword)**의 벡터들로 표현한다는 점을 제외하고는 Word2Vec과 거의 유사합니다. 노이즈가 많은 말뭉치에 강점을 지닌 것으로 알려져 있습니다.
+한편 페이스북이 2016년 발표한 [Fasttext](https://research.fb.com/projects/fasttext/)는 원래 단어를 **부분단어(subword)**의 벡터들로 표현한다는 점을 제외하고는 Word2Vec과 거의 유사합니다. Fasttext 역시 Word2Vec처럼 단어들의 동시 등장 정보를 보존한다는 말입니다.
 
 
 
@@ -108,8 +106,3 @@ GloVe는 위 표를 기준으로 할 때 P(k\|ice)/P(k\|steam)로 표현되는 *
 
 'OS', '운영체제', '발적화' 같은 단어가 소프트웨어와 유사하다는 결과는 직관적으로 납득할 만하다고 생각합니다. 하지만 '하드웨어'가 '소프트웨어'랑 가장 비슷하다는 결과는 약간 받아들이기 힘듭니다. Word2Vec은 '하드웨어' 주변단어와 '소프트웨어' 주변단어들이 비슷한 분포를 보이기 때문에 이런 결과를 낸 것 같은데요. Word2Vec이 보존하려는 정보가 '동시등장 여부'이기 때문에 생기는 근본적인 한계가 아닐까 하는 생각이 듭니다.
 
-
-
-## 마치며
-
-단어 벡터를 만들 때 등장 정보를 보존한다는 점에서는 Word2Vec, GloVe, Fast-text가 모두 기존 count 기반의 방법론과 본질적으로 다르지 않습니다. 다만 동시 등장 정보를 벡터로 표현한 결과(representation)가 [잠재의미분석(Latent Semantic Analysis)](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/04/06/pcasvdlsa/) 등 기존 대비 매우 개선됐기 때문에 최근 들어 크게 각광받고 있는 것 같습니다. 포스팅과 관련돼 의견 있으시면 언제든지 댓글, 메일로 주시면 좋을 것 같습니다. 여기까지 읽어주셔서 감사합니다.
