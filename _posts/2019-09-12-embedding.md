@@ -10,7 +10,7 @@ tag: embedding
 
 다음 그림을 클릭하면 도서 안내 페이지로 이동합니다.
 
-<a href="http://www.yes24.com/Product/Goods/78569687"><img src="https://i.imgur.com/LiXiYzn.jpg" width="500px" title="source: imgur.com" /></a>
+<a href="http://www.yes24.com/Product/Goods/78569687"><img src="https://i.imgur.com/j03ENCc.jpg" width="500px" title="embeddings" /></a>
 
 
 
