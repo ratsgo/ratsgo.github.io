@@ -1,10 +1,10 @@
 - post: maxparam
   related:
   - loss
-  - MLE
   - CRF
   - logistic
   - unsugen
+  - gradient
 - post: plsa
   related:
   - LDA
@@ -25,7 +25,7 @@
   - regression
   - unsugen
   - maxparam
-  - MLE
+  - CRF
 - post: binomial
   related:
   - vi
@@ -149,8 +149,8 @@
   related:
   - deepNLP
   - NNLM
-  - embedding
   - LM
+  - embedding
   - CNN
 - post: quicksort
   related:
@@ -186,14 +186,14 @@
   - NP
   - wordclass
   - ida
-  - noun
+  - morpheme
 - post: operations
   related:
   - PCA
   - pcasvdlsa
   - RNTN
   - projection
-  - Ldependence
+  - LUfactorization
 - post: disciminative
   related:
   - logistic
@@ -371,9 +371,9 @@
   - CRF
 - post: bayes
   related:
-  - bayesinfer
   - vi
   - bayes2
+  - bayesinfer
   - HMMs
   - naive
 - post: bayes2
@@ -408,9 +408,9 @@
   related:
   - svgen
   - logistic
-  - MLE
   - disciminative
   - vi
+  - maxparam
 - post: gan
   related:
   - gans
@@ -421,8 +421,8 @@
 - post: RNTN
   related:
   - NNLM
-  - embedding
   - CNN
+  - embedding
   - projection
   - Ldependence
 - post: gans
@@ -450,9 +450,9 @@
   related:
   - softmax
   - maxparam
-  - MLE
   - unsugen
   - information
+  - disciminative
 - post: SOM
   related:
   - RNTN
@@ -513,8 +513,8 @@
   related:
   - verb
   - parsing
-  - ida
   - sentcomp
+  - ida
   - syntax
 - post: genmodels
   related:
@@ -548,9 +548,9 @@
   related:
   - unsugen
   - naive
-  - MLE
   - vi
   - logistic
+  - maxparam
 - post: detertime
   related:
   - NP
@@ -718,7 +718,7 @@
   - logistic
   - disciminative
   - comparison
-  - MLE
+  - terms
 - post: Topological
   related:
   - DFS
@@ -794,8 +794,8 @@
   - glove
   - xlnet
   - manning
-  - embedding
   - CNN
+  - embedding
 - post: median
   related:
   - normal
@@ -850,8 +850,8 @@
   - naive
   - CNNs
   - loss
-  - plsa
   - deepNLP
+  - plsa
 - post: terms
   related:
   - loss
@@ -971,13 +971,6 @@
   - pcasvdlsa
   - operations
   - computeHMMs
-- post: CAM2
-  related:
-  - RNTN
-  - wordclass
-  - wordweighting
-  - deepNLP
-  - LM
 - post: milano
   related:
   - italy
@@ -1011,8 +1004,8 @@
   - asymptotic
   - list
   - funcall
-  - CRF
   - mergesort
+  - CRF
 - post: nounontology2
   related:
   - nounontology
@@ -1026,7 +1019,7 @@
   - parsing
   - valency
   - wordclass
-  - generate2
+  - thetarole
 - post: SCC
   related:
   - graph
@@ -1034,13 +1027,6 @@
   - CC
   - Topological
   - BFS
-- post: MLE
-  related:
-  - loss
-  - maxparam
-  - unsugen
-  - logistic
-  - CRF
 - post: summer
   related:
   - word2vecpos
@@ -1094,16 +1080,16 @@
   related:
   - loss
   - bayesinfer
-  - MLE
   - gans
   - prob
+  - maxparam
 - post: visual
   related:
   - spectral
   - genmodels
   - treecode
   - SCC
-  - compare
+  - graph
 - post: advp
   related:
   - NP
@@ -1184,8 +1170,8 @@
 - post: ends
   related:
   - words2
-  - modality
   - comsent
+  - modality
   - quote
   - parsing
 - post: maxflow
@@ -1299,7 +1285,7 @@
   - computeHMMs
   - unsugen
   - logistic
-  - MLE
+  - loss
 - post: convexset
   related:
   - Ldependence
@@ -1347,8 +1333,8 @@
   - RNTN
   - Ldependence
   - PCA
-  - NNLM
   - operations
+  - NNLM
 - post: SVM
   related:
   - SVM2
