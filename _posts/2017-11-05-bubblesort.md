@@ -122,4 +122,4 @@ def bubbleSort(alist):
                 alist[i] = alist[i+1]
                 alist[i+1] = temp
 ```
-
+**추가 읽기** - [C++의 버블 정렬](https://www.scaler.com/topics/bubble-sort-in-cpp/)
